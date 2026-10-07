@@ -14,7 +14,7 @@
 <style>
 
 /* =========================
-   HOME PAGE SLIDESHOW
+   HOME HERO SLIDESHOW
 ========================= */
 
 .hero {
@@ -29,6 +29,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   z-index: 0;
 }
 
@@ -89,13 +90,13 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.38);
+  background: rgba(0,0,0,0.35);
   z-index: 1;
   pointer-events: none;
 }
 
 
-/* Hero text */
+/* Hero content */
 
 .hero-overlay {
   position: relative;
@@ -189,12 +190,10 @@
 <section id="home" class="hero">
 
 
-  <!-- HOME SLIDESHOW -->
+  <!-- 4 HOME IMAGES -->
 
   <div class="hero-slideshow">
 
-
-    <!-- IMAGE 1 -->
 
     <img
       class="hero-slide"
@@ -202,23 +201,17 @@
       alt="Sea & Mount Travel">
 
 
-    <!-- IMAGE 2 -->
-
     <img
       class="hero-slide"
       src="image/home-2.png"
       alt="Sea & Mount Travel">
 
 
-    <!-- IMAGE 3 -->
-
     <img
       class="hero-slide"
       src="image/home-3.png"
       alt="Sea & Mount Travel">
 
-
-    <!-- IMAGE 4 -->
 
     <img
       class="hero-slide"
