@@ -17,21 +17,27 @@
    HEADER LOGO
 ========================= */
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.header .logo {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
 }
 
-.logo img {
-  width: 55px;
-  height: 55px;
-  object-fit: contain;
-  border-radius: 6px;
+.header .logo img {
+  display: block !important;
+  width: 55px !important;
+  height: 55px !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
 }
 
-.logo div {
-  white-space: nowrap;
+.header .logo span {
+  white-space: nowrap !important;
+}
+
+.header .logo b {
+  font-weight: 400;
 }
 
 
@@ -148,13 +154,13 @@
     object-position: center;
   }
 
-  .logo img {
-    width: 45px;
-    height: 45px;
+  .header .logo img {
+    width: 45px !important;
+    height: 45px !important;
   }
 
-  .logo {
-    gap: 7px;
+  .header .logo {
+    gap: 7px !important;
   }
 
 }
@@ -175,17 +181,18 @@
 
   <div class="container nav">
 
-    <!-- LOGO + BRAND NAME -->
+
+    <!-- LOGO -->
 
     <div class="logo">
 
       <img
-        src="image/logo.jpeg"
+        src="./image/logo.jpeg"
         alt="Sea & Mount Travel Logo">
 
-      <div>
-        SEA & MOUNT <span>TRAVEL</span>
-      </div>
+      <span>
+        SEA & MOUNT <b>TRAVEL</b>
+      </span>
 
     </div>
 
@@ -241,37 +248,31 @@
 <section id="home" class="hero">
 
 
-  <!-- 4 HOME IMAGES -->
+  <!-- HOME SLIDESHOW -->
 
   <div class="hero-slideshow">
-
 
     <img
       class="hero-slide"
       src="image/home-1.jpg"
       alt="Sea & Mount Travel">
 
-
     <img
       class="hero-slide"
       src="image/home-2.png"
       alt="Sea & Mount Travel">
-
 
     <img
       class="hero-slide"
       src="image/home-3.png"
       alt="Sea & Mount Travel">
 
-
     <img
       class="hero-slide"
       src="image/home-4.webp"
       alt="Sea & Mount Travel">
 
-
   </div>
-
 
 
   <!-- HERO TEXT -->
@@ -280,17 +281,14 @@
 
     <div class="container hero-content">
 
-
       <p class="eyebrow">
         SEA • MOUNTAIN • STAY • TRAVEL
       </p>
-
 
       <h1>
         Your Perfect Stay,<br>
         From Sea to Mountains
       </h1>
-
 
       <p>
         Comfortable hotels in Digha and peaceful homestays in Icchegaon.
@@ -298,7 +296,6 @@
 
 
       <div class="hero-buttons">
-
 
         <a
           href="#digha"
@@ -308,7 +305,6 @@
 
         </a>
 
-
         <a
           href="#icchegaon"
           class="btn secondary">
@@ -316,7 +312,6 @@
           Explore Icchegaon
 
         </a>
-
 
       </div>
 
@@ -340,11 +335,9 @@
       WELCOME TO
     </p>
 
-
     <h2>
       Sea & Mount Travel
     </h2>
-
 
     <p class="lead">
       Stay, relax and explore. Choose your favourite destination
@@ -365,7 +358,6 @@
 
   <div class="container">
 
-
     <div class="section-heading">
 
       <div>
@@ -374,13 +366,11 @@
           SEA DESTINATION
         </p>
 
-
         <h2>
           Digha Hotels
         </h2>
 
       </div>
-
 
       <a
         href="#contact"
@@ -391,7 +381,6 @@
       </a>
 
     </div>
-
 
 
     <div class="cards">
@@ -420,13 +409,11 @@
             Hotel Pratima Guest Inn
           </h3>
 
-
           <p class="location">
             📍 SBSTC Bus Stand, Railway Station,
             Shankar Mandal Rd, near Sea Beach Road,
             New Digha, Digha, West Bengal – 721428
           </p>
-
 
           <p>
             Comfortable rooms for families and travellers,
@@ -489,13 +476,11 @@
             Aaradhya Holiday Inn
           </h3>
 
-
           <p class="location">
             📍 Near Helipad, Jahaj Bari,
             Palsandapur, Digha,
             West Bengal – 721428
           </p>
-
 
           <p>
             Comfortable accommodation for families
@@ -558,7 +543,6 @@
           MOUNTAIN DESTINATION
         </p>
 
-
         <h2>
           Icchegaon Homestays
         </h2>
@@ -575,7 +559,6 @@
       </a>
 
     </div>
-
 
 
     <div class="cards">
@@ -740,7 +723,6 @@
         EXPLORE
       </p>
 
-
       <h2>
         Photo Gallery
       </h2>
@@ -748,39 +730,31 @@
     </div>
 
 
-
     <div class="gallery">
-
 
       <img
         src="images/gallery-1.jpg"
         alt="Sea & Mount Travel Gallery">
 
-
       <img
         src="images/gallery-2.jpg"
         alt="Sea & Mount Travel Gallery">
-
 
       <img
         src="images/gallery-3.jpg"
         alt="Sea & Mount Travel Gallery">
 
-
       <img
         src="images/gallery-4.jpg"
         alt="Sea & Mount Travel Gallery">
-
 
       <img
         src="images/gallery-5.jpg"
         alt="Sea & Mount Travel Gallery">
 
-
       <img
         src="images/gallery-6.jpg"
         alt="Sea & Mount Travel Gallery">
-
 
     </div>
 
@@ -805,11 +779,9 @@
         DIRECT BOOKING
       </p>
 
-
       <h2>
         Plan Your Stay With Us
       </h2>
-
 
       <p>
         Send your check-in, check-out and guest details
@@ -846,7 +818,6 @@
     <p class="eyebrow">
       GET IN TOUCH
     </p>
-
 
     <h2>
       Sea & Mount Travel
@@ -932,9 +903,7 @@
         SEA & MOUNT TRAVEL
       </strong>
 
-
       <br>
-
 
       <small>
         Hotels • Homestays • Travel
