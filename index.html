@@ -14,6 +14,28 @@
 <style>
 
 /* =========================
+   HEADER LOGO
+========================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.logo div {
+  white-space: nowrap;
+}
+
+
+/* =========================
    HOME HERO SLIDESHOW
 ========================= */
 
@@ -84,7 +106,9 @@
 }
 
 
-/* Dark overlay */
+/* =========================
+   DARK OVERLAY
+========================= */
 
 .hero::after {
   content: "";
@@ -96,7 +120,9 @@
 }
 
 
-/* Hero content */
+/* =========================
+   HERO CONTENT
+========================= */
 
 .hero-overlay {
   position: relative;
@@ -107,7 +133,9 @@
 }
 
 
-/* Mobile */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 768px) {
 
@@ -118,6 +146,15 @@
 
   .hero-slide {
     object-position: center;
+  }
+
+  .logo img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .logo {
+    gap: 7px;
   }
 
 }
@@ -138,10 +175,22 @@
 
   <div class="container nav">
 
+    <!-- LOGO + BRAND NAME -->
+
     <div class="logo">
-      SEA & MOUNT <span>TRAVEL</span>
+
+      <img
+        src="image/logo.jpeg"
+        alt="Sea & Mount Travel Logo">
+
+      <div>
+        SEA & MOUNT <span>TRAVEL</span>
+      </div>
+
     </div>
 
+
+    <!-- NAVIGATION -->
 
     <nav>
 
@@ -167,6 +216,8 @@
 
     </nav>
 
+
+    <!-- WHATSAPP -->
 
     <a
       class="wa-btn"
