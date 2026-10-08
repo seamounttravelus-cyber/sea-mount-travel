@@ -226,6 +226,34 @@ section{
 
 
 /* =========================================================
+   TWO LINE RED SECTION HEADINGS
+========================================================= */
+
+.red-section-heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.red-section-heading .top-line{
+    display:block;
+    font-size:30px;
+    font-weight:700;
+    color:#e53935;
+    line-height:1.1;
+    letter-spacing:1px;
+}
+
+.red-section-heading .bottom-line{
+    display:block;
+    font-size:38px;
+    font-weight:800;
+    color:#e53935;
+    line-height:1.05;
+    margin-top:3px;
+}
+
+
+/* =========================================================
    INTRO
 ========================================================= */
 
@@ -347,20 +375,35 @@ section{
 
 
 /* =========================================================
-   PRATIMA
+   ALL PROPERTY SLIDES
 ========================================================= */
 
-.pratima-card-slide{
+.pratima-card-slide,
+.aaradhya-card-slide,
+.susanta-card-slide,
+.tashi-card-slide{
+
     position:absolute;
     inset:0;
+
     width:100%;
     height:100%;
+
     object-fit:cover;
 
     opacity:0;
+
     transform:scale(1);
 
-    animation:propertyZoomSlide 18s infinite;
+}
+
+
+/* =========================================================
+   PRATIMA - 9 PHOTOS
+========================================================= */
+
+.pratima-card-slide{
+    animation:pratimaShow 18s infinite;
 }
 
 .pratima-card-slide:nth-child(1){animation-delay:0s;}
@@ -375,20 +418,11 @@ section{
 
 
 /* =========================================================
-   AARADHYA
+   AARADHYA - 15 PHOTOS
 ========================================================= */
 
 .aaradhya-card-slide{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-
-    opacity:0;
-    transform:scale(1);
-
-    animation:propertyZoomSlide 30s infinite;
+    animation:aaradhyaShow 30s infinite;
 }
 
 .aaradhya-card-slide:nth-child(1){animation-delay:0s;}
@@ -409,20 +443,11 @@ section{
 
 
 /* =========================================================
-   SUSANTA
+   SUSANTA - 14 PHOTOS
 ========================================================= */
 
 .susanta-card-slide{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-
-    opacity:0;
-    transform:scale(1);
-
-    animation:propertyZoomSlide 28s infinite;
+    animation:susantaShow 28s infinite;
 }
 
 .susanta-card-slide:nth-child(1){animation-delay:0s;}
@@ -442,20 +467,11 @@ section{
 
 
 /* =========================================================
-   TASHI / GOPERPA
+   TASHI - 10 PHOTOS
 ========================================================= */
 
 .tashi-card-slide{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-
-    opacity:0;
-    transform:scale(1);
-
-    animation:propertyZoomSlide 20s infinite;
+    animation:tashiShow 20s infinite;
 }
 
 .tashi-card-slide:nth-child(1){animation-delay:0s;}
@@ -471,10 +487,10 @@ section{
 
 
 /* =========================================================
-   ZOOM + FADE
+   ANIMATION
 ========================================================= */
 
-@keyframes propertyZoomSlide{
+@keyframes pratimaShow{
 
     0%{
         opacity:0;
@@ -486,12 +502,96 @@ section{
         transform:scale(1.02);
     }
 
-    45%{
+    75%{
         opacity:1;
         transform:scale(1.10);
     }
 
-    55%{
+    92%{
+        opacity:0;
+        transform:scale(1.13);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1);
+    }
+}
+
+@keyframes aaradhyaShow{
+
+    0%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+    8%{
+        opacity:1;
+        transform:scale(1.02);
+    }
+
+    75%{
+        opacity:1;
+        transform:scale(1.10);
+    }
+
+    92%{
+        opacity:0;
+        transform:scale(1.13);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1);
+    }
+}
+
+@keyframes susantaShow{
+
+    0%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+    8%{
+        opacity:1;
+        transform:scale(1.02);
+    }
+
+    75%{
+        opacity:1;
+        transform:scale(1.10);
+    }
+
+    92%{
+        opacity:0;
+        transform:scale(1.13);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1);
+    }
+}
+
+@keyframes tashiShow{
+
+    0%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+    8%{
+        opacity:1;
+        transform:scale(1.02);
+    }
+
+    75%{
+        opacity:1;
+        transform:scale(1.10);
+    }
+
+    92%{
         opacity:0;
         transform:scale(1.13);
     }
@@ -504,7 +604,7 @@ section{
 
 
 /* =========================================================
-   GALLERY HOME
+   GALLERY SECTION
 ========================================================= */
 
 .gallery-section{
@@ -514,6 +614,38 @@ section{
 .gallery-home{
     display:block;
 }
+
+
+/* =========================================================
+   ROOM PHOTO HEADING
+========================================================= */
+
+.room-photo-heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.room-photo-heading .room-line{
+    display:block;
+    color:#075e54;
+    font-size:34px;
+    font-weight:700;
+    line-height:1.05;
+}
+
+.room-photo-heading .photo-line{
+    display:block;
+    color:#075e54;
+    font-size:42px;
+    font-weight:800;
+    line-height:1;
+    margin-top:2px;
+}
+
+
+/* =========================================================
+   GALLERY COVER
+========================================================= */
 
 .gallery-cover-grid{
     display:grid;
@@ -885,19 +1017,18 @@ footer p{
     }
 
 
-    /* SECTION TITLE */
+    /* RED HEADINGS */
 
-    .section-title{
+    .red-section-heading{
         margin-bottom:28px;
     }
 
-    .section-title h2{
-        font-size:28px;
-        line-height:1.2;
+    .red-section-heading .top-line{
+        font-size:24px;
     }
 
-    .section-title p{
-        font-size:15px;
+    .red-section-heading .bottom-line{
+        font-size:34px;
     }
 
 
@@ -942,6 +1073,21 @@ footer p{
     .property-buttons .btn{
         padding:10px 14px;
         font-size:14px;
+    }
+
+
+    /* ROOM PHOTO */
+
+    .room-photo-heading{
+        margin-bottom:28px;
+    }
+
+    .room-photo-heading .room-line{
+        font-size:28px;
+    }
+
+    .room-photo-heading .photo-line{
+        font-size:36px;
     }
 
 
@@ -1125,7 +1271,6 @@ footer p{
 
     .floating-whatsapp:active,
     .floating-call:active{
-
         transform:scale(.88);
     }
 
@@ -1136,10 +1281,6 @@ footer p{
 
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
 
 @media(max-width:480px){
 
@@ -1201,7 +1342,7 @@ footer p{
         <a href="#home">Home</a>
         <a href="#hotels">Hotels</a>
         <a href="#homestays">Homestays</a>
-        <a href="#gallery">Gallery</a>
+        <a href="#gallery">Room Photo</a>
         <a href="#booking">Booking</a>
         <a href="#contact">Contact</a>
 
@@ -1311,13 +1452,16 @@ footer p{
 
 <div class="container">
 
-    <div class="section-title">
 
-        <h2>Digha Hotels</h2>
+    <div class="red-section-heading">
 
-        <p>
-            Comfortable stays near the sea
-        </p>
+        <span class="top-line">
+            Digha
+        </span>
+
+        <span class="bottom-line">
+            Hotels
+        </span>
 
     </div>
 
@@ -1432,7 +1576,7 @@ footer p{
                         class="btn"
                         onclick="openPratimaGallery()"
                     >
-                        Photo Gallery
+                        Room Photo
                     </button>
 
                 </div>
@@ -1453,95 +1597,21 @@ footer p{
                     onclick="openAaradhyaGallery()"
                 >
 
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/22.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
-
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/23.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
-
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/24.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
-
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/25.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
-
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/26.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
-
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/27.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
-
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/28.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
-
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/29.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
-
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/30.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
-
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/31.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
-
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/32.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
-
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/33.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
-
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/34.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
-
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/35.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
-
-                    <img
-                        class="aaradhya-card-slide"
-                        src="image/36.jpeg"
-                        alt="Aaradhya Holiday Inn"
-                    >
+                    <img class="aaradhya-card-slide" src="image/22.jpeg" alt="Aaradhya Holiday Inn">
+                    <img class="aaradhya-card-slide" src="image/23.jpeg" alt="Aaradhya Holiday Inn">
+                    <img class="aaradhya-card-slide" src="image/24.jpeg" alt="Aaradhya Holiday Inn">
+                    <img class="aaradhya-card-slide" src="image/25.jpeg" alt="Aaradhya Holiday Inn">
+                    <img class="aaradhya-card-slide" src="image/26.jpeg" alt="Aaradhya Holiday Inn">
+                    <img class="aaradhya-card-slide" src="image/27.jpeg" alt="Aaradhya Holiday Inn">
+                    <img class="aaradhya-card-slide" src="image/28.jpeg" alt="Aaradhya Holiday Inn">
+                    <img class="aaradhya-card-slide" src="image/29.jpeg" alt="Aaradhya Holiday Inn">
+                    <img class="aaradhya-card-slide" src="image/30.jpeg" alt="Aaradhya Holiday Inn">
+                    <img class="aaradhya-card-slide" src="image/31.jpeg" alt="Aaradhya Holiday Inn">
+                    <img class="aaradhya-card-slide" src="image/32.jpeg" alt="Aaradhya Holiday Inn">
+                    <img class="aaradhya-card-slide" src="image/33.jpeg" alt="Aaradhya Holiday Inn">
+                    <img class="aaradhya-card-slide" src="image/34.jpeg" alt="Aaradhya Holiday Inn">
+                    <img class="aaradhya-card-slide" src="image/35.jpeg" alt="Aaradhya Holiday Inn">
+                    <img class="aaradhya-card-slide" src="image/36.jpeg" alt="Aaradhya Holiday Inn">
 
                 </div>
 
@@ -1585,7 +1655,7 @@ footer p{
                         class="btn"
                         onclick="openAaradhyaGallery()"
                     >
-                        Photo Gallery
+                        Room Photo
                     </button>
 
                 </div>
@@ -1602,7 +1672,7 @@ footer p{
 
 
 <!-- =======================================================
-     ICCHEGAON HOMESTAYS
+     NORTH BENGAL HOMESTAYS
 ======================================================= -->
 
 <section
@@ -1612,15 +1682,16 @@ footer p{
 
 <div class="container">
 
-    <div class="section-title">
 
-        <h2>
-            Icchegaon Homestays
-        </h2>
+    <div class="red-section-heading">
 
-        <p>
-            Peaceful mountain stays in North Bengal
-        </p>
+        <span class="top-line">
+            North Bengal
+        </span>
+
+        <span class="bottom-line">
+            Homestays
+        </span>
 
     </div>
 
@@ -1639,89 +1710,20 @@ footer p{
                     onclick="openSusantaGallery()"
                 >
 
-                    <img
-                        class="susanta-card-slide"
-                        src="image/51.webp"
-                        alt="Susanta Homestay"
-                    >
-
-                    <img
-                        class="susanta-card-slide"
-                        src="image/52.webp"
-                        alt="Susanta Homestay"
-                    >
-
-                    <img
-                        class="susanta-card-slide"
-                        src="image/53.jpeg"
-                        alt="Susanta Homestay"
-                    >
-
-                    <img
-                        class="susanta-card-slide"
-                        src="image/54.png"
-                        alt="Susanta Homestay"
-                    >
-
-                    <img
-                        class="susanta-card-slide"
-                        src="image/55.png"
-                        alt="Susanta Homestay"
-                    >
-
-                    <img
-                        class="susanta-card-slide"
-                        src="image/56.png"
-                        alt="Susanta Homestay"
-                    >
-
-                    <img
-                        class="susanta-card-slide"
-                        src="image/57.jpeg"
-                        alt="Susanta Homestay"
-                    >
-
-                    <img
-                        class="susanta-card-slide"
-                        src="image/58.png"
-                        alt="Susanta Homestay"
-                    >
-
-                    <img
-                        class="susanta-card-slide"
-                        src="image/59.jpg"
-                        alt="Susanta Homestay"
-                    >
-
-                    <img
-                        class="susanta-card-slide"
-                        src="image/60.png"
-                        alt="Susanta Homestay"
-                    >
-
-                    <img
-                        class="susanta-card-slide"
-                        src="image/61.jpg"
-                        alt="Susanta Homestay"
-                    >
-
-                    <img
-                        class="susanta-card-slide"
-                        src="image/62.png"
-                        alt="Susanta Homestay"
-                    >
-
-                    <img
-                        class="susanta-card-slide"
-                        src="image/63.png"
-                        alt="Susanta Homestay"
-                    >
-
-                    <img
-                        class="susanta-card-slide"
-                        src="image/64.png"
-                        alt="Susanta Homestay"
-                    >
+                    <img class="susanta-card-slide" src="image/51.webp" alt="Susanta Homestay">
+                    <img class="susanta-card-slide" src="image/52.webp" alt="Susanta Homestay">
+                    <img class="susanta-card-slide" src="image/53.jpeg" alt="Susanta Homestay">
+                    <img class="susanta-card-slide" src="image/54.png" alt="Susanta Homestay">
+                    <img class="susanta-card-slide" src="image/55.png" alt="Susanta Homestay">
+                    <img class="susanta-card-slide" src="image/56.png" alt="Susanta Homestay">
+                    <img class="susanta-card-slide" src="image/57.jpeg" alt="Susanta Homestay">
+                    <img class="susanta-card-slide" src="image/58.png" alt="Susanta Homestay">
+                    <img class="susanta-card-slide" src="image/59.jpg" alt="Susanta Homestay">
+                    <img class="susanta-card-slide" src="image/60.png" alt="Susanta Homestay">
+                    <img class="susanta-card-slide" src="image/61.jpg" alt="Susanta Homestay">
+                    <img class="susanta-card-slide" src="image/62.png" alt="Susanta Homestay">
+                    <img class="susanta-card-slide" src="image/63.png" alt="Susanta Homestay">
+                    <img class="susanta-card-slide" src="image/64.png" alt="Susanta Homestay">
 
                 </div>
 
@@ -1764,7 +1766,7 @@ footer p{
                         class="btn"
                         onclick="openSusantaGallery()"
                     >
-                        Photo Gallery
+                        Room Photo
                     </button>
 
                 </div>
@@ -1785,65 +1787,16 @@ footer p{
                     onclick="openTashiGallery()"
                 >
 
-                    <img
-                        class="tashi-card-slide"
-                        src="image/71.jpg"
-                        alt="Tashi Goperpa Homestay"
-                    >
-
-                    <img
-                        class="tashi-card-slide"
-                        src="image/72.png"
-                        alt="Tashi Goperpa Homestay"
-                    >
-
-                    <img
-                        class="tashi-card-slide"
-                        src="image/73.jpg"
-                        alt="Tashi Goperpa Homestay"
-                    >
-
-                    <img
-                        class="tashi-card-slide"
-                        src="image/74.jpeg"
-                        alt="Tashi Goperpa Homestay"
-                    >
-
-                    <img
-                        class="tashi-card-slide"
-                        src="image/75.png"
-                        alt="Tashi Goperpa Homestay"
-                    >
-
-                    <img
-                        class="tashi-card-slide"
-                        src="image/76.png"
-                        alt="Tashi Goperpa Homestay"
-                    >
-
-                    <img
-                        class="tashi-card-slide"
-                        src="image/77.jpg"
-                        alt="Tashi Goperpa Homestay"
-                    >
-
-                    <img
-                        class="tashi-card-slide"
-                        src="image/79.jpeg"
-                        alt="Tashi Goperpa Homestay"
-                    >
-
-                    <img
-                        class="tashi-card-slide"
-                        src="image/80.jpg"
-                        alt="Tashi Goperpa Homestay"
-                    >
-
-                    <img
-                        class="tashi-card-slide"
-                        src="image/81.jpeg"
-                        alt="Tashi Goperpa Homestay"
-                    >
+                    <img class="tashi-card-slide" src="image/71.jpg" alt="Tashi Goperpa Homestay">
+                    <img class="tashi-card-slide" src="image/72.png" alt="Tashi Goperpa Homestay">
+                    <img class="tashi-card-slide" src="image/73.jpg" alt="Tashi Goperpa Homestay">
+                    <img class="tashi-card-slide" src="image/74.jpeg" alt="Tashi Goperpa Homestay">
+                    <img class="tashi-card-slide" src="image/75.png" alt="Tashi Goperpa Homestay">
+                    <img class="tashi-card-slide" src="image/76.png" alt="Tashi Goperpa Homestay">
+                    <img class="tashi-card-slide" src="image/77.jpg" alt="Tashi Goperpa Homestay">
+                    <img class="tashi-card-slide" src="image/79.jpeg" alt="Tashi Goperpa Homestay">
+                    <img class="tashi-card-slide" src="image/80.jpg" alt="Tashi Goperpa Homestay">
+                    <img class="tashi-card-slide" src="image/81.jpeg" alt="Tashi Goperpa Homestay">
 
                 </div>
 
@@ -1886,7 +1839,7 @@ footer p{
                         class="btn"
                         onclick="openTashiGallery()"
                     >
-                        Photo Gallery
+                        Room Photo
                     </button>
 
                 </div>
@@ -1903,7 +1856,7 @@ footer p{
 
 
 <!-- =======================================================
-     GALLERY
+     ROOM PHOTO
 ======================================================= -->
 
 <section
@@ -1913,13 +1866,16 @@ footer p{
 
 <div class="container">
 
-    <div class="section-title">
 
-        <h2>Photo Gallery</h2>
+    <div class="room-photo-heading">
 
-        <p>
-            Explore our properties
-        </p>
+        <span class="room-line">
+            Room
+        </span>
+
+        <span class="photo-line">
+            Photo
+        </span>
 
     </div>
 
@@ -1934,7 +1890,7 @@ footer p{
         <div class="gallery-cover-grid">
 
 
-            <!-- PRATIMA COVER -->
+            <!-- PRATIMA -->
 
             <div
                 class="gallery-cover"
@@ -1953,7 +1909,7 @@ footer p{
                     </h3>
 
                     <p>
-                        View all photos
+                        View Room Photos
                     </p>
 
                 </div>
@@ -1961,7 +1917,7 @@ footer p{
             </div>
 
 
-            <!-- AARADHYA COVER -->
+            <!-- AARADHYA -->
 
             <div
                 class="gallery-cover"
@@ -1980,7 +1936,7 @@ footer p{
                     </h3>
 
                     <p>
-                        View all photos
+                        View Room Photos
                     </p>
 
                 </div>
@@ -1988,7 +1944,7 @@ footer p{
             </div>
 
 
-            <!-- SUSANTA COVER -->
+            <!-- SUSANTA -->
 
             <div
                 class="gallery-cover"
@@ -2007,7 +1963,7 @@ footer p{
                     </h3>
 
                     <p>
-                        View all photos
+                        View Room Photos
                     </p>
 
                 </div>
@@ -2015,7 +1971,7 @@ footer p{
             </div>
 
 
-            <!-- TASHI COVER -->
+            <!-- TASHI -->
 
             <div
                 class="gallery-cover"
@@ -2034,7 +1990,7 @@ footer p{
                     </h3>
 
                     <p>
-                        View all photos
+                        View Room Photos
                     </p>
 
                 </div>
@@ -2060,7 +2016,7 @@ footer p{
             class="back-gallery-btn"
             onclick="backToGallery()"
         >
-            ← Back to Gallery
+            ← Back to Room Photo
         </button>
 
         <h2>
@@ -2100,7 +2056,7 @@ footer p{
             class="back-gallery-btn"
             onclick="backToGallery()"
         >
-            ← Back to Gallery
+            ← Back to Room Photo
         </button>
 
         <h2>
@@ -2140,7 +2096,7 @@ footer p{
             class="back-gallery-btn"
             onclick="backToGallery()"
         >
-            ← Back to Gallery
+            ← Back to Room Photo
         </button>
 
         <h2>
@@ -2180,7 +2136,7 @@ footer p{
             class="back-gallery-btn"
             onclick="backToGallery()"
         >
-            ← Back to Gallery
+            ← Back to Room Photo
         </button>
 
         <h2>
@@ -2232,7 +2188,7 @@ footer p{
         <img
             id="lightboxImage"
             src=""
-            alt="Property Photo"
+            alt="Room Photo"
         >
 
         <div class="lightbox-nav">
@@ -2394,8 +2350,6 @@ footer p{
 
 <!-- =======================================================
      MOBILE FIXED BUTTONS
-     LEFT = WHATSAPP
-     RIGHT = CALL
 ======================================================= -->
 
 <div class="mobile-contact-buttons">
@@ -2417,7 +2371,7 @@ footer p{
             fill="white"
         >
 
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372.074-.57.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
 
             <path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.55 4.112 1.514 5.824L.057 24l6.338-1.66A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0Zm0 22.1c-1.88 0-3.722-.504-5.342-1.459l-.382-.225-3.762.985 1.003-3.666-.249-.394A9.95 9.95 0 0 1 2.05 12C2.05 6.515 6.515 2.05 12 2.05S21.95 6.515 21.95 12 17.485 21.95 12 21.95Z"/>
 
@@ -2444,7 +2398,6 @@ footer p{
 ======================================================= -->
 
 <script>
-
 
 /* =========================================================
    PHOTO ARRAYS
@@ -2567,7 +2520,7 @@ function scrollToGallery(){
 
 
 /* =========================================================
-   PRATIMA GALLERY
+   PRATIMA
 ========================================================= */
 
 function openPratimaGallery(){
@@ -2666,7 +2619,7 @@ function nextPhoto(){
 
 
 /* =========================================================
-   AARADHYA GALLERY
+   AARADHYA
 ========================================================= */
 
 function openAaradhyaGallery(){
@@ -2770,7 +2723,7 @@ function nextAaradhyaPhoto(){
 
 
 /* =========================================================
-   SUSANTA GALLERY
+   SUSANTA
 ========================================================= */
 
 function openSusantaGallery(){
@@ -2874,7 +2827,7 @@ function nextSusantaPhoto(){
 
 
 /* =========================================================
-   TASHI GALLERY
+   TASHI
 ========================================================= */
 
 function openTashiGallery(){
@@ -2978,7 +2931,7 @@ function nextTashiPhoto(){
 
 
 /* =========================================================
-   BACK TO GALLERY
+   BACK TO ROOM PHOTO
 ========================================================= */
 
 function backToGallery(){
