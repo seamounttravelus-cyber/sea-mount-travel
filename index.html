@@ -27,7 +27,6 @@ body{
   background:#f5f7f9;
   color:#222;
   line-height:1.6;
-  overflow-x:hidden;
 }
 
 img{
@@ -122,17 +121,44 @@ nav a:hover{
   animation:heroFade 16s infinite;
 }
 
-.hero-slide:nth-child(1){animation-delay:0s;}
-.hero-slide:nth-child(2){animation-delay:4s;}
-.hero-slide:nth-child(3){animation-delay:8s;}
-.hero-slide:nth-child(4){animation-delay:12s;}
+.hero-slide:nth-child(1){
+  animation-delay:0s;
+}
+
+.hero-slide:nth-child(2){
+  animation-delay:4s;
+}
+
+.hero-slide:nth-child(3){
+  animation-delay:8s;
+}
+
+.hero-slide:nth-child(4){
+  animation-delay:12s;
+}
 
 @keyframes heroFade{
-  0%{opacity:0;}
-  8%{opacity:1;}
-  25%{opacity:1;}
-  33%{opacity:0;}
-  100%{opacity:0;}
+
+  0%{
+    opacity:0;
+  }
+
+  8%{
+    opacity:1;
+  }
+
+  25%{
+    opacity:1;
+  }
+
+  33%{
+    opacity:0;
+  }
+
+  100%{
+    opacity:0;
+  }
+
 }
 
 .hero-overlay{
@@ -167,7 +193,7 @@ nav a:hover{
 
 
 /* =========================================================
-   COMMON SECTIONS
+   COMMON
 ========================================================= */
 
 section{
@@ -303,7 +329,7 @@ section{
 
 
 /* =========================================================
-   SLIDESHOW
+   SLIDESHOW CONTAINER
 ========================================================= */
 
 .pratima-card-slideshow{
@@ -316,7 +342,9 @@ section{
 }
 
 
-/* PRATIMA */
+/* =========================================================
+   PRATIMA - 9 PHOTOS
+========================================================= */
 
 .pratima-card-slide{
   position:absolute;
@@ -340,7 +368,9 @@ section{
 .pratima-card-slide:nth-child(9){animation-delay:16s;}
 
 
-/* AARADHYA */
+/* =========================================================
+   AARADHYA - 15 PHOTOS
+========================================================= */
 
 .aaradhya-card-slide{
   position:absolute;
@@ -370,7 +400,9 @@ section{
 .aaradhya-card-slide:nth-child(15){animation-delay:28s;}
 
 
-/* SUSANTA */
+/* =========================================================
+   SUSANTA - 14 PHOTOS
+========================================================= */
 
 .susanta-card-slide{
   position:absolute;
@@ -399,7 +431,9 @@ section{
 .susanta-card-slide:nth-child(14){animation-delay:26s;}
 
 
-/* TASHI */
+/* =========================================================
+   TASHI / GOPERPA - 10 PHOTOS
+========================================================= */
 
 .tashi-card-slide{
   position:absolute;
@@ -424,7 +458,9 @@ section{
 .tashi-card-slide:nth-child(10){animation-delay:18s;}
 
 
-/* COMMON ANIMATION */
+/* =========================================================
+   COMMON ZOOM + FADE
+========================================================= */
 
 @keyframes propertyZoomSlide{
 
@@ -587,6 +623,10 @@ section{
   cursor:pointer;
 }
 
+.gallery-navigation button:hover{
+  background:#043f39;
+}
+
 
 /* =========================================================
    LIGHTBOX
@@ -648,6 +688,10 @@ section{
   color:#222;
   font-weight:600;
   cursor:pointer;
+}
+
+.lightbox-nav button:hover{
+  background:#ddd;
 }
 
 
@@ -734,300 +778,83 @@ footer p{
 
 
 /* =========================================================
-   MOBILE OPTIMIZATION
+   MOBILE
 ========================================================= */
 
 @media(max-width:768px){
 
-  body{
-    overflow-x:hidden;
-  }
-
-  section{
-    padding:50px 14px;
-  }
-
-  .container{
-    width:100%;
-    max-width:100%;
-    padding-left:0;
-    padding-right:0;
-  }
-
-  /* HEADER */
-
   .navbar{
-    padding:7px 10px;
+    padding:8px 12px;
     flex-direction:column;
-    gap:6px;
   }
 
   .logo{
-    font-size:16px;
+    font-size:17px;
   }
 
   .logo img{
-    width:44px;
-    height:44px;
+    width:45px;
+    height:45px;
   }
 
   nav{
-    gap:10px;
+    gap:12px;
   }
 
   nav a{
-    font-size:12px;
+    font-size:13px;
   }
-
-
-  /* HERO */
 
   .hero{
-    height:460px;
-  }
-
-  .hero-content{
-    padding:15px;
+    height:500px;
   }
 
   .hero-content h1{
-    font-size:31px;
-    line-height:1.15;
+    font-size:35px;
   }
 
   .hero-content p{
     font-size:17px;
-    line-height:1.5;
   }
 
-
-  /* TITLES */
-
-  .section-title{
-    margin-bottom:28px;
+  section{
+    padding:50px 15px;
   }
 
   .section-title h2{
-    font-size:28px;
-    line-height:1.2;
+    font-size:29px;
   }
-
-  .section-title p{
-    font-size:15px;
-  }
-
-
-  /* PROPERTY */
 
   .property-grid{
     grid-template-columns:1fr;
-    gap:22px;
-  }
-
-  .property-card{
-    width:100%;
-    border-radius:16px;
   }
 
   .property-image{
-    height:245px;
+    height:280px;
   }
-
-  .property-content{
-    padding:18px;
-  }
-
-  .property-content h3{
-    font-size:23px;
-    line-height:1.25;
-  }
-
-  .property-content h4{
-    font-size:17px;
-  }
-
-  .property-content p{
-    font-size:15px;
-    line-height:1.55;
-  }
-
-  .property-buttons{
-    gap:8px;
-  }
-
-  .property-buttons .btn{
-    padding:10px 14px;
-    font-size:14px;
-  }
-
-
-  /* GALLERY COVER */
 
   .gallery-cover-grid{
     grid-template-columns:1fr;
-    gap:18px;
   }
 
   .gallery-cover img{
-    height:220px;
+    height:250px;
   }
-
-
-  /* GALLERY PHOTOS */
 
   .photo-grid{
     grid-template-columns:repeat(2,1fr);
-    gap:8px;
+    gap:10px;
   }
 
   .property-photo{
-    height:155px;
-    border-radius:9px;
+    height:180px;
   }
-
-
-  /* GALLERY BUTTONS */
-
-  .gallery-navigation{
-    gap:8px;
-  }
-
-  .gallery-navigation button{
-    padding:10px 15px;
-    font-size:14px;
-  }
-
-
-  /* BOOKING */
-
-  .booking h2{
-    font-size:29px;
-  }
-
-  .booking p{
-    font-size:15px;
-  }
-
-
-  /* CONTACT */
 
   .contact-grid{
     grid-template-columns:1fr;
-    gap:15px;
-  }
-
-
-  /* LIGHTBOX */
-
-  .photo-lightbox{
-    padding:15px;
-  }
-
-  .lightbox-content img{
-    max-width:96vw;
-    max-height:72vh;
-  }
-
-  .lightbox-close{
-    top:-42px;
-    right:0;
-    font-size:32px;
-  }
-
-  .lightbox-nav button{
-    padding:10px 15px;
-    font-size:14px;
   }
 
 }
-
-
-/* =========================================================
-   MOBILE FLOATING CALL + WHATSAPP
-========================================================= */
-
-.mobile-contact-buttons{
-  display:none;
-}
-
-@media(max-width:768px){
-
-  .mobile-contact-buttons{
-    position:fixed;
-    left:0;
-    right:0;
-    bottom:0;
-
-    height:75px;
-
-    z-index:9999;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:8px 18px;
-
-    pointer-events:none;
-
-    background:linear-gradient(
-      to top,
-      rgba(255,255,255,.18),
-      transparent
-    );
-  }
-
-
-  .floating-call,
-  .floating-whatsapp{
-
-    width:58px;
-    height:58px;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    color:#fff;
-
-    box-shadow:
-      0 4px 15px rgba(0,0,0,.28);
-
-    pointer-events:auto;
-
-    transition:.25s;
-  }
-
-
-  .floating-call{
-    background:#087ea4;
-    font-size:29px;
-  }
-
-
-  .floating-whatsapp{
-    background:#16d45a;
-  }
-
-
-  .floating-call:active,
-  .floating-whatsapp:active{
-    transform:scale(.90);
-  }
-
-
-  footer{
-    padding-bottom:100px;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
 
 @media(max-width:480px){
 
@@ -1045,12 +872,6 @@ footer p{
 
   .property-photo{
     height:150px;
-  }
-
-  .floating-call,
-  .floating-whatsapp{
-    width:56px;
-    height:56px;
   }
 
 }
@@ -1197,10 +1018,13 @@ footer p{
 
     </div>
 
+
     <div class="property-grid">
 
 
-      <!-- PRATIMA -->
+      <!-- =================================================
+           PRATIMA
+      ================================================== -->
 
       <div class="property-card">
 
@@ -1294,7 +1118,9 @@ footer p{
 
 
 
-      <!-- AARADHYA -->
+      <!-- =================================================
+           AARADHYA
+      ================================================== -->
 
       <div class="property-card">
 
@@ -1433,10 +1259,13 @@ footer p{
 
     </div>
 
+
     <div class="property-grid">
 
 
-      <!-- SUSANTA -->
+      <!-- =================================================
+           SUSANTA HOMESTAY
+      ================================================== -->
 
       <div class="property-card">
 
@@ -1549,7 +1378,9 @@ footer p{
 
 
 
-      <!-- TASHI / GOPERPA -->
+      <!-- =================================================
+           TASHI / GOPERPA
+      ================================================== -->
 
       <div class="property-card">
 
@@ -1654,7 +1485,7 @@ footer p{
 
 
 <!-- =======================================================
-     PHOTO GALLERY
+     GALLERY
 ======================================================= -->
 
 <section class="gallery-section" id="gallery">
@@ -1670,14 +1501,19 @@ footer p{
     </div>
 
 
-    <!-- GALLERY HOME -->
+    <!-- ===================================================
+         GALLERY HOME
+    ==================================================== -->
 
-    <div id="galleryHome" class="gallery-home">
+    <div
+      id="galleryHome"
+      class="gallery-home"
+    >
 
       <div class="gallery-cover-grid">
 
 
-        <!-- PRATIMA -->
+        <!-- PRATIMA COVER -->
 
         <div
           class="gallery-cover"
@@ -1700,7 +1536,7 @@ footer p{
         </div>
 
 
-        <!-- AARADHYA -->
+        <!-- AARADHYA COVER -->
 
         <div
           class="gallery-cover"
@@ -1723,7 +1559,7 @@ footer p{
         </div>
 
 
-        <!-- SUSANTA -->
+        <!-- SUSANTA COVER -->
 
         <div
           class="gallery-cover"
@@ -1746,7 +1582,7 @@ footer p{
         </div>
 
 
-        <!-- TASHI -->
+        <!-- TASHI COVER -->
 
         <div
           class="gallery-cover"
@@ -1775,9 +1611,14 @@ footer p{
 
 
 
-    <!-- PRATIMA GALLERY -->
+    <!-- ===================================================
+         PRATIMA GALLERY
+    ==================================================== -->
 
-    <div id="pratimaGallery" class="property-gallery">
+    <div
+      id="pratimaGallery"
+      class="property-gallery"
+    >
 
       <button
         class="back-gallery-btn"
@@ -1809,9 +1650,14 @@ footer p{
 
 
 
-    <!-- AARADHYA GALLERY -->
+    <!-- ===================================================
+         AARADHYA GALLERY
+    ==================================================== -->
 
-    <div id="aaradhyaGallery" class="property-gallery">
+    <div
+      id="aaradhyaGallery"
+      class="property-gallery"
+    >
 
       <button
         class="back-gallery-btn"
@@ -1843,9 +1689,14 @@ footer p{
 
 
 
-    <!-- SUSANTA GALLERY -->
+    <!-- ===================================================
+         SUSANTA GALLERY
+    ==================================================== -->
 
-    <div id="susantaGallery" class="property-gallery">
+    <div
+      id="susantaGallery"
+      class="property-gallery"
+    >
 
       <button
         class="back-gallery-btn"
@@ -1877,9 +1728,14 @@ footer p{
 
 
 
-    <!-- TASHI GALLERY -->
+    <!-- ===================================================
+         TASHI GALLERY
+    ==================================================== -->
 
-    <div id="tashiGallery" class="property-gallery">
+    <div
+      id="tashiGallery"
+      class="property-gallery"
+    >
 
       <button
         class="back-gallery-btn"
@@ -1919,7 +1775,10 @@ footer p{
      LIGHTBOX
 ======================================================= -->
 
-<div id="photoLightbox" class="photo-lightbox">
+<div
+  id="photoLightbox"
+  class="photo-lightbox"
+>
 
   <div class="lightbox-content">
 
@@ -2016,25 +1875,35 @@ footer p{
 
         <h3>WhatsApp</h3>
 
-        <p>+91 62906 24090</p>
+        <p>
+          +91 62906 24090
+        </p>
 
       </div>
+
 
       <div class="contact-box">
 
         <h3>Phone</h3>
 
-        <p>+91 97482 38781</p>
+        <p>
+          +91 97482 38781
+        </p>
 
-        <p>+91 82405 11881</p>
+        <p>
+          +91 82405 11881
+        </p>
 
       </div>
+
 
       <div class="contact-box">
 
         <h3>Email</h3>
 
-        <p>admin@seamount.co.in</p>
+        <p>
+          admin@seamount.co.in
+        </p>
 
       </div>
 
@@ -2065,59 +1934,13 @@ footer p{
 
 
 <!-- =======================================================
-     MOBILE FLOATING CALL + WHATSAPP
-======================================================= -->
-
-<div class="mobile-contact-buttons">
-
-  <!-- CALL BUTTON -->
-
-  <a
-    class="floating-call"
-    href="tel:+919748238781"
-    aria-label="Call Sea and Mount Travel"
-  >
-
-    ☎
-
-  </a>
-
-
-  <!-- WHATSAPP BUTTON -->
-
-  <a
-    class="floating-whatsapp"
-    href="https://wa.me/916290624090"
-    target="_blank"
-    aria-label="WhatsApp Sea and Mount Travel"
-  >
-
-    <svg
-      width="31"
-      height="31"
-      viewBox="0 0 24 24"
-      fill="white"
-    >
-
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982 1-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.437-9.884 9.893-9.884 2.64.001 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.892 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.893c0 2.096.547 4.142 1.588 5.945L.06 24l6.304-1.654a11.87 11.87 0 005.684 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.482-8.413"/>
-
-    </svg>
-
-  </a>
-
-</div>
-
-
-
-<!-- =======================================================
      JAVASCRIPT
 ======================================================= -->
 
 <script>
 
-
 /* =========================================================
-   PRATIMA PHOTOS
+   PRATIMA
 ========================================================= */
 
 const pratimaPhotos = [
@@ -2138,7 +1961,7 @@ let currentPhoto = 0;
 
 
 /* =========================================================
-   AARADHYA PHOTOS
+   AARADHYA
 ========================================================= */
 
 const aaradhyaPhotos = [
@@ -2165,7 +1988,7 @@ let currentAaradhyaPhoto = 0;
 
 
 /* =========================================================
-   SUSANTA PHOTOS
+   SUSANTA
 ========================================================= */
 
 const susantaPhotos = [
@@ -2191,7 +2014,7 @@ let currentSusantaPhoto = 0;
 
 
 /* =========================================================
-   TASHI / GOPERPA PHOTOS
+   TASHI / GOPERPA
 ========================================================= */
 
 const tashiPhotos = [
@@ -2220,50 +2043,6 @@ let currentGalleryType = "pratima";
 
 
 /* =========================================================
-   HIDE ALL GALLERIES
-========================================================= */
-
-function hideAllGalleries(){
-
-  document
-    .getElementById("galleryHome")
-    .style.display="none";
-
-  document
-    .getElementById("pratimaGallery")
-    .classList.remove("active");
-
-  document
-    .getElementById("aaradhyaGallery")
-    .classList.remove("active");
-
-  document
-    .getElementById("susantaGallery")
-    .classList.remove("active");
-
-  document
-    .getElementById("tashiGallery")
-    .classList.remove("active");
-
-}
-
-
-/* =========================================================
-   SCROLL GALLERY
-========================================================= */
-
-function scrollToGallery(){
-
-  document
-    .getElementById("gallery")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-}
-
-
-/* =========================================================
    PRATIMA
 ========================================================= */
 
@@ -2275,7 +2054,7 @@ function openPratimaGallery(){
     .getElementById("pratimaGallery")
     .classList.add("active");
 
-  currentGalleryType="pratima";
+  currentGalleryType = "pratima";
 
   showPratimaPhotos();
 
@@ -2291,7 +2070,7 @@ function showPratimaPhotos(){
       "pratimaPhotoGrid"
     );
 
-  grid.innerHTML="";
+  grid.innerHTML = "";
 
   pratimaPhotos.forEach(
     function(photo,index){
@@ -2299,19 +2078,18 @@ function showPratimaPhotos(){
       const img =
         document.createElement("img");
 
-      img.className="property-photo";
+      img.className = "property-photo";
 
-      img.src="image/"+photo;
+      img.src = "image/" + photo;
 
-      img.alt=
-        "Hotel Pratima Guest Inn Photo "+
-        (index+1);
+      img.alt =
+        "Hotel Pratima Guest Inn Photo "
+        + (index + 1);
 
-      img.onclick=function(){
-
-        openPratimaLightbox(index);
-
-      };
+      img.onclick =
+        function(){
+          openPratimaLightbox(index);
+        };
 
       grid.appendChild(img);
 
@@ -2323,14 +2101,15 @@ function showPratimaPhotos(){
 
 function openPratimaLightbox(index){
 
-  currentGalleryType="pratima";
+  currentGalleryType = "pratima";
 
-  currentPhoto=index;
+  currentPhoto = index;
 
   document
     .getElementById("lightboxImage")
-    .src=
-    "image/"+pratimaPhotos[currentPhoto];
+    .src =
+    "image/" +
+    pratimaPhotos[currentPhoto];
 
   document
     .getElementById("photoLightbox")
@@ -2343,10 +2122,10 @@ function previousPhoto(){
 
   currentPhoto--;
 
-  if(currentPhoto<0){
+  if(currentPhoto < 0){
 
-    currentPhoto=
-      pratimaPhotos.length-1;
+    currentPhoto =
+      pratimaPhotos.length - 1;
 
   }
 
@@ -2360,11 +2139,11 @@ function nextPhoto(){
   currentPhoto++;
 
   if(
-    currentPhoto>=
+    currentPhoto >=
     pratimaPhotos.length
   ){
 
-    currentPhoto=0;
+    currentPhoto = 0;
 
   }
 
@@ -2385,7 +2164,7 @@ function openAaradhyaGallery(){
     .getElementById("aaradhyaGallery")
     .classList.add("active");
 
-  currentGalleryType="aaradhya";
+  currentGalleryType = "aaradhya";
 
   showAaradhyaPhotos();
 
@@ -2401,7 +2180,7 @@ function showAaradhyaPhotos(){
       "aaradhyaPhotoGrid"
     );
 
-  grid.innerHTML="";
+  grid.innerHTML = "";
 
   aaradhyaPhotos.forEach(
     function(photo,index){
@@ -2409,19 +2188,18 @@ function showAaradhyaPhotos(){
       const img =
         document.createElement("img");
 
-      img.className="property-photo";
+      img.className = "property-photo";
 
-      img.src="image/"+photo;
+      img.src = "image/" + photo;
 
-      img.alt=
-        "Aaradhya Holiday Inn Photo "+
-        (index+1);
+      img.alt =
+        "Aaradhya Holiday Inn Photo "
+        + (index + 1);
 
-      img.onclick=function(){
-
-        openAaradhyaLightbox(index);
-
-      };
+      img.onclick =
+        function(){
+          openAaradhyaLightbox(index);
+        };
 
       grid.appendChild(img);
 
@@ -2433,14 +2211,14 @@ function showAaradhyaPhotos(){
 
 function openAaradhyaLightbox(index){
 
-  currentGalleryType="aaradhya";
+  currentGalleryType = "aaradhya";
 
-  currentAaradhyaPhoto=index;
+  currentAaradhyaPhoto = index;
 
   document
     .getElementById("lightboxImage")
-    .src=
-    "image/"+
+    .src =
+    "image/" +
     aaradhyaPhotos[
       currentAaradhyaPhoto
     ];
@@ -2457,11 +2235,11 @@ function previousAaradhyaPhoto(){
   currentAaradhyaPhoto--;
 
   if(
-    currentAaradhyaPhoto<0
+    currentAaradhyaPhoto < 0
   ){
 
-    currentAaradhyaPhoto=
-      aaradhyaPhotos.length-1;
+    currentAaradhyaPhoto =
+      aaradhyaPhotos.length - 1;
 
   }
 
@@ -2477,11 +2255,11 @@ function nextAaradhyaPhoto(){
   currentAaradhyaPhoto++;
 
   if(
-    currentAaradhyaPhoto>=
+    currentAaradhyaPhoto >=
     aaradhyaPhotos.length
   ){
 
-    currentAaradhyaPhoto=0;
+    currentAaradhyaPhoto = 0;
 
   }
 
@@ -2504,7 +2282,7 @@ function openSusantaGallery(){
     .getElementById("susantaGallery")
     .classList.add("active");
 
-  currentGalleryType="susanta";
+  currentGalleryType = "susanta";
 
   showSusantaPhotos();
 
@@ -2520,7 +2298,7 @@ function showSusantaPhotos(){
       "susantaPhotoGrid"
     );
 
-  grid.innerHTML="";
+  grid.innerHTML = "";
 
   susantaPhotos.forEach(
     function(photo,index){
@@ -2528,19 +2306,18 @@ function showSusantaPhotos(){
       const img =
         document.createElement("img");
 
-      img.className="property-photo";
+      img.className = "property-photo";
 
-      img.src="image/"+photo;
+      img.src = "image/" + photo;
 
-      img.alt=
-        "Susanta Homestay Photo "+
-        (index+1);
+      img.alt =
+        "Susanta Homestay Photo "
+        + (index + 1);
 
-      img.onclick=function(){
-
-        openSusantaLightbox(index);
-
-      };
+      img.onclick =
+        function(){
+          openSusantaLightbox(index);
+        };
 
       grid.appendChild(img);
 
@@ -2552,14 +2329,14 @@ function showSusantaPhotos(){
 
 function openSusantaLightbox(index){
 
-  currentGalleryType="susanta";
+  currentGalleryType = "susanta";
 
-  currentSusantaPhoto=index;
+  currentSusantaPhoto = index;
 
   document
     .getElementById("lightboxImage")
-    .src=
-    "image/"+
+    .src =
+    "image/" +
     susantaPhotos[
       currentSusantaPhoto
     ];
@@ -2576,11 +2353,11 @@ function previousSusantaPhoto(){
   currentSusantaPhoto--;
 
   if(
-    currentSusantaPhoto<0
+    currentSusantaPhoto < 0
   ){
 
-    currentSusantaPhoto=
-      susantaPhotos.length-1;
+    currentSusantaPhoto =
+      susantaPhotos.length - 1;
 
   }
 
@@ -2596,11 +2373,11 @@ function nextSusantaPhoto(){
   currentSusantaPhoto++;
 
   if(
-    currentSusantaPhoto>=
+    currentSusantaPhoto >=
     susantaPhotos.length
   ){
 
-    currentSusantaPhoto=0;
+    currentSusantaPhoto = 0;
 
   }
 
@@ -2623,7 +2400,7 @@ function openTashiGallery(){
     .getElementById("tashiGallery")
     .classList.add("active");
 
-  currentGalleryType="tashi";
+  currentGalleryType = "tashi";
 
   showTashiPhotos();
 
@@ -2639,7 +2416,7 @@ function showTashiPhotos(){
       "tashiPhotoGrid"
     );
 
-  grid.innerHTML="";
+  grid.innerHTML = "";
 
   tashiPhotos.forEach(
     function(photo,index){
@@ -2647,19 +2424,18 @@ function showTashiPhotos(){
       const img =
         document.createElement("img");
 
-      img.className="property-photo";
+      img.className = "property-photo";
 
-      img.src="image/"+photo;
+      img.src = "image/" + photo;
 
-      img.alt=
-        "Tashi Goperpa Homestay Photo "+
-        (index+1);
+      img.alt =
+        "Tashi Goperpa Homestay Photo "
+        + (index + 1);
 
-      img.onclick=function(){
-
-        openTashiLightbox(index);
-
-      };
+      img.onclick =
+        function(){
+          openTashiLightbox(index);
+        };
 
       grid.appendChild(img);
 
@@ -2671,14 +2447,14 @@ function showTashiPhotos(){
 
 function openTashiLightbox(index){
 
-  currentGalleryType="tashi";
+  currentGalleryType = "tashi";
 
-  currentTashiPhoto=index;
+  currentTashiPhoto = index;
 
   document
     .getElementById("lightboxImage")
-    .src=
-    "image/"+
+    .src =
+    "image/" +
     tashiPhotos[
       currentTashiPhoto
     ];
@@ -2695,11 +2471,11 @@ function previousTashiPhoto(){
   currentTashiPhoto--;
 
   if(
-    currentTashiPhoto<0
+    currentTashiPhoto < 0
   ){
 
-    currentTashiPhoto=
-      tashiPhotos.length-1;
+    currentTashiPhoto =
+      tashiPhotos.length - 1;
 
   }
 
@@ -2715,17 +2491,46 @@ function nextTashiPhoto(){
   currentTashiPhoto++;
 
   if(
-    currentTashiPhoto>=
+    currentTashiPhoto >=
     tashiPhotos.length
   ){
 
-    currentTashiPhoto=0;
+    currentTashiPhoto = 0;
 
   }
 
   openTashiLightbox(
     currentTashiPhoto
   );
+
+}
+
+
+/* =========================================================
+   HIDE ALL GALLERIES
+========================================================= */
+
+function hideAllGalleries(){
+
+  document
+    .getElementById("galleryHome")
+    .style.display = "none";
+
+  document
+    .getElementById("pratimaGallery")
+    .classList.remove("active");
+
+  document
+    .getElementById("aaradhyaGallery")
+    .classList.remove("active");
+
+  document
+    .getElementById("susantaGallery")
+    .classList.remove("active");
+
+  document
+    .getElementById("tashiGallery")
+    .classList.remove("active");
 
 }
 
@@ -2754,9 +2559,24 @@ function backToGallery(){
 
   document
     .getElementById("galleryHome")
-    .style.display="block";
+    .style.display = "block";
 
   scrollToGallery();
+
+}
+
+
+/* =========================================================
+   SCROLL TO GALLERY
+========================================================= */
+
+function scrollToGallery(){
+
+  document
+    .getElementById("gallery")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
 
 }
 
@@ -2768,7 +2588,8 @@ function backToGallery(){
 function previousLightboxPhoto(){
 
   if(
-    currentGalleryType==="pratima"
+    currentGalleryType ===
+    "pratima"
   ){
 
     previousPhoto();
@@ -2776,7 +2597,8 @@ function previousLightboxPhoto(){
   }
 
   else if(
-    currentGalleryType==="aaradhya"
+    currentGalleryType ===
+    "aaradhya"
   ){
 
     previousAaradhyaPhoto();
@@ -2784,7 +2606,8 @@ function previousLightboxPhoto(){
   }
 
   else if(
-    currentGalleryType==="susanta"
+    currentGalleryType ===
+    "susanta"
   ){
 
     previousSusantaPhoto();
@@ -2792,7 +2615,8 @@ function previousLightboxPhoto(){
   }
 
   else if(
-    currentGalleryType==="tashi"
+    currentGalleryType ===
+    "tashi"
   ){
 
     previousTashiPhoto();
@@ -2809,7 +2633,8 @@ function previousLightboxPhoto(){
 function nextLightboxPhoto(){
 
   if(
-    currentGalleryType==="pratima"
+    currentGalleryType ===
+    "pratima"
   ){
 
     nextPhoto();
@@ -2817,7 +2642,8 @@ function nextLightboxPhoto(){
   }
 
   else if(
-    currentGalleryType==="aaradhya"
+    currentGalleryType ===
+    "aaradhya"
   ){
 
     nextAaradhyaPhoto();
@@ -2825,7 +2651,8 @@ function nextLightboxPhoto(){
   }
 
   else if(
-    currentGalleryType==="susanta"
+    currentGalleryType ===
+    "susanta"
   ){
 
     nextSusantaPhoto();
@@ -2833,7 +2660,8 @@ function nextLightboxPhoto(){
   }
 
   else if(
-    currentGalleryType==="tashi"
+    currentGalleryType ===
+    "tashi"
   ){
 
     nextTashiPhoto();
@@ -2864,19 +2692,19 @@ document.addEventListener(
   "keydown",
   function(event){
 
-    if(event.key==="Escape"){
+    if(event.key === "Escape"){
 
       closeLightbox();
 
     }
 
-    if(event.key==="ArrowRight"){
+    if(event.key === "ArrowRight"){
 
       nextLightboxPhoto();
 
     }
 
-    if(event.key==="ArrowLeft"){
+    if(event.key === "ArrowLeft"){
 
       previousLightboxPhoto();
 
@@ -2896,7 +2724,7 @@ document
     "click",
     function(event){
 
-      if(event.target===this){
+      if(event.target === this){
 
         closeLightbox();
 
