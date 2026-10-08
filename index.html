@@ -13,9 +13,9 @@
 
 <style>
 
-/* =========================
+/* =====================================================
    HEADER LOGO
-========================= */
+===================================================== */
 
 .header .logo {
   display: flex !important;
@@ -41,9 +41,9 @@
 }
 
 
-/* =========================
+/* =====================================================
    HOME HERO SLIDESHOW
-========================= */
+===================================================== */
 
 .hero {
   position: relative;
@@ -112,9 +112,9 @@
 }
 
 
-/* =========================
-   DARK OVERLAY
-========================= */
+/* =====================================================
+   HERO OVERLAY
+===================================================== */
 
 .hero::after {
   content: "";
@@ -125,11 +125,6 @@
   pointer-events: none;
 }
 
-
-/* =========================
-   HERO CONTENT
-========================= */
-
 .hero-overlay {
   position: relative;
   z-index: 2;
@@ -139,9 +134,223 @@
 }
 
 
-/* =========================
+/* =====================================================
+   PRATIMA GALLERY COVER
+===================================================== */
+
+.gallery-pratima {
+  margin-top: 35px;
+}
+
+.gallery-property {
+  max-width: 750px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-property:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.18);
+}
+
+.gallery-cover {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+}
+
+.gallery-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-property:hover .gallery-cover img {
+  transform: scale(1.04);
+}
+
+.gallery-cover-label {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  padding: 9px 15px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.gallery-property-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.gallery-property-info h3 {
+  margin: 0 0 8px;
+}
+
+.gallery-property-info p {
+  margin: 0;
+  opacity: 0.70;
+}
+
+
+/* =====================================================
+   PRATIMA PHOTO GALLERY
+===================================================== */
+
+.pratima-gallery-view {
+  display: none;
+  margin-top: 30px;
+}
+
+.pratima-gallery-view.active {
+  display: block;
+}
+
+.gallery-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.gallery-back-btn,
+.gallery-nav-btn {
+  border: none;
+  background: #111;
+  color: #fff;
+  padding: 11px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.gallery-back-btn:hover,
+.gallery-nav-btn:hover {
+  opacity: 0.85;
+}
+
+.pratima-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.pratima-title h3 {
+  margin-bottom: 6px;
+  font-size: 28px;
+}
+
+.pratima-title p {
+  margin: 0;
+  opacity: 0.7;
+}
+
+
+/* =====================================================
+   PRATIMA PHOTO GRID
+===================================================== */
+
+.pratima-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.pratima-photo {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.pratima-photo:hover {
+  transform: scale(1.02);
+}
+
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+.photo-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.93);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.photo-lightbox.active {
+  display: flex;
+}
+
+.photo-lightbox img {
+  max-width: 92%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: #fff;
+  font-size: 38px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  font-size: 38px;
+  width: 55px;
+  height: 65px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255,255,255,0.30);
+}
+
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media (max-width: 768px) {
 
@@ -163,6 +372,34 @@
     gap: 7px !important;
   }
 
+  .gallery-cover {
+    height: 250px;
+  }
+
+  .pratima-photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .pratima-photo {
+    height: 170px;
+  }
+
+  .gallery-navigation {
+    justify-content: center;
+  }
+
+  .pratima-title h3 {
+    font-size: 23px;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    width: 42px;
+    height: 50px;
+    font-size: 28px;
+  }
+
 }
 
 </style>
@@ -173,16 +410,13 @@
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <header class="header">
 
   <div class="container nav">
-
-
-    <!-- LOGO -->
 
     <div class="logo">
 
@@ -196,8 +430,6 @@
 
     </div>
 
-
-    <!-- NAVIGATION -->
 
     <nav>
 
@@ -224,8 +456,6 @@
     </nav>
 
 
-    <!-- WHATSAPP -->
-
     <a
       class="wa-btn"
       href="https://wa.me/916290624090"
@@ -241,14 +471,11 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      HOME
-========================= -->
+===================================================== -->
 
 <section id="home" class="hero">
-
-
-  <!-- HOME SLIDESHOW -->
 
   <div class="hero-slideshow">
 
@@ -274,8 +501,6 @@
 
   </div>
 
-
-  <!-- HERO TEXT -->
 
   <div class="hero-overlay">
 
@@ -305,6 +530,7 @@
 
         </a>
 
+
         <a
           href="#icchegaon"
           class="btn secondary">
@@ -323,9 +549,9 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      INTRO
-========================= -->
+===================================================== -->
 
 <section class="intro">
 
@@ -335,9 +561,11 @@
       WELCOME TO
     </p>
 
+
     <h2>
       Sea & Mount Travel
     </h2>
+
 
     <p class="lead">
       Stay, relax and explore. Choose your favourite destination
@@ -350,13 +578,14 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      DIGHA HOTELS
-========================= -->
+===================================================== -->
 
 <section id="digha" class="section">
 
   <div class="container">
+
 
     <div class="section-heading">
 
@@ -366,11 +595,13 @@
           SEA DESTINATION
         </p>
 
+
         <h2>
           Digha Hotels
         </h2>
 
       </div>
+
 
       <a
         href="#contact"
@@ -381,6 +612,7 @@
       </a>
 
     </div>
+
 
 
     <div class="cards">
@@ -409,11 +641,13 @@
             Hotel Pratima Guest Inn
           </h3>
 
+
           <p class="location">
             📍 SBSTC Bus Stand, Railway Station,
             Shankar Mandal Rd, near Sea Beach Road,
             New Digha, Digha, West Bengal – 721428
           </p>
+
 
           <p>
             Comfortable rooms for families and travellers,
@@ -476,11 +710,13 @@
             Aaradhya Holiday Inn
           </h3>
 
+
           <p class="location">
             📍 Near Helipad, Jahaj Bari,
             Palsandapur, Digha,
             West Bengal – 721428
           </p>
+
 
           <p>
             Comfortable accommodation for families
@@ -526,9 +762,9 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      ICCHEGAON HOMESTAYS
-========================= -->
+===================================================== -->
 
 <section id="icchegaon" class="section mountain">
 
@@ -542,6 +778,7 @@
         <p class="eyebrow">
           MOUNTAIN DESTINATION
         </p>
+
 
         <h2>
           Icchegaon Homestays
@@ -559,6 +796,7 @@
       </a>
 
     </div>
+
 
 
     <div class="cards">
@@ -708,9 +946,9 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      PHOTO GALLERY
-========================= -->
+===================================================== -->
 
 <section id="gallery" class="section">
 
@@ -723,38 +961,123 @@
         EXPLORE
       </p>
 
+
       <h2>
         Photo Gallery
       </h2>
 
+
+      <p class="lead">
+        Hotel Pratima Guest Inn — New Digha
+      </p>
+
     </div>
 
 
-    <div class="gallery">
 
-      <img
-        src="images/gallery-1.jpg"
-        alt="Sea & Mount Travel Gallery">
+    <!-- PRATIMA COVER -->
 
-      <img
-        src="images/gallery-2.jpg"
-        alt="Sea & Mount Travel Gallery">
+    <div
+      id="galleryHome"
+      class="gallery-pratima">
 
-      <img
-        src="images/gallery-3.jpg"
-        alt="Sea & Mount Travel Gallery">
 
-      <img
-        src="images/gallery-4.jpg"
-        alt="Sea & Mount Travel Gallery">
+      <div
+        class="gallery-property"
+        onclick="openPratimaGallery()">
 
-      <img
-        src="images/gallery-5.jpg"
-        alt="Sea & Mount Travel Gallery">
 
-      <img
-        src="images/gallery-6.jpg"
-        alt="Sea & Mount Travel Gallery">
+        <div class="gallery-cover">
+
+          <img
+            src="image/1.jpg"
+            alt="Hotel Pratima Guest Inn Gallery">
+
+          <div class="gallery-cover-label">
+            HOTEL
+          </div>
+
+        </div>
+
+
+        <div class="gallery-property-info">
+
+          <h3>
+            Hotel Pratima Guest Inn
+          </h3>
+
+          <p>
+            New Digha • Digha
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+    <!-- PRATIMA PHOTO GALLERY -->
+
+    <div
+      id="pratimaGallery"
+      class="pratima-gallery-view">
+
+
+      <div class="gallery-navigation">
+
+
+        <button
+          class="gallery-back-btn"
+          onclick="backToGallery()">
+
+          ← Back to Gallery
+
+        </button>
+
+
+        <button
+          class="gallery-nav-btn"
+          onclick="previousPhoto()">
+
+          ← Previous
+
+        </button>
+
+
+        <button
+          class="gallery-nav-btn"
+          onclick="nextPhoto()">
+
+          Next →
+
+        </button>
+
+
+      </div>
+
+
+
+      <div class="pratima-title">
+
+        <h3>
+          Hotel Pratima Guest Inn
+        </h3>
+
+        <p>
+          New Digha • Digha</p>
+
+      </div>
+
+
+
+      <div
+        id="pratimaPhotoGrid"
+        class="pratima-photo-grid">
+      </div>
+
 
     </div>
 
@@ -764,9 +1087,55 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+<div
+  id="photoLightbox"
+  class="photo-lightbox">
+
+
+  <span
+    class="lightbox-close"
+    onclick="closeLightbox()">
+
+    ×
+
+  </span>
+
+
+  <button
+    class="lightbox-prev"
+    onclick="previousPhoto()">
+
+    ‹
+
+  </button>
+
+
+  <img
+    id="lightboxImage"
+    src=""
+    alt="Hotel Pratima Guest Inn Photo">
+
+
+  <button
+    class="lightbox-next"
+    onclick="nextPhoto()">
+
+    ›
+
+  </button>
+
+
+</div>
+
+
+
+<!-- =====================================================
      DIRECT BOOKING
-========================= -->
+===================================================== -->
 
 <section class="booking">
 
@@ -779,9 +1148,11 @@
         DIRECT BOOKING
       </p>
 
+
       <h2>
         Plan Your Stay With Us
       </h2>
+
 
       <p>
         Send your check-in, check-out and guest details
@@ -806,9 +1177,9 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      CONTACT
-========================= -->
+===================================================== -->
 
 <section id="contact" class="contact section">
 
@@ -818,6 +1189,7 @@
     <p class="eyebrow">
       GET IN TOUCH
     </p>
+
 
     <h2>
       Sea & Mount Travel
@@ -888,9 +1260,9 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
@@ -903,7 +1275,9 @@
         SEA & MOUNT TRAVEL
       </strong>
 
+
       <br>
+
 
       <small>
         Hotels • Homestays • Travel
@@ -920,6 +1294,242 @@
   </div>
 
 </footer>
+
+
+
+<!-- =====================================================
+     PRATIMA GALLERY JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+const pratimaPhotos = [
+
+  "1.jpg",
+  "2.jpeg",
+  "3.jpg",
+  "4.jpg",
+  "5.jpeg",
+  "6.jpeg",
+  "7.jpeg",
+  "8.jpeg",
+  "9.jpeg"
+
+];
+
+
+let currentPhoto = 0;
+
+
+
+/* =====================================================
+   OPEN PRATIMA GALLERY
+===================================================== */
+
+function openPratimaGallery() {
+
+  document
+    .getElementById("galleryHome")
+    .style.display = "none";
+
+
+  document
+    .getElementById("pratimaGallery")
+    .classList.add("active");
+
+
+  showPratimaPhotos();
+
+
+  document
+    .getElementById("gallery")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
+
+}
+
+
+
+/* =====================================================
+   SHOW ALL PRATIMA PHOTOS
+===================================================== */
+
+function showPratimaPhotos() {
+
+  const grid =
+    document.getElementById("pratimaPhotoGrid");
+
+
+  grid.innerHTML = "";
+
+
+  pratimaPhotos.forEach(function(photo, index) {
+
+
+    const img =
+      document.createElement("img");
+
+
+    img.className =
+      "pratima-photo";
+
+
+    img.src =
+      "image/" + photo;
+
+
+    img.alt =
+      "Hotel Pratima Guest Inn Photo " + (index + 1);
+
+
+    img.onclick = function() {
+
+      openLightbox(index);
+
+    };
+
+
+    grid.appendChild(img);
+
+  });
+
+}
+
+
+
+/* =====================================================
+   BACK TO GALLERY
+===================================================== */
+
+function backToGallery() {
+
+  document
+    .getElementById("pratimaGallery")
+    .classList.remove("active");
+
+
+  document
+    .getElementById("galleryHome")
+    .style.display = "block";
+
+}
+
+
+
+/* =====================================================
+   OPEN LIGHTBOX
+===================================================== */
+
+function openLightbox(index) {
+
+  currentPhoto = index;
+
+
+  document
+    .getElementById("lightboxImage")
+    .src =
+    "image/" +
+    pratimaPhotos[currentPhoto];
+
+
+  document
+    .getElementById("photoLightbox")
+    .classList.add("active");
+
+}
+
+
+
+/* =====================================================
+   CLOSE LIGHTBOX
+===================================================== */
+
+function closeLightbox() {
+
+  document
+    .getElementById("photoLightbox")
+    .classList.remove("active");
+
+}
+
+
+
+/* =====================================================
+   NEXT PHOTO
+===================================================== */
+
+function nextPhoto() {
+
+  currentPhoto++;
+
+
+  if (
+    currentPhoto >=
+    pratimaPhotos.length
+  ) {
+
+    currentPhoto = 0;
+
+  }
+
+
+  document
+    .getElementById("lightboxImage")
+    .src =
+    "image/" +
+    pratimaPhotos[currentPhoto];
+
+}
+
+
+
+/* =====================================================
+   PREVIOUS PHOTO
+===================================================== */
+
+function previousPhoto() {
+
+  currentPhoto--;
+
+
+  if (currentPhoto < 0) {
+
+    currentPhoto =
+      pratimaPhotos.length - 1;
+
+  }
+
+
+  document
+    .getElementById("lightboxImage")
+    .src =
+    "image/" +
+    pratimaPhotos[currentPhoto];
+
+}
+
+
+
+/* =====================================================
+   ESC KEY
+===================================================== */
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (event.key === "Escape") {
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+</script>
 
 
 </body>
