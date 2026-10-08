@@ -135,7 +135,101 @@
 
 
 /* =====================================================
-   PRATIMA GALLERY COVER
+   PRATIMA HOTEL CARD SLIDESHOW
+   9 PHOTOS / 2 SECONDS EACH
+===================================================== */
+
+.pratima-card-slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #111;
+}
+
+.pratima-card-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1);
+  animation: pratimaZoomSlide 18s infinite;
+}
+
+
+/* 2 seconds each */
+
+.pratima-card-slide:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.pratima-card-slide:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.pratima-card-slide:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.pratima-card-slide:nth-child(4) {
+  animation-delay: 6s;
+}
+
+.pratima-card-slide:nth-child(5) {
+  animation-delay: 8s;
+}
+
+.pratima-card-slide:nth-child(6) {
+  animation-delay: 10s;
+}
+
+.pratima-card-slide:nth-child(7) {
+  animation-delay: 12s;
+}
+
+.pratima-card-slide:nth-child(8) {
+  animation-delay: 14s;
+}
+
+.pratima-card-slide:nth-child(9) {
+  animation-delay: 16s;
+}
+
+
+@keyframes pratimaZoomSlide {
+
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  8% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+
+  45% {
+    opacity: 1;
+    transform: scale(1.10);
+  }
+
+  55% {
+    opacity: 0;
+    transform: scale(1.13);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+}
+
+
+/* =====================================================
+   PRATIMA GALLERY
 ===================================================== */
 
 .gallery-pratima {
@@ -561,11 +655,9 @@
       WELCOME TO
     </p>
 
-
     <h2>
       Sea & Mount Travel
     </h2>
-
 
     <p class="lead">
       Stay, relax and explore. Choose your favourite destination
@@ -595,7 +687,6 @@
           SEA DESTINATION
         </p>
 
-
         <h2>
           Digha Hotels
         </h2>
@@ -618,19 +709,71 @@
     <div class="cards">
 
 
-      <!-- PRATIMA GUEST INN -->
+      <!-- =================================================
+           PRATIMA GUEST INN
+      ================================================= -->
 
       <article class="card">
 
         <div class="card-image">
 
-          <img
-            src="images/digha-hotel-1.jpg"
-            alt="Hotel Pratima Guest Inn">
+
+          <div class="pratima-card-slideshow">
+
+
+            <img
+              class="pratima-card-slide"
+              src="image/1.jpg"
+              alt="Hotel Pratima Guest Inn">
+
+            <img
+              class="pratima-card-slide"
+              src="image/2.jpeg"
+              alt="Hotel Pratima Guest Inn">
+
+            <img
+              class="pratima-card-slide"
+              src="image/3.jpg"
+              alt="Hotel Pratima Guest Inn">
+
+            <img
+              class="pratima-card-slide"
+              src="image/4.jpg"
+              alt="Hotel Pratima Guest Inn">
+
+            <img
+              class="pratima-card-slide"
+              src="image/5.jpeg"
+              alt="Hotel Pratima Guest Inn">
+
+            <img
+              class="pratima-card-slide"
+              src="image/6.jpeg"
+              alt="Hotel Pratima Guest Inn">
+
+            <img
+              class="pratima-card-slide"
+              src="image/7.jpeg"
+              alt="Hotel Pratima Guest Inn">
+
+            <img
+              class="pratima-card-slide"
+              src="image/8.jpeg"
+              alt="Hotel Pratima Guest Inn">
+
+            <img
+              class="pratima-card-slide"
+              src="image/9.jpeg"
+              alt="Hotel Pratima Guest Inn">
+
+
+          </div>
+
 
           <span>
             HOTEL
           </span>
+
 
         </div>
 
@@ -687,7 +830,9 @@
 
 
 
-      <!-- AARADHYA HOLIDAY INN -->
+      <!-- =================================================
+           AARADHYA HOLIDAY INN
+      ================================================= -->
 
       <article class="card">
 
@@ -754,6 +899,7 @@
 
       </article>
 
+
     </div>
 
   </div>
@@ -778,7 +924,6 @@
         <p class="eyebrow">
           MOUNTAIN DESTINATION
         </p>
-
 
         <h2>
           Icchegaon Homestays
@@ -938,6 +1083,7 @@
 
       </article>
 
+
     </div>
 
   </div>
@@ -1006,6 +1152,7 @@
             Hotel Pratima Guest Inn
           </h3>
 
+
           <p>
             New Digha • Digha
           </p>
@@ -1066,8 +1213,10 @@
           Hotel Pratima Guest Inn
         </h3>
 
+
         <p>
-          New Digha • Digha</p>
+          New Digha • Digha
+        </p>
 
       </div>
 
@@ -1298,11 +1447,14 @@
 
 
 <!-- =====================================================
-     PRATIMA GALLERY JAVASCRIPT
+     JAVASCRIPT
 ===================================================== -->
 
 <script>
 
+/* =====================================================
+   PRATIMA GALLERY PHOTOS
+===================================================== */
 
 const pratimaPhotos = [
 
@@ -1320,7 +1472,6 @@ const pratimaPhotos = [
 
 
 let currentPhoto = 0;
-
 
 
 /* =====================================================
@@ -1351,9 +1502,8 @@ function openPratimaGallery() {
 }
 
 
-
 /* =====================================================
-   SHOW ALL PRATIMA PHOTOS
+   SHOW PRATIMA PHOTOS
 ===================================================== */
 
 function showPratimaPhotos() {
@@ -1366,7 +1516,6 @@ function showPratimaPhotos() {
 
 
   pratimaPhotos.forEach(function(photo, index) {
-
 
     const img =
       document.createElement("img");
@@ -1381,7 +1530,8 @@ function showPratimaPhotos() {
 
 
     img.alt =
-      "Hotel Pratima Guest Inn Photo " + (index + 1);
+      "Hotel Pratima Guest Inn Photo " +
+      (index + 1);
 
 
     img.onclick = function() {
@@ -1396,7 +1546,6 @@ function showPratimaPhotos() {
   });
 
 }
-
 
 
 /* =====================================================
@@ -1415,7 +1564,6 @@ function backToGallery() {
     .style.display = "block";
 
 }
-
 
 
 /* =====================================================
@@ -1441,7 +1589,6 @@ function openLightbox(index) {
 }
 
 
-
 /* =====================================================
    CLOSE LIGHTBOX
 ===================================================== */
@@ -1453,7 +1600,6 @@ function closeLightbox() {
     .classList.remove("active");
 
 }
-
 
 
 /* =====================================================
@@ -1484,7 +1630,6 @@ function nextPhoto() {
 }
 
 
-
 /* =====================================================
    PREVIOUS PHOTO
 ===================================================== */
@@ -1509,7 +1654,6 @@ function previousPhoto() {
     pratimaPhotos[currentPhoto];
 
 }
-
 
 
 /* =====================================================
