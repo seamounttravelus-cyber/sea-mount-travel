@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,22 +22,32 @@ nav a{color:#333;font-weight:600;font-size:14px}
 nav a:hover{color:#075e54}
 section{padding:70px 20px}
 .container{max-width:1200px;margin:auto}
+
 .hero{position:relative;height:620px;overflow:hidden;background:#111;padding:0}
-.hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:heroFade 16s infinite}
+.hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:heroFade 20s infinite}
 .hero-slide:nth-child(1){animation-delay:0s}
 .hero-slide:nth-child(2){animation-delay:4s}
 .hero-slide:nth-child(3){animation-delay:8s}
 .hero-slide:nth-child(4){animation-delay:12s}
-@keyframes heroFade{0%{opacity:0}8%{opacity:1}25%{opacity:1}33%{opacity:0}100%{opacity:0}}
+.hero-slide:nth-child(5){animation-delay:16s}
+@keyframes heroFade{
+  0%{opacity:0}
+  8%{opacity:1}
+  25%{opacity:1}
+  33%{opacity:0}
+  100%{opacity:0}
+}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(#0004,#0009);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
 .hero-content{color:#fff;max-width:800px}
 .hero-content h1{font-size:52px;margin-bottom:15px;text-shadow:0 3px 10px #0009}
 .hero-content p{font-size:21px;text-shadow:0 2px 8px #000b}
+
 .intro,.gallery-section{background:#fff}
 .section-title{text-align:center;margin-bottom:40px}
 .section-title h2{font-size:36px;color:#075e54;margin-bottom:8px}
 .section-title p{color:#666}
 .intro-text{max-width:900px;margin:auto;text-align:center;font-size:18px;color:#555}
+
 .property-section{background:#f5f7f9}
 .red-section-heading{text-align:center;margin-bottom:40px}
 .red-section-heading .top-line{display:block;font-size:30px;font-weight:700;color:#e53935;line-height:1.1;letter-spacing:1px}
@@ -47,9 +58,15 @@ section{padding:70px 20px}
 .property-image{height:330px;position:relative;overflow:hidden}
 .slideshow{position:relative;width:100%;height:100%;overflow:hidden;background:#111;cursor:pointer}
 .card-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:cardFade var(--duration,18s) infinite}
-@keyframes cardFade{0%{opacity:0;transform:scale(1)}8%{opacity:1;transform:scale(1.02)}75%{opacity:1;transform:scale(1.1)}92%{opacity:0;transform:scale(1.13)}100%{opacity:0;transform:scale(1)}}
+@keyframes cardFade{
+  0%{opacity:0;transform:scale(1)}
+  8%{opacity:1;transform:scale(1.02)}
+  75%{opacity:1;transform:scale(1.1)}
+  92%{opacity:0;transform:scale(1.13)}
+  100%{opacity:0;transform:scale(1)}
+}
 
-/* Seventh Key: one image only, always visible with a gentle zoom */
+/* Seventh Key single-image card animation */
 @keyframes singlePhotoZoom{
   0%{opacity:1;transform:scale(1)}
   100%{opacity:1;transform:scale(1.10)}
@@ -65,6 +82,7 @@ section{padding:70px 20px}
 .btn:hover{background:#043f39}
 .btn-whatsapp{background:#25d366}
 .btn-whatsapp:hover{background:#1da851}
+
 .room-photo-heading{text-align:center;margin-bottom:40px}
 .room-photo-heading .room-line{display:block;color:#075e54;font-size:34px;font-weight:700;line-height:1.05}
 .room-photo-heading .photo-line{display:block;color:#075e54;font-size:42px;font-weight:800;line-height:1;margin-top:2px}
@@ -92,6 +110,7 @@ section{padding:70px 20px}
 .lightbox-close{position:absolute;top:-50px;right:0;color:#fff;font-size:35px;background:none;border:none;cursor:pointer}
 .lightbox-nav{margin-top:20px}
 .lightbox-nav button{padding:12px 22px;border:none;border-radius:8px;background:#fff;color:#222;font-weight:600;cursor:pointer}
+
 .booking{background:#075e54;color:#fff;text-align:center}
 .booking h2{font-size:35px;margin-bottom:12px}
 .booking p{max-width:700px;margin:0 auto 25px;font-size:18px}
@@ -162,6 +181,7 @@ footer p{margin:5px 0}
 </style>
 </head>
 <body>
+
 <header>
  <div class="navbar">
   <div class="logo"><img src="image/logo.jpeg" alt="Sea & Mount Travel Logo"><span>SEA & MOUNT <b>TRAVEL</b></span></div>
@@ -176,11 +196,13 @@ footer p{margin:5px 0}
  </div>
 </header>
 
+<!-- Main homepage slideshow: Seventh Key's first photo is included -->
 <section class="hero" id="home">
  <img class="hero-slide" src="image/home-1.jpg" alt="Sea & Mount Travel">
  <img class="hero-slide" src="image/home-2.png" alt="Sea & Mount Travel">
  <img class="hero-slide" src="image/home-3.png" alt="Sea & Mount Travel">
  <img class="hero-slide" src="image/home-4.webp" alt="Sea & Mount Travel">
+ <img class="hero-slide" src="image/82.jpeg" alt="Seventh Key Homestay, Sherpa Gaon">
  <div class="hero-overlay">
   <div class="hero-content">
    <h1>SEA & MOUNT TRAVEL</h1>
@@ -331,11 +353,17 @@ footer p{margin:5px 0}
     </div>
    </article>
 
+   <!-- Seventh Key: all listed photos animate with zoom -->
    <article class="property-card">
     <div class="property-image">
      <div class="slideshow" onclick="openGallery('seventh')">
-      <img src="image/82.jpeg" alt="Seventh Key Homestay"
-       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;animation:singlePhotoZoom 8s ease-in-out infinite alternate;">
+      <img class="card-slide" style="--duration:14s;animation-delay:0s" src="image/82.jpeg" alt="Seventh Key Homestay">
+      <img class="card-slide" style="--duration:14s;animation-delay:2s" src="image/83.jpeg" alt="Seventh Key Homestay">
+      <img class="card-slide" style="--duration:14s;animation-delay:4s" src="image/84.jpeg" alt="Seventh Key Homestay">
+      <img class="card-slide" style="--duration:14s;animation-delay:6s" src="image/86.jpg" alt="Seventh Key Homestay">
+      <img class="card-slide" style="--duration:14s;animation-delay:8s" src="image/87.jpg" alt="Seventh Key Homestay">
+      <img class="card-slide" style="--duration:14s;animation-delay:10s" src="image/88.jpg" alt="Seventh Key Homestay">
+      <img class="card-slide" style="--duration:14s;animation-delay:12s" src="image/89.jpeg" alt="Seventh Key Homestay">
      </div>
     </div>
     <div class="property-content">
