@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,10 +121,83 @@ section{padding:70px 20px}
 
 /* FOOTER */
 footer{background:#102a2a;color:#fff;text-align:center;padding:25px 20px}
-footer p{margin:5px 0}
 
 /* FLOATING BUTTONS */
 .mobile-contact-buttons{display:none}
+
+/* GOLDEN GLOWING ROTATING MOUSE CURSOR */
+.custom-cursor{
+ position:fixed;
+ top:0;
+ left:0;
+ width:48px;
+ height:48px;
+ pointer-events:none;
+ z-index:999999;
+ transform:translate(-50%,-50%);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ opacity:0;
+ transition:opacity .25s ease;
+}
+
+.custom-cursor.visible{
+ opacity:1;
+}
+
+.cursor-ring{
+ position:absolute;
+ width:44px;
+ height:44px;
+ border-radius:50%;
+ background:conic-gradient(
+  from 0deg,
+  transparent 0deg,
+  #ffd700 60deg,
+  #fff3a0 120deg,
+  #d89b16 180deg,
+  transparent 240deg,
+  #ffd700 300deg,
+  transparent 360deg
+ );
+ animation:goldenRotate 2s linear infinite;
+ filter:drop-shadow(0 0 5px #ffd700)
+        drop-shadow(0 0 12px #d89b16);
+}
+
+.cursor-ring::after{
+ content:"";
+ position:absolute;
+ inset:3px;
+ background:#f5f7f9;
+ border-radius:50%;
+}
+
+.cursor-dot{
+ position:absolute;
+ width:7px;
+ height:7px;
+ border-radius:50%;
+ background:#ffd700;
+ box-shadow:0 0 8px #ffd700,0 0 15px #d89b16;
+ z-index:2;
+}
+
+@keyframes goldenRotate{
+ from{transform:rotate(0deg)}
+ to{transform:rotate(360deg)}
+}
+
+.custom-cursor.hovering{
+ transform:translate(-50%,-50%) scale(1.35);
+}
+
+@media(max-width:768px),(hover:none){
+ .custom-cursor{
+  display:none !important;
+ }
+}
 
 /* MOBILE RESPONSIVE */
 @media(max-width:768px){
@@ -195,11 +267,11 @@ footer p{margin:5px 0}
    <a href="Northbengal.html">North Bengal</a>
    <a href="#booking">Booking</a>
    <a href="#contact">Contact</a>
-</nav>
+  </nav>
  </div>
 </header>
 
-<!-- HOME SLIDESHOW: NO CENTRE TEXT -->
+<!-- HOME SLIDESHOW -->
 <section class="hero" id="home">
  <img class="hero-slide" src="image/home-1.jpg" alt="Sea & Mount Travel">
  <img class="hero-slide" src="image/home-2.png" alt="Sea & Mount Travel">
@@ -543,6 +615,12 @@ footer p{margin:5px 0}
 
 </div>
 
+<!-- GOLDEN MOUSE CURSOR -->
+<div class="custom-cursor" id="customCursor">
+ <div class="cursor-ring"></div>
+ <div class="cursor-dot"></div>
+</div>
+
 <script>
 const galleries = {
  pratima:{
@@ -612,9 +690,7 @@ function buildGalleryCovers(){
   content.append(h3,p);
   cover.append(img,content);
   grid.appendChild(cover);
- }
-
- );
+ });
 }
 
 function hideAllGalleries(){
@@ -752,6 +828,53 @@ document.addEventListener("keydown",function(event){
 
 document.getElementById("photoLightbox").addEventListener("click",function(event){
  if(event.target===this)closeLightbox();
+});
+
+/* GOLDEN MOUSE CURSOR ANIMATION */
+const customCursor = document.getElementById("customCursor");
+
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+
+document.addEventListener("mousemove",function(e){
+ mouseX = e.clientX;
+ mouseY = e.clientY;
+ customCursor.classList.add("visible");
+});
+
+document.addEventListener("mouseleave",function(){
+ customCursor.classList.remove("visible");
+});
+
+document.addEventListener("mouseenter",function(){
+ customCursor.classList.add("visible");
+});
+
+function animateGoldenCursor(){
+ cursorX += (mouseX - cursorX) * 0.18;
+ cursorY += (mouseY - cursorY) * 0.18;
+
+ customCursor.style.left = cursorX + "px";
+ customCursor.style.top = cursorY + "px";
+
+ requestAnimationFrame(animateGoldenCursor);
+}
+
+animateGoldenCursor();
+
+/* CURSOR HOVER EFFECT */
+document.querySelectorAll("a,button,.slideshow,.gallery-cover").forEach(function(element){
+
+ element.addEventListener("mouseenter",function(){
+  customCursor.classList.add("hovering");
+ });
+
+ element.addEventListener("mouseleave",function(){
+  customCursor.classList.remove("hovering");
+ });
+
 });
 
 buildGalleryCovers();
