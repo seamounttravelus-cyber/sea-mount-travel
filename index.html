@@ -1,494 +1,253 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="Sea & Mount Travel - Hotel bookings, homestays and holiday packages in Digha, Darjeeling, Kalimpong and North Bengal.">
-
-<title>Sea & Mount Travel | Explore • Experience • Enjoy</title>
+<meta name="description" content="Sea & Mount Travel offers hotels in Digha and homestays in North Bengal.">
+<title>Sea & Mount Travel</title>
 
 <style>
-:root {
-  --gold: #d6a83d;
-  --dark: #102b27;
-  --green: #174d3c;
-  --cream: #fffaf0;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#f5f7f9;color:#222;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none}
+header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 12px #0002}
+.navbar{max-width:1200px;margin:auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:700;color:#075e54;white-space:nowrap}
+.logo img{width:55px;height:55px;object-fit:contain;border-radius:50%}
+.logo b{color:#d89b16}
+nav{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+nav a{color:#333;font-weight:600;font-size:14px}
+nav a:hover{color:#075e54}
+section{padding:70px 20px}
+.container{max-width:1200px;margin:auto}
+
+/* HOME SLIDESHOW */
+.hero{position:relative;height:620px;overflow:hidden;background:#111;padding:0}
+.hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:heroFade 20s infinite}
+.hero-slide:nth-child(1){animation-delay:0s}
+.hero-slide:nth-child(2){animation-delay:4s}
+.hero-slide:nth-child(3){animation-delay:8s}
+.hero-slide:nth-child(4){animation-delay:12s}
+.hero-slide:nth-child(5){animation-delay:16s}
+@keyframes heroFade{
+ 0%{opacity:0}
+ 8%{opacity:1}
+ 25%{opacity:1}
+ 33%{opacity:0}
+ 100%{opacity:0}
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  color: #25332f;
-  background: #fff;
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* HEADER */
-
-header {
-  background: var(--dark);
-  color: white;
-  padding: 15px 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo {
-  color: var(--gold);
-  font-size: 23px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.logo small {
-  display: block;
-  font-size: 10px;
-  color: white;
-  letter-spacing: 3px;
-  text-align: center;
-}
-
-nav {
-  display: flex;
-  gap: 22px;
-  align-items: center;
-}
-
-nav a {
-  color: white;
-  font-size: 14px;
-  transition: .3s;
-}
-
-nav a:hover {
-  color: var(--gold);
-}
-
-.menu-btn {
-  display: none;
-  font-size: 27px;
-  cursor: pointer;
-  color: white;
-  background: none;
-  border: 0;
-}
-
-/* HERO SLIDESHOW */
-
-.hero {
-  min-height: 570px;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 30px;
-  transition: background-image 1s ease;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0,0,0,.65),
-    rgba(0,0,0,.25)
-  );
-}
-
-.hero-content {
-  position: relative;
-  max-width: 800px;
-}
-
-.hero h1 {
-  font-size: clamp(35px, 6vw, 65px);
-  line-height: 1.15;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-bottom: 28px;
-}
-
-/* BUTTONS */
-
-.btn {
-  display: inline-block;
-  background: var(--gold);
-  color: #17251e;
-  padding: 13px 25px;
-  border-radius: 30px;
-  font-weight: bold;
-  margin: 5px;
-  transition: .3s;
-}
-
-.btn:hover {
-  background: white;
-  transform: translateY(-3px);
-}
-
-.btn-outline {
-  border: 2px solid white;
-  color: white;
-  background: transparent;
-}
-
-/* GENERAL SECTIONS */
-
-section {
-  padding: 70px 7%;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 38px;
-}
-
-.section-title h2 {
-  font-size: 34px;
-  color: var(--green);
-}
-
-.section-title p {
-  color: #777;
-}
-
-/* ABOUT */
-
-.about {
-  background: var(--cream);
-  text-align: center;
-}
-
-.about p {
-  max-width: 850px;
-  margin: auto;
-}
+/* COMMON HEADINGS */
+.section-title{text-align:center;margin-bottom:40px}
+.section-title h2{font-size:36px;color:#075e54;margin-bottom:8px}
+.section-title p{color:#666}
+.property-section{background:#f5f7f9}
+.red-section-heading{text-align:center;margin-bottom:40px}
+.red-section-heading .top-line{display:block;font-size:30px;font-weight:700;color:#e53935;line-height:1.1;letter-spacing:1px}
+.red-section-heading .bottom-line{display:block;font-size:38px;font-weight:800;color:#e53935;line-height:1.05;margin-top:3px}
 
 /* PROPERTY CARDS */
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  );
-  gap: 25px;
+.property-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
+.property-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 5px 20px #0002;transition:.3s}
+.property-card:hover{transform:translateY(-5px);box-shadow:0 10px 28px #0003}
+.property-image{height:330px;position:relative;overflow:hidden}
+.slideshow{position:relative;width:100%;height:100%;overflow:hidden;background:#111;cursor:pointer}
+.card-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:cardFade var(--duration,18s) infinite}
+@keyframes cardFade{
+ 0%{opacity:0;transform:scale(1)}
+ 8%{opacity:1;transform:scale(1.02)}
+ 75%{opacity:1;transform:scale(1.1)}
+ 92%{opacity:0;transform:scale(1.13)}
+ 100%{opacity:0;transform:scale(1)}
 }
+.property-content{padding:24px}
+.property-content h3{color:#075e54;font-size:25px;margin-bottom:8px}
+.property-content h4{color:#d28d00;margin-bottom:12px}
+.property-content p{color:#555;margin-bottom:10px}
+.location{font-weight:600;color:#555}
+.property-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{display:inline-block;padding:11px 18px;border-radius:8px;background:#075e54;color:#fff;font-weight:600;border:none;cursor:pointer;transition:.3s;font-family:inherit;font-size:14px}
+.btn:hover{background:#043f39}
+.btn-whatsapp{background:#25d366}
+.btn-whatsapp:hover{background:#1da851}
 
-.card {
-  border-radius: 15px;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 5px 22px rgba(0,0,0,.1);
-  transition: .3s;
-}
+/* ROOM PHOTO GALLERY */
+.gallery-section{background:#fff}
+.room-photo-heading{text-align:center;margin-bottom:40px}
+.room-photo-heading .room-line{display:block;color:#075e54;font-size:34px;font-weight:700;line-height:1.05}
+.room-photo-heading .photo-line{display:block;color:#075e54;font-size:42px;font-weight:800;line-height:1;margin-top:2px}
+.gallery-home{display:block}
+.gallery-cover-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}
+.gallery-cover{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 5px 20px #0002;cursor:pointer;transition:.3s}
+.gallery-cover:hover{transform:translateY(-5px)}
+.gallery-cover img{width:100%;height:280px;object-fit:cover}
+.gallery-cover-content{padding:20px;text-align:center}
+.gallery-cover-content h3{color:#075e54;margin-bottom:5px}
+.gallery-cover-content p{color:#777}
+.property-gallery{display:none}
+.property-gallery.active{display:block}
+.property-gallery h2{text-align:center;color:#075e54;font-size:32px;margin:20px 0 30px}
+.back-gallery-btn{display:block;margin:0 auto 20px;padding:11px 20px;border:none;border-radius:8px;background:#075e54;color:#fff;cursor:pointer;font-size:15px;font-weight:600}
+.photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.property-photo{width:100%;height:260px;object-fit:cover;border-radius:12px;cursor:pointer;transition:.3s;box-shadow:0 3px 12px #0002}
+.property-photo:hover{transform:scale(1.03)}
+.gallery-navigation,.lightbox-nav{display:flex;justify-content:center;gap:15px;margin-top:30px}
+.gallery-navigation button{padding:12px 22px;border:none;border-radius:8px;background:#075e54;color:#fff;font-weight:600;cursor:pointer}
 
-.card:hover {
-  transform: translateY(-7px);
-}
+/* LIGHTBOX */
+.photo-lightbox{position:fixed;inset:0;background:#000e;z-index:5000;display:none;align-items:center;justify-content:center;padding:30px}
+.photo-lightbox.active{display:flex}
+.lightbox-content{position:relative;max-width:1000px;width:100%;text-align:center}
+.lightbox-content img{max-width:90vw;max-height:75vh;margin:auto;object-fit:contain;border-radius:8px}
+.lightbox-close{position:absolute;top:-50px;right:0;color:#fff;font-size:35px;background:none;border:none;cursor:pointer}
+.lightbox-nav{margin-top:20px}
+.lightbox-nav button{padding:12px 22px;border:none;border-radius:8px;background:#fff;color:#222;font-weight:600;cursor:pointer}
 
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-
-.card-content {
-  padding: 20px;
-}
-
-.card h3 {
-  color: var(--green);
-  margin-bottom: 8px;
-}
-
-.card p {
-  color: #666;
-  font-size: 14px;
-  margin-bottom: 14px;
-}
-
-.card .btn {
-  margin-left: 0;
-}
-
-.packages {
-  background: var(--cream);
-}
-
-/* GALLERY */
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(210px, 1fr)
-  );
-  gap: 15px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: .3s;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.03);
-}
+/* BOOKING */
+.booking{background:#075e54;color:#fff;text-align:center}
+.booking h2{font-size:35px;margin-bottom:12px}
+.booking p{max-width:700px;margin:0 auto 25px;font-size:18px}
+.booking-buttons{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+.booking .btn{background:#fff;color:#075e54}
 
 /* CONTACT */
-
-.contact {
-  background: var(--dark);
-  color: white;
-  text-align: center;
-}
-
-.contact h2 {
-  color: var(--gold);
-}
-
-.contact p {
-  margin: 12px 0;
-}
+.contact{background:#f5f7f9}
+.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+.contact-box{background:#fff;padding:25px;border-radius:15px;text-align:center;box-shadow:0 4px 15px #0001}
+.contact-box h3{color:#075e54;margin-bottom:10px}
+.contact-box p{color:#555}
 
 /* FOOTER */
+footer{background:#102a2a;color:#fff;text-align:center;padding:25px 20px}
 
-footer {
-  background: #081c18;
-  color: white;
-  text-align: center;
-  padding: 22px;
-  font-size: 13px;
+/* FLOATING BUTTONS */
+.mobile-contact-buttons{display:none}
+
+/* GOLDEN GLOWING ROTATING MOUSE CURSOR */
+.custom-cursor{
+ position:fixed;
+ top:0;
+ left:0;
+ width:48px;
+ height:48px;
+ pointer-events:none;
+ z-index:999999;
+ transform:translate(-50%,-50%);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ opacity:0;
+ transition:opacity .25s ease;
 }
 
-/* FLOATING CONTACT BUTTONS */
-
-.float-buttons {
-  position: fixed;
-  right: 18px;
-  bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 2000;
+.custom-cursor.visible{
+ opacity:1;
 }
 
-.float-buttons a {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: white;
-  font-size: 23px;
-  box-shadow: 0 3px 12px #0004;
+.cursor-ring{
+ position:absolute;
+ width:44px;
+ height:44px;
+ border-radius:50%;
+ background:conic-gradient(
+  from 0deg,
+  transparent 0deg,
+  #ffd700 60deg,
+  #fff3a0 120deg,
+  #d89b16 180deg,
+  transparent 240deg,
+  #ffd700 300deg,
+  transparent 360deg
+ );
+ animation:goldenRotate 2s linear infinite;
+ filter:drop-shadow(0 0 5px #ffd700)
+        drop-shadow(0 0 12px #d89b16);
 }
 
-.whatsapp {
-  background: #20bd62;
+.cursor-ring::after{
+ content:"";
+ position:absolute;
+ inset:3px;
+ background:#f5f7f9;
+ border-radius:50%;
 }
 
-.call {
-  background: #1677d2;
+.cursor-dot{
+ position:absolute;
+ width:7px;
+ height:7px;
+ border-radius:50%;
+ background:#ffd700;
+ box-shadow:0 0 8px #ffd700,0 0 15px #d89b16;
+ z-index:2;
 }
 
-/* GALLERY LIGHTBOX */
-
-.lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.93);
-  z-index: 5000;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+@keyframes goldenRotate{
+ from{transform:rotate(0deg)}
+ to{transform:rotate(360deg)}
 }
 
-.lightbox img {
-  max-width: 90%;
-  max-height: 85vh;
-  border-radius: 10px;
+.custom-cursor.hovering{
+ transform:translate(-50%,-50%) scale(1.35);
 }
 
-.lightbox span {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: white;
-  font-size: 40px;
-  cursor: pointer;
-}
-
-/* GOLDEN TRANSPARENT ROTATING CURSOR */
-
-#customCursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 42px;
-  height: 42px;
-  pointer-events: none;
-  z-index: 999999;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  transition:
-    opacity .2s,
-    width .2s,
-    height .2s;
-}
-
-#customCursor.visible {
-  opacity: 1;
-}
-
-/* TRANSPARENT CENTER - ONLY GOLDEN BORDER */
-
-.cursor-ring {
-  position: absolute;
-  inset: 0;
-
-  border: 3px solid transparent;
-
-  border-top-color: #ffd700;
-  border-right-color: #d89b16;
-  border-bottom-color: #fff1a6;
-  border-left-color: #d89b16;
-
-  border-radius: 50%;
-
-  /* No background colour */
-  background: transparent;
-
-  /* Golden glowing border */
-  box-shadow:
-    0 0 8px #ffd700,
-    0 0 18px #d89b16;
-
-  animation: goldenRotate 1.4s linear infinite;
-}
-
-/* CENTER DOT */
-
-.cursor-dot {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: #ffd700;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow:
-    0 0 10px #ffd700,
-    0 0 20px #d89b16;
-}
-
-/* CURSOR HOVER EFFECT */
-
-#customCursor.hovering {
-  width: 58px;
-  height: 58px;
-}
-
-/* ROTATION ANIMATION */
-
-@keyframes goldenRotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* HIDE NORMAL MOUSE POINTER ON DESKTOP */
-
-@media (hover: hover) and (pointer: fine) {
-  body,
-  body a,
-  body button {
-    cursor: none !important;
-  }
+@media(max-width:768px),(hover:none){
+ .custom-cursor{
+  display:none !important;
+ }
 }
 
 /* MOBILE RESPONSIVE */
-
-@media (max-width: 768px) {
-
-  header {
-    padding: 13px 5%;
-  }
-
-  .menu-btn {
-    display: block;
-  }
-
-  nav {
-    display: none;
-    position: absolute;
-    top: 65px;
-    left: 0;
-    right: 0;
-    background: var(--dark);
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .hero {
-    min-height: 480px;
-  }
-
-  section {
-    padding: 50px 6%;
-  }
-
-  .section-title h2 {
-    font-size: 28px;
-  }
-
-  #customCursor {
-    display: none;
-  }
+@media(max-width:768px){
+ section{padding:50px 14px}
+ .navbar{padding:7px 10px;flex-direction:column;gap:6px}
+ .logo{font-size:16px}
+ .logo img{width:44px;height:44px}
+ nav{gap:10px}
+ nav a{font-size:12px}
+ .hero{height:430px}
+ .red-section-heading{margin-bottom:28px}
+ .red-section-heading .top-line{font-size:24px}
+ .red-section-heading .bottom-line{font-size:34px}
+ .property-grid{grid-template-columns:1fr;gap:22px}
+ .property-card{width:100%;border-radius:16px}
+ .property-image{height:245px}
+ .property-content{padding:18px}
+ .property-content h3{font-size:23px;line-height:1.25}
+ .property-content h4{font-size:17px}
+ .property-content p{font-size:15px;line-height:1.55}
+ .property-buttons{gap:8px}
+ .property-buttons .btn{padding:10px 14px;font-size:13px}
+ .room-photo-heading{margin-bottom:28px}
+ .room-photo-heading .room-line{font-size:28px}
+ .room-photo-heading .photo-line{font-size:36px}
+ .gallery-cover-grid{grid-template-columns:1fr;gap:18px}
+ .gallery-cover img{height:220px}
+ .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .property-photo{height:155px;border-radius:9px}
+ .gallery-navigation{gap:8px}
+ .gallery-navigation button{padding:10px 15px;font-size:14px}
+ .photo-lightbox{padding:15px}
+ .lightbox-content img{max-width:96vw;max-height:72vh}
+ .lightbox-close{top:-42px;font-size:32px}
+ .lightbox-nav button{padding:10px 15px;font-size:14px}
+ .booking h2{font-size:29px}
+ .booking p{font-size:15px}
+ .contact-grid{grid-template-columns:1fr;gap:15px}
+ .mobile-contact-buttons{position:fixed;left:0;right:0;bottom:0;width:100%;height:82px;z-index:99999;display:flex;align-items:center;justify-content:space-between;padding:10px 24px;pointer-events:none;background:transparent}
+ .floating-whatsapp,.floating-call{width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 5px 18px #0005;pointer-events:auto;transition:.2s;border:2px solid #ffffff40}
+ .floating-whatsapp{background:#16d45a}
+ .floating-call{background:#087ea4;font-size:32px}
+ .floating-whatsapp:active,.floating-call:active{transform:scale(.88)}
+ footer{padding-bottom:105px}
+}
+@media(max-width:480px){
+ .hero{height:420px}
+ .property-image{height:240px}
+ .property-photo{height:150px}
+ .floating-whatsapp,.floating-call{width:58px;height:58px}
 }
 </style>
 </head>
@@ -496,667 +255,629 @@ footer {
 <body>
 
 <!-- HEADER -->
-
 <header>
-
-  <a href="#home" class="logo">
-    SEA & MOUNT TRAVEL
-    <small>EXPLORE • EXPERIENCE • ENJOY</small>
-  </a>
-
-  <button
-    class="menu-btn"
-    id="menuBtn"
-    aria-label="Open menu"
-  >
-    ☰
-  </button>
-
-  <nav id="navigation">
-    <a href="#home">Home</a>
-    <a href="#digha">Digha Hotels</a>
-    <a href="#northbengal">Homestays</a>
-    <a href="#packages">Packages</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
+ <div class="navbar">
+  <div class="logo">
+   <img src="image/logo.jpeg" alt="Sea & Mount Travel Logo">
+   <span>SEA & MOUNT <b>TRAVEL</b></span>
+  </div>
+  <nav>
+   <a href="index.html">Home</a>
+   <a href="Digha.html">Digha Hotels</a>
+   <a href="Northbengal.html">North Bengal</a>
+   <a href="#booking">Booking</a>
+   <a href="#contact">Contact</a>
   </nav>
-
+ </div>
 </header>
 
 <!-- HOME SLIDESHOW -->
-
-<div class="hero" id="home">
-
-  <div class="hero-content">
-
-    <h1>Discover Beautiful Destinations</h1>
-
-    <p>
-      Explore the Sea, Mountains, Hotels & Homestays
-      with Sea & Mount Travel.
-    </p>
-
-    <a href="#packages" class="btn">
-      Explore Packages
-    </a>
-
-    <a href="#contact" class="btn btn-outline">
-      Contact Us
-    </a>
-
-  </div>
-
-</div>
-
-<!-- ABOUT US -->
-
-<section class="about">
-
-  <div class="section-title">
-    <h2>Welcome to Sea & Mount Travel</h2>
-    <p>Your Travel Partner for Memorable Holidays</p>
-  </div>
-
-  <p>
-    Sea & Mount Travel offers hotel bookings, homestay
-    reservations and holiday packages across Digha,
-    Darjeeling, Kalimpong and North Bengal.
-
-    Discover beautiful destinations, comfortable stays
-    and memorable travel experiences with us.
-  </p>
-
+<section class="hero" id="home">
+ <img class="hero-slide" src="image/home-1.jpg" alt="Sea & Mount Travel">
+ <img class="hero-slide" src="image/home-2.png" alt="Sea & Mount Travel">
+ <img class="hero-slide" src="image/home-3.png" alt="Sea & Mount Travel">
+ <img class="hero-slide" src="image/home-4.webp" alt="Sea & Mount Travel">
+ <img class="hero-slide" src="image/82.jpeg" alt="Seventh Key Homestay">
 </section>
 
 <!-- DIGHA HOTELS -->
+<section class="property-section" id="hotels">
+<div class="container">
 
-<section id="digha">
+ <div class="red-section-heading">
+  <span class="top-line">Digha</span>
+  <span class="bottom-line">Hotels</span>
+ </div>
 
-  <div class="section-title">
-    <h2>Our Hotels in Digha</h2>
-    <p>Enjoy a comfortable stay near the sea</p>
-  </div>
+ <div class="property-grid">
 
-  <div class="cards">
+  <!-- HOTEL PRATIMA GUEST INN -->
+  <article class="property-card">
+   <div class="property-image">
+    <div class="slideshow" onclick="openGallery('pratima')">
+     <img class="card-slide" style="--duration:18s;animation-delay:0s" src="image/1.jpg" alt="Hotel Pratima Guest Inn">
+     <img class="card-slide" style="--duration:18s;animation-delay:2s" src="image/2.jpeg" alt="Hotel Pratima Guest Inn">
+     <img class="card-slide" style="--duration:18s;animation-delay:4s" src="image/3.jpg" alt="Hotel Pratima Guest Inn">
+     <img class="card-slide" style="--duration:18s;animation-delay:6s" src="image/4.jpg" alt="Hotel Pratima Guest Inn">
+     <img class="card-slide" style="--duration:18s;animation-delay:8s" src="image/5.jpeg" alt="Hotel Pratima Guest Inn">
+     <img class="card-slide" style="--duration:18s;animation-delay:10s" src="image/6.jpeg" alt="Hotel Pratima Guest Inn">
+     <img class="card-slide" style="--duration:18s;animation-delay:12s" src="image/7.jpeg" alt="Hotel Pratima Guest Inn">
+     <img class="card-slide" style="--duration:18s;animation-delay:14s" src="image/8.jpeg" alt="Hotel Pratima Guest Inn">
+     <img class="card-slide" style="--duration:18s;animation-delay:16s" src="image/9.jpeg" alt="Hotel Pratima Guest Inn">
+    </div>
+   </div>
+   <div class="property-content">
+    <h3>Hotel Pratima Guest Inn</h3>
+    <h4>New Digha</h4>
+    <p class="location">📍 New Digha, Digha, West Bengal 721428</p>
+    <p>Comfortable rooms for families and groups, conveniently located near Sea Beach, SBSTC Bus Stand, Railway Station and Jagannath Temple.</p>
+    <div class="property-buttons">
+     <a class="btn btn-whatsapp" target="_blank" rel="noopener" href="https://wa.me/916290624090">WhatsApp</a>
+     <button class="btn" onclick="openGallery('pratima')">Room Photo</button>
+    </div>
+   </div>
+  </article>
 
-    <article class="card">
+  <!-- AARADHYA HOLIDAY INN -->
+  <article class="property-card">
+   <div class="property-image">
+    <div class="slideshow" onclick="openGallery('aaradhya')">
+     <img class="card-slide" style="--duration:30s;animation-delay:0s" src="image/22.jpeg" alt="Aaradhya Holiday Inn">
+     <img class="card-slide" style="--duration:30s;animation-delay:2s" src="image/23.jpeg" alt="Aaradhya Holiday Inn">
+     <img class="card-slide" style="--duration:30s;animation-delay:4s" src="image/24.jpeg" alt="Aaradhya Holiday Inn">
+     <img class="card-slide" style="--duration:30s;animation-delay:6s" src="image/25.jpeg" alt="Aaradhya Holiday Inn">
+     <img class="card-slide" style="--duration:30s;animation-delay:8s" src="image/26.jpeg" alt="Aaradhya Holiday Inn">
+     <img class="card-slide" style="--duration:30s;animation-delay:10s" src="image/27.jpeg" alt="Aaradhya Holiday Inn">
+     <img class="card-slide" style="--duration:30s;animation-delay:12s" src="image/28.jpeg" alt="Aaradhya Holiday Inn">
+     <img class="card-slide" style="--duration:30s;animation-delay:14s" src="image/29.jpeg" alt="Aaradhya Holiday Inn">
+     <img class="card-slide" style="--duration:30s;animation-delay:16s" src="image/30.jpeg" alt="Aaradhya Holiday Inn">
+     <img class="card-slide" style="--duration:30s;animation-delay:18s" src="image/31.jpeg" alt="Aaradhya Holiday Inn">
+     <img class="card-slide" style="--duration:30s;animation-delay:20s" src="image/32.jpeg" alt="Aaradhya Holiday Inn">
+     <img class="card-slide" style="--duration:30s;animation-delay:22s" src="image/33.jpeg" alt="Aaradhya Holiday Inn">
+     <img class="card-slide" style="--duration:30s;animation-delay:24s" src="image/34.jpeg" alt="Aaradhya Holiday Inn">
+     <img class="card-slide" style="--duration:30s;animation-delay:26s" src="image/35.jpeg" alt="Aaradhya Holiday Inn">
+     <img class="card-slide" style="--duration:30s;animation-delay:28s" src="image/36.jpeg" alt="Aaradhya Holiday Inn">
+    </div>
+   </div>
+   <div class="property-content">
+    <h3>Aaradhya Holiday Inn</h3>
+    <h4>New Digha</h4>
+    <p class="location">📍 Near Helipad, Jahaj Bari, Palsandapur, Digha, West Bengal 721428</p>
+    <p>A comfortable holiday stay in New Digha, suitable for families, couples and groups.</p>
+    <div class="property-buttons">
+     <a class="btn btn-whatsapp" target="_blank" rel="noopener" href="https://wa.me/916290624090">WhatsApp</a>
+     <button class="btn" onclick="openGallery('aaradhya')">Room Photo</button>
+    </div>
+   </div>
+  </article>
 
-      <img
-        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900"
-        alt="Hotel Pratima Guest Inn"
-      >
-
-      <div class="card-content">
-
-        <h3>Hotel Pratima Guest Inn</h3>
-
-        <p>
-          New Digha, West Bengal. Convenient access
-          to the Sea Beach, railway station, bus stand
-          and Jagannath Temple.
-        </p>
-
-        <a class="btn" href="#contact">
-          Book Now
-        </a>
-
-      </div>
-
-    </article>
-
-    <article class="card">
-
-      <img
-        src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900"
-        alt="Aaradhya Holiday Inn"
-      >
-
-      <div class="card-content">
-
-        <h3>Aaradhya Holiday Inn</h3>
-
-        <p>
-          Enjoy a relaxing holiday in Digha with
-          comfortable accommodation and convenient
-          booking support.
-        </p>
-
-        <a class="btn" href="#contact">
-          Book Now
-        </a>
-
-      </div>
-
-    </article>
-
-  </div>
-
+ </div>
+</div>
 </section>
 
 <!-- NORTH BENGAL HOMESTAYS -->
+<section class="property-section" id="homestays">
+<div class="container">
 
-<section id="northbengal" class="packages">
+ <div class="red-section-heading">
+  <span class="top-line">North Bengal</span>
+  <span class="bottom-line">Homestays</span>
+ </div>
 
-  <div class="section-title">
-    <h2>North Bengal Homestays</h2>
-    <p>Experience the beauty of the mountains</p>
-  </div>
+ <div class="property-grid">
 
-  <div class="cards">
+  <!-- SUSANTA HOMESTAY -->
+  <article class="property-card">
+   <div class="property-image">
+    <div class="slideshow" onclick="openGallery('susanta')">
+     <img class="card-slide" style="--duration:28s;animation-delay:0s" src="image/51.webp" alt="Susanta Homestay">
+     <img class="card-slide" style="--duration:28s;animation-delay:2s" src="image/52.webp" alt="Susanta Homestay">
+     <img class="card-slide" style="--duration:28s;animation-delay:4s" src="image/53.jpeg" alt="Susanta Homestay">
+     <img class="card-slide" style="--duration:28s;animation-delay:6s" src="image/54.png" alt="Susanta Homestay">
+     <img class="card-slide" style="--duration:28s;animation-delay:8s" src="image/55.png" alt="Susanta Homestay">
+     <img class="card-slide" style="--duration:28s;animation-delay:10s" src="image/56.png" alt="Susanta Homestay">
+     <img class="card-slide" style="--duration:28s;animation-delay:12s" src="image/57.jpeg" alt="Susanta Homestay">
+     <img class="card-slide" style="--duration:28s;animation-delay:14s" src="image/58.png" alt="Susanta Homestay">
+     <img class="card-slide" style="--duration:28s;animation-delay:16s" src="image/59.jpg" alt="Susanta Homestay">
+     <img class="card-slide" style="--duration:28s;animation-delay:18s" src="image/60.png" alt="Susanta Homestay">
+     <img class="card-slide" style="--duration:28s;animation-delay:20s" src="image/61.jpg" alt="Susanta Homestay">
+     <img class="card-slide" style="--duration:28s;animation-delay:22s" src="image/62.png" alt="Susanta Homestay">
+     <img class="card-slide" style="--duration:28s;animation-delay:24s" src="image/63.png" alt="Susanta Homestay">
+     <img class="card-slide" style="--duration:28s;animation-delay:26s" src="image/64.png" alt="Susanta Homestay">
+    </div>
+   </div>
+   <div class="property-content">
+    <h3>Susanta Homestay</h3>
+    <h4>Icche Gaon</h4>
+    <p class="location">📍 Icche Gaon, Icha Forest, Kalimpong-II, West Bengal 734315</p>
+    <p>Peaceful mountain retreat surrounded by nature and beautiful Himalayan views.</p>
+    <div class="property-buttons">
+     <a class="btn btn-whatsapp" target="_blank" rel="noopener" href="https://wa.me/916290624090">WhatsApp</a>
+     <button class="btn" onclick="openGallery('susanta')">Room Photo</button>
+    </div>
+   </div>
+  </article>
 
-    <article class="card">
+  <!-- TASHI / GOPERPA HOMESTAY -->
+  <article class="property-card">
+   <div class="property-image">
+    <div class="slideshow" onclick="openGallery('tashi')">
+     <img class="card-slide" style="--duration:20s;animation-delay:0s" src="image/71.jpg" alt="Tashi Goperpa Homestay">
+     <img class="card-slide" style="--duration:20s;animation-delay:2s" src="image/72.png" alt="Tashi Goperpa Homestay">
+     <img class="card-slide" style="--duration:20s;animation-delay:4s" src="image/73.jpg" alt="Tashi Goperpa Homestay">
+     <img class="card-slide" style="--duration:20s;animation-delay:6s" src="image/74.jpeg" alt="Tashi Goperpa Homestay">
+     <img class="card-slide" style="--duration:20s;animation-delay:8s" src="image/75.png" alt="Tashi Goperpa Homestay">
+     <img class="card-slide" style="--duration:20s;animation-delay:10s" src="image/76.png" alt="Tashi Goperpa Homestay">
+     <img class="card-slide" style="--duration:20s;animation-delay:12s" src="image/77.jpg" alt="Tashi Goperpa Homestay">
+     <img class="card-slide" style="--duration:20s;animation-delay:14s" src="image/79.jpeg" alt="Tashi Goperpa Homestay">
+     <img class="card-slide" style="--duration:20s;animation-delay:16s" src="image/80.jpg" alt="Tashi Goperpa Homestay">
+     <img class="card-slide" style="--duration:20s;animation-delay:18s" src="image/81.jpeg" alt="Tashi Goperpa Homestay">
+    </div>
+   </div>
+   <div class="property-content">
+    <h3>Tashi / Goperpa Homestay</h3>
+    <h4>Icche Gaon</h4>
+    <p class="location">📍 Icche Gaon, Icha Forest, Kalimpong-II, West Bengal 734315</p>
+    <p>A peaceful homestay for guests looking for a relaxing mountain holiday.</p>
+    <div class="property-buttons">
+     <a class="btn btn-whatsapp" target="_blank" rel="noopener" href="https://wa.me/916290624090">WhatsApp</a>
+     <button class="btn" onclick="openGallery('tashi')">Room Photo</button>
+    </div>
+   </div>
+  </article>
 
-      <img
-        src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=900"
-        alt="Susanta Homestay"
-      >
+  <!-- SEVENTH KEY HOMESTAY -->
+  <article class="property-card">
+   <div class="property-image">
+    <div class="slideshow" onclick="openGallery('seventh')">
+     <img class="card-slide" style="--duration:14s;animation-delay:0s" src="image/82.jpeg" alt="Seventh Key Homestay">
+     <img class="card-slide" style="--duration:14s;animation-delay:2s" src="image/83.jpeg" alt="Seventh Key Homestay">
+     <img class="card-slide" style="--duration:14s;animation-delay:4s" src="image/84.jpeg" alt="Seventh Key Homestay">
+     <img class="card-slide" style="--duration:14s;animation-delay:6s" src="image/86.jpg" alt="Seventh Key Homestay">
+     <img class="card-slide" style="--duration:14s;animation-delay:8s" src="image/87.jpg" alt="Seventh Key Homestay">
+     <img class="card-slide" style="--duration:14s;animation-delay:10s" src="image/88.jpg" alt="Seventh Key Homestay">
+     <img class="card-slide" style="--duration:14s;animation-delay:12s" src="image/89.jpeg" alt="Seventh Key Homestay">
+    </div>
+   </div>
+   <div class="property-content">
+    <h3>SEVENTH KEY HOMESTAY</h3>
+    <h4>Lava – Sherpa Gaon</h4>
+    <p class="location">📍 Sherpagaon, Pankhasari Khasmahal, Near Lava, Dist: Kalimpong, West Bengal 734314</p>
+    <p>Discover the hidden beauty of Sherpa Gaon, surrounded by green hills, tea gardens, cherry blossoms, monasteries and clouds. Enjoy delicious home-cooked meals and warm hospitality.</p>
+    <p>🍽️ Breakfast, lunch, evening snacks and dinner included.</p>
+    <p>🚘 Free parking · 🚿 Geyser in every room · Vehicle access to the main entrance · Convenient for senior citizens.</p>
+    <p><strong>Nearby:</strong> Lava, Lolegaon, Jhandi, Rishop, Kolakham, Nokdara, Changi Waterfall and Neora Valley National Park.</p>
+    <div class="property-buttons">
+     <a class="btn btn-whatsapp" target="_blank" rel="noopener" href="https://wa.me/916290624090?text=Hello%2C%20I%20want%20to%20enquire%20about%20Seventh%20Key%20Homestay">WhatsApp Booking</a>
+     <button class="btn" onclick="openGallery('seventh')">Room Photo</button>
+     <a class="btn" href="seventh-key.html">View Details</a>
+    </div>
+   </div>
+  </article>
 
-      <div class="card-content">
-
-        <h3>Susanta Homestay</h3>
-
-        <p>
-          Icchegaon, Kalimpong. Enjoy mountain views,
-          peaceful surroundings and village life.
-        </p>
-
-        <a class="btn" href="#contact">
-          Enquire Now
-        </a>
-
-      </div>
-
-    </article>
-
-    <article class="card">
-
-      <img
-        src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=900"
-        alt="Tashi Goperpa Homestay"
-      >
-
-      <div class="card-content">
-
-        <h3>Tashi / Goperpa Homestay</h3>
-
-        <p>
-          Icchegaon, North Bengal. A peaceful mountain
-          getaway surrounded by natural beauty.
-        </p>
-
-        <a class="btn" href="#contact">
-          Enquire Now
-        </a>
-
-      </div>
-
-    </article>
-
-    <article class="card">
-
-      <img
-        src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=900"
-        alt="Seventh Key Homestay"
-      >
-
-      <div class="card-content">
-
-        <h3>Seventh Key Homestay</h3>
-
-        <p>
-          Sherpagaon, Lava. Enjoy pine forest,
-          valley views and a relaxing mountain stay.
-        </p>
-
-        <a class="btn" href="#contact">
-          Enquire Now
-        </a>
-
-      </div>
-
-    </article>
-
-    <article class="card">
-
-      <img
-        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900"
-        alt="Rangaroon Tea Garden"
-      >
-
-      <div class="card-content">
-
-        <h3>Rangaroon Tea Garden</h3>
-
-        <p>
-          Experience the peaceful atmosphere of tea
-          gardens and the beautiful Darjeeling hills.
-        </p>
-
-        <a class="btn" href="#contact">
-          Enquire Now
-        </a>
-
-      </div>
-
-    </article>
-
-  </div>
-
+ </div>
+</div>
 </section>
 
-<!-- TOUR PACKAGES -->
+<!-- ROOM PHOTO GALLERY -->
+<section class="gallery-section" id="gallery">
+<div class="container">
 
-<section id="packages">
+ <div class="room-photo-heading">
+  <span class="room-line">Room</span>
+  <span class="photo-line">Photo</span>
+ </div>
 
-  <div class="section-title">
-    <h2>Our Tour Packages</h2>
-    <p>Plan your next holiday with us</p>
+ <div id="galleryHome" class="gallery-home">
+  <div class="gallery-cover-grid" id="galleryCoverGrid"></div>
+ </div>
+
+ <div id="pratimaGallery" class="property-gallery">
+  <button class="back-gallery-btn" onclick="backToGallery()">← Back to Room Photo</button>
+  <h2>Hotel Pratima Guest Inn</h2>
+  <div id="pratimaPhotoGrid" class="photo-grid"></div>
+  <div class="gallery-navigation">
+   <button onclick="previousPhoto()">← Previous</button>
+   <button onclick="nextPhoto()">Next →</button>
   </div>
+ </div>
 
-  <div class="cards">
-
-    <article class="card">
-
-      <img
-        src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=900"
-        alt="Darjeeling tour"
-      >
-
-      <div class="card-content">
-
-        <h3>Darjeeling Tour</h3>
-
-        <p>
-          Explore tea gardens, mountain views
-          and beautiful sightseeing destinations.
-        </p>
-
-        <a class="btn" href="#contact">
-          Get Details
-        </a>
-
-      </div>
-
-    </article>
-
-    <article class="card">
-
-      <img
-        src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=900"
-        alt="Kalimpong tour"
-      >
-
-      <div class="card-content">
-
-        <h3>Kalimpong & Sittong</h3>
-
-        <p>
-          Discover peaceful villages, scenic landscapes
-          and mountain experiences.
-        </p>
-
-        <a class="btn" href="#contact">
-          Get Details
-        </a>
-
-      </div>
-
-    </article>
-
-    <article class="card">
-
-      <img
-        src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=900"
-        alt="Icchegaon tour"
-      >
-
-      <div class="card-content">
-
-        <h3>Icchegaon Tour</h3>
-
-        <p>
-          Enjoy village stays, forest walks and
-          breathtaking Himalayan views.
-        </p>
-
-        <a class="btn" href="#contact">
-          Get Details
-        </a>
-
-      </div>
-
-    </article>
-
+ <div id="aaradhyaGallery" class="property-gallery">
+  <button class="back-gallery-btn" onclick="backToGallery()">← Back to Room Photo</button>
+  <h2>Aaradhya Holiday Inn</h2>
+  <div id="aaradhyaPhotoGrid" class="photo-grid"></div>
+  <div class="gallery-navigation">
+   <button onclick="previousAaradhyaPhoto()">← Previous</button>
+   <button onclick="nextAaradhyaPhoto()">Next →</button>
   </div>
+ </div>
 
+ <div id="susantaGallery" class="property-gallery">
+  <button class="back-gallery-btn" onclick="backToGallery()">← Back to Room Photo</button>
+  <h2>Susanta Homestay</h2>
+  <div id="susantaPhotoGrid" class="photo-grid"></div>
+  <div class="gallery-navigation">
+   <button onclick="previousSusantaPhoto()">← Previous</button>
+   <button onclick="nextSusantaPhoto()">Next →</button>
+  </div>
+ </div>
+
+ <div id="tashiGallery" class="property-gallery">
+  <button class="back-gallery-btn" onclick="backToGallery()">← Back to Room Photo</button>
+  <h2>Tashi / Goperpa Homestay</h2>
+  <div id="tashiPhotoGrid" class="photo-grid"></div>
+  <div class="gallery-navigation">
+   <button onclick="previousTashiPhoto()">← Previous</button>
+   <button onclick="nextTashiPhoto()">Next →</button>
+  </div>
+ </div>
+
+ <div id="seventhGallery" class="property-gallery">
+  <button class="back-gallery-btn" onclick="backToGallery()">← Back to Room Photo</button>
+  <h2>SEVENTH KEY HOMESTAY – Sherpa Gaon</h2>
+  <div id="seventhPhotoGrid" class="photo-grid"></div>
+  <div class="gallery-navigation">
+   <button onclick="previousSeventhPhoto()">← Previous</button>
+   <button onclick="nextSeventhPhoto()">Next →</button>
+  </div>
+ </div>
+
+</div>
 </section>
 
-<!-- PHOTO GALLERY -->
-
-<section id="gallery" class="packages">
-
-  <div class="section-title">
-    <h2>Photo Gallery</h2>
-    <p>Explore the beauty of our destinations</p>
+<!-- PHOTO LIGHTBOX -->
+<div id="photoLightbox" class="photo-lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+ <div class="lightbox-content">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close photo viewer">×</button>
+  <img id="lightboxImage" src="" alt="Room Photo">
+  <div class="lightbox-nav">
+   <button onclick="previousLightboxPhoto()">← Previous</button>
+   <button onclick="nextLightboxPhoto()">Next →</button>
   </div>
+ </div>
+</div>
 
-  <div class="gallery-grid">
+<!-- BOOKING SECTION -->
+<section class="booking" id="booking">
+ <div class="container">
+  <h2>Direct Booking</h2>
+  <p>Contact us directly for room booking, holiday packages and travel assistance.</p>
 
-    <img
-      src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=900"
-      alt="Mountain scenery"
-    >
+  <div class="booking-buttons">
+   <a class="btn" target="_blank" rel="noopener"
+      href="https://wa.me/916290624090">
+      WhatsApp: +91 62906 24090
+   </a>
 
-    <img
-      src="https://images.unsplash.com/photo-1500534623283-312aade485b7?w=900"
-      alt="Nature"
-    >
-
-    <img
-      src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=900"
-      alt="Sea beach"
-    >
-
-    <img
-      src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900"
-      alt="Forest"
-    >
-
-    <img
-      src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900"
-      alt="Mountains"
-    >
-
-    <img
-      src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=900"
-      alt="Valley"
-    >
-
+   <a class="btn" href="tel:+916290624090">
+      Call: +91 62906 24090
+   </a>
   </div>
-
+ </div>
 </section>
 
-<!-- CONTACT -->
-
-<section id="contact" class="contact">
+<!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+ <div class="container">
 
   <div class="section-title">
-
-    <h2>Contact Sea & Mount Travel</h2>
-
-    <p>
-      Let us help you plan your next holiday
-    </p>
-
+   <h2>Contact Us</h2>
+   <p>Sea & Mount Travel</p>
   </div>
 
-  <p>
-    Hotel Booking | Homestay Booking | Tour Packages
-  </p>
+  <div class="contact-grid">
 
-  <p>
-    For booking enquiries, contact us on WhatsApp.
-  </p>
+   <div class="contact-box">
+    <h3>WhatsApp</h3>
+    <p>+91 62906 24090</p>
+   </div>
 
-  <a
-    class="btn"
-    href="https://wa.me/91XXXXXXXXXX?text=Hello%20Sea%20%26%20Mount%20Travel%2C%20I%20want%20to%20know%20about%20your%20packages."
-    target="_blank"
-    rel="noopener"
-  >
-    WhatsApp for Booking
-  </a>
+   <div class="contact-box">
+    <h3>Phone</h3>
+    <p>+91 97482 28781</p>
+    <p>+91 82405 11881</p>
+   </div>
 
+   <div class="contact-box">
+    <h3>Email</h3>
+    <p>admin@seamount.co.in</p>
+   </div>
+
+  </div>
+ </div>
 </section>
 
 <!-- FOOTER -->
-
 <footer>
-
-  <p>
-    © <span id="year"></span>
-    Sea & Mount Travel. All Rights Reserved.
-  </p>
-
-  <p>
-    Explore • Experience • Enjoy
-  </p>
-
+ <p>© 2026 Sea & Mount Travel. All Rights Reserved.</p>
+ <p>Hotels • Homestays • Holiday Packages</p>
 </footer>
 
-<!-- FLOATING CALL & WHATSAPP BUTTONS -->
+<!-- MOBILE FLOATING CALL & WHATSAPP BUTTONS -->
+<div class="mobile-contact-buttons">
 
-<div class="float-buttons">
-
-  <a
-    class="whatsapp"
-    href="https://wa.me/91XXXXXXXXXX"
+ <a class="floating-whatsapp"
+    href="https://wa.me/916290624090"
     target="_blank"
     rel="noopener"
-    aria-label="WhatsApp"
-  >
-    ✆
-  </a>
+    aria-label="WhatsApp Sea and Mount Travel">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372.074-.57.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+   <path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.55 4.112 1.514 5.824L.057 24l6.338-1.66A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0Zm0 22.1c-1.88 0-3.722-.504-5.342-1.459l-.382-.225-3.762.985 1.003-3.666-.249-.394A9.95 9.95 0 0 1 2.05 12C2.05 6.515 6.515 2.05 12 2.05S21.95 6.515 21.95 12 17.485 21.95 12 21.95Z"/>
+  </svg>
+ </a>
 
-  <a
-    class="call"
-    href="tel:+91XXXXXXXXXX"
-    aria-label="Call"
-  >
-    ☎
-  </a>
-
-</div>
-
-<!-- GALLERY LIGHTBOX -->
-
-<div class="lightbox" id="lightbox">
-
-  <span id="closeLightbox">&times;</span>
-
-  <img
-    id="lightboxImage"
-    src=""
-    alt="Gallery preview"
-  >
+ <a class="floating-call"
+    href="tel:+916290624090"
+    aria-label="Call Sea and Mount Travel">
+  ☎
+ </a>
 
 </div>
 
-<!-- GOLDEN TRANSPARENT CURSOR -->
-
-<div id="customCursor" aria-hidden="true">
-
-  <div class="cursor-ring"></div>
-
-  <div class="cursor-dot"></div>
-
+<!-- GOLDEN MOUSE CURSOR -->
+<div class="custom-cursor" id="customCursor">
+ <div class="cursor-ring"></div>
+ <div class="cursor-dot"></div>
 </div>
 
 <script>
+const galleries = {
+ pratima:{
+  title:"Hotel Pratima Guest Inn",
+  photos:["1.jpg","2.jpeg","3.jpg","4.jpg","5.jpeg","6.jpeg","7.jpeg","8.jpeg","9.jpeg"],
+  grid:"pratimaPhotoGrid",
+  section:"pratimaGallery"
+ },
+ aaradhya:{
+  title:"Aaradhya Holiday Inn",
+  photos:["22.jpeg","23.jpeg","24.jpeg","25.jpeg","26.jpeg","27.jpeg","28.jpeg","29.jpeg","30.jpeg","31.jpeg","32.jpeg","33.jpeg","34.jpeg","35.jpeg","36.jpeg"],
+  grid:"aaradhyaPhotoGrid",
+  section:"aaradhyaGallery"
+ },
+ susanta:{
+  title:"Susanta Homestay",
+  photos:["51.webp","52.webp","53.jpeg","54.png","55.png","56.png","57.jpeg","58.png","59.jpg","60.png","61.jpg","62.png","63.png","64.png"],
+  grid:"susantaPhotoGrid",
+  section:"susantaGallery"
+ },
+ tashi:{
+  title:"Tashi / Goperpa Homestay",
+  photos:["71.jpg","72.png","73.jpg","74.jpeg","75.png","76.png","77.jpg","79.jpeg","80.jpg","81.jpeg"],
+  grid:"tashiPhotoGrid",
+  section:"tashiGallery"
+ },
+ seventh:{
+  title:"SEVENTH KEY HOMESTAY – Sherpa Gaon",
+  photos:["82.jpeg","83.jpeg","84.jpeg","86.jpg","87.jpg","88.jpg","89.jpeg"],
+  grid:"seventhPhotoGrid",
+  section:"seventhGallery"
+ }
+};
 
-/* MOBILE MENU */
+let currentGalleryType="pratima";
+const currentIndexes={
+ pratima:0,
+ aaradhya:0,
+ susanta:0,
+ tashi:0,
+ seventh:0
+};
 
-const menuBtn = document.getElementById("menuBtn");
+function buildGalleryCovers(){
+ const grid=document.getElementById("galleryCoverGrid");
 
-const navigation = document.getElementById("navigation");
+ Object.keys(galleries).forEach(function(key){
+  const g=galleries[key];
+  const cover=document.createElement("div");
 
-menuBtn.addEventListener("click", () => {
+  cover.className="gallery-cover";
+  cover.onclick=function(){openGallery(key)};
 
-  navigation.classList.toggle("active");
+  const img=document.createElement("img");
+  img.src="image/"+g.photos[0];
+  img.alt=g.title;
 
-});
+  const content=document.createElement("div");
+  content.className="gallery-cover-content";
 
-navigation.querySelectorAll("a").forEach(link => {
+  const h3=document.createElement("h3");
+  h3.textContent=g.title;
 
-  link.addEventListener("click", () => {
+  const p=document.createElement("p");
+  p.textContent="View Room Photos";
 
-    navigation.classList.remove("active");
-
-  });
-
-});
-
-
-/* HERO SLIDESHOW */
-
-const hero = document.querySelector(".hero");
-
-const slides = [
-
-  "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1800",
-
-  "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1800",
-
-  "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1800"
-
-];
-
-let slideIndex = 0;
-
-function changeSlide() {
-
-  hero.style.backgroundImage =
-    `url("${slides[slideIndex]}")`;
-
-  slideIndex = (slideIndex + 1) % slides.length;
-
+  content.append(h3,p);
+  cover.append(img,content);
+  grid.appendChild(cover);
+ });
 }
 
-changeSlide();
-
-setInterval(changeSlide, 5000);
-
-
-/* GALLERY LIGHTBOX */
-
-const lightbox = document.getElementById("lightbox");
-
-const lightboxImage =
-  document.getElementById("lightboxImage");
-
-document.querySelectorAll(".gallery-grid img").forEach(img => {
-
-  img.addEventListener("click", () => {
-
-    lightboxImage.src = img.src;
-
-    lightbox.style.display = "flex";
-
-  });
-
-});
-
-document.getElementById("closeLightbox")
-  .addEventListener("click", () => {
-
-    lightbox.style.display = "none";
-
-  });
-
-lightbox.addEventListener("click", event => {
-
-  if (event.target === lightbox) {
-
-    lightbox.style.display = "none";
-
-  }
-
-});
-
-
-/* COPYRIGHT YEAR */
-
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-
-
-/* GOLDEN ROTATING MOUSE CURSOR */
-
-const cursor = document.getElementById("customCursor");
-
-const finePointer = window.matchMedia(
-  "(hover: hover) and (pointer: fine)"
-).matches;
-
-if (finePointer) {
-
-  let mouseX = window.innerWidth / 2;
-
-  let mouseY = window.innerHeight / 2;
-
-  let cursorX = mouseX;
-
-  let cursorY = mouseY;
-
-
-  /* FOLLOW MOUSE MOVEMENT */
-
-  document.addEventListener("mousemove", event => {
-
-    mouseX = event.clientX;
-
-    mouseY = event.clientY;
-
-    cursor.classList.add("visible");
-
-  });
-
-
-  /* HIDE WHEN MOUSE LEAVES PAGE */
-
-  document.addEventListener("mouseleave", () => {
-
-    cursor.classList.remove("visible");
-
-  });
-
-
-  document.addEventListener("mouseenter", () => {
-
-    cursor.classList.add("visible");
-
-  });
-
-
-  /* SMOOTH CURSOR MOVEMENT */
-
-  function animateCursor() {
-
-    cursorX += (mouseX - cursorX) * 0.25;
-
-    cursorY += (mouseY - cursorY) * 0.25;
-
-    cursor.style.left = cursorX + "px";
-
-    cursor.style.top = cursorY + "px";
-
-    requestAnimationFrame(animateCursor);
-
-  }
-
-  animateCursor();
-
-
-  /* ENLARGE CURSOR ON HOVER */
-
-  document.querySelectorAll("a, button, img").forEach(element => {
-
-    element.addEventListener("mouseenter", () => {
-
-      cursor.classList.add("hovering");
-
-    });
-
-    element.addEventListener("mouseleave", () => {
-
-      cursor.classList.remove("hovering");
-
-    });
-
-  });
-
+function hideAllGalleries(){
+ document.getElementById("galleryHome").style.display="none";
+
+ Object.values(galleries).forEach(g=>{
+  document.getElementById(g.section).classList.remove("active");
+ });
 }
 
+function scrollToGallery(){
+ document.getElementById("gallery").scrollIntoView({behavior:"smooth"});
+}
+
+function openGallery(key){
+ if(!galleries[key])return;
+
+ hideAllGalleries();
+ currentGalleryType=key;
+
+ document.getElementById(galleries[key].section).classList.add("active");
+
+ showPhotos(key);
+ scrollToGallery();
+}
+
+function showPhotos(key){
+ const g=galleries[key];
+ const grid=document.getElementById(g.grid);
+ grid.innerHTML="";
+
+ g.photos.forEach(function(photo,index){
+  const img=document.createElement("img");
+
+  img.className="property-photo";
+  img.src="image/"+photo;
+  img.alt=g.title+" Photo "+(index+1);
+  img.loading="lazy";
+
+  img.onclick=function(){
+   openLightbox(key,index);
+  };
+
+  grid.appendChild(img);
+ });
+}
+
+function openLightbox(key,index){
+ currentGalleryType=key;
+ currentIndexes[key]=index;
+
+ document.getElementById("lightboxImage").src="image/"+galleries[key].photos[index];
+ document.getElementById("lightboxImage").alt=galleries[key].title+" photo "+(index+1);
+
+ document.getElementById("photoLightbox").classList.add("active");
+}
+
+function movePhoto(direction){
+ const photos=galleries[currentGalleryType].photos;
+
+ currentIndexes[currentGalleryType]=
+  (currentIndexes[currentGalleryType]+direction+photos.length)%photos.length;
+
+ openLightbox(currentGalleryType,currentIndexes[currentGalleryType]);
+}
+
+function previousLightboxPhoto(){movePhoto(-1)}
+function nextLightboxPhoto(){movePhoto(1)}
+
+function previousPhoto(){
+ currentGalleryType="pratima";
+ movePhoto(-1);
+}
+function nextPhoto(){
+ currentGalleryType="pratima";
+ movePhoto(1);
+}
+function previousAaradhyaPhoto(){
+ currentGalleryType="aaradhya";
+ movePhoto(-1);
+}
+function nextAaradhyaPhoto(){
+ currentGalleryType="aaradhya";
+ movePhoto(1);
+}
+function previousSusantaPhoto(){
+ currentGalleryType="susanta";
+ movePhoto(-1);
+}
+function nextSusantaPhoto(){
+ currentGalleryType="susanta";
+ movePhoto(1);
+}
+function previousTashiPhoto(){
+ currentGalleryType="tashi";
+ movePhoto(-1);
+}
+function nextTashiPhoto(){
+ currentGalleryType="tashi";
+ movePhoto(1);
+}
+function previousSeventhPhoto(){
+ currentGalleryType="seventh";
+ movePhoto(-1);
+}
+function nextSeventhPhoto(){
+ currentGalleryType="seventh";
+ movePhoto(1);
+}
+
+function backToGallery(){
+ Object.values(galleries).forEach(g=>{
+  document.getElementById(g.section).classList.remove("active");
+ });
+
+ document.getElementById("galleryHome").style.display="block";
+ scrollToGallery();
+}
+
+function closeLightbox(){
+ document.getElementById("photoLightbox").classList.remove("active");
+}
+
+document.addEventListener("keydown",function(event){
+ if(event.key==="Escape")closeLightbox();
+
+ if(event.key==="ArrowRight" && document.getElementById("photoLightbox").classList.contains("active")){
+  nextLightboxPhoto();
+ }
+
+ if(event.key==="ArrowLeft" && document.getElementById("photoLightbox").classList.contains("active")){
+  previousLightboxPhoto();
+ }
+});
+
+document.getElementById("photoLightbox").addEventListener("click",function(event){
+ if(event.target===this)closeLightbox();
+});
+
+/* GOLDEN MOUSE CURSOR ANIMATION */
+const customCursor = document.getElementById("customCursor");
+
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+
+document.addEventListener("mousemove",function(e){
+ mouseX = e.clientX;
+ mouseY = e.clientY;
+ customCursor.classList.add("visible");
+});
+
+document.addEventListener("mouseleave",function(){
+ customCursor.classList.remove("visible");
+});
+
+document.addEventListener("mouseenter",function(){
+ customCursor.classList.add("visible");
+});
+
+function animateGoldenCursor(){
+ cursorX += (mouseX - cursorX) * 0.18;
+ cursorY += (mouseY - cursorY) * 0.18;
+
+ customCursor.style.left = cursorX + "px";
+ customCursor.style.top = cursorY + "px";
+
+ requestAnimationFrame(animateGoldenCursor);
+}
+
+animateGoldenCursor();
+
+/* CURSOR HOVER EFFECT */
+document.querySelectorAll("a,button,.slideshow,.gallery-cover").forEach(function(element){
+
+ element.addEventListener("mouseenter",function(){
+  customCursor.classList.add("hovering");
+ });
+
+ element.addEventListener("mouseleave",function(){
+  customCursor.classList.remove("hovering");
+ });
+
+});
+
+buildGalleryCovers();
 </script>
 
 </body>
