@@ -4,191 +4,395 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Book hotels in New Digha with Sea & Mount Travel. Explore Hotel Pratima Guest Inn and Aaradhya Holiday Inn.">
-<title>Digha Hotels | Sea & Mount Travel</title>
+
+<title>Sea & Mount Travel | Hotels, Homestays & Holiday Packages</title>
+
+<meta name="description" content="Sea & Mount Travel offers hotel and homestay booking, holiday packages, group tours and travel assistance in Digha and North Bengal.">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#f5f7f9;color:#222;line-height:1.6;overflow-x:hidden}
-img{max-width:100%;display:block}
+body{
+ font-family:Arial,Helvetica,sans-serif;
+ background:#f5f7f9;
+ color:#222;
+ line-height:1.6;
+ overflow-x:hidden
+}
 a{text-decoration:none}
+img{max-width:100%;display:block}
 
-header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 12px #0002}
-.navbar{max-width:1200px;margin:auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:700;color:#075e54;white-space:nowrap}
-.logo img{width:55px;height:55px;object-fit:contain;border-radius:50%}
+header{
+ position:sticky;
+ top:0;
+ z-index:1000;
+ background:#fff;
+ box-shadow:0 2px 12px #0002
+}
+.navbar{
+ max-width:1200px;
+ margin:auto;
+ padding:10px 20px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:20px
+}
+.logo{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ font-size:20px;
+ font-weight:700;
+ color:#075e54;
+ white-space:nowrap
+}
+.logo img{
+ width:55px;
+ height:55px;
+ object-fit:contain;
+ border-radius:50%
+}
 .logo b{color:#d89b16}
-nav{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
-nav a{color:#333;font-weight:600;font-size:14px}
+
+nav{
+ display:flex;
+ gap:20px;
+ flex-wrap:wrap;
+ justify-content:center;
+ align-items:center
+}
+nav a{
+ color:#333;
+ font-weight:700;
+ font-size:14px;
+ transition:.3s
+}
 nav a:hover{color:#075e54}
 
-section{padding:70px 20px}
-.container{max-width:1200px;margin:auto}
+/* ANIMATED DESTINATION MENU */
+nav a.destination-link{
+ display:inline-block;
+ animation:menuPulse 2s ease-in-out infinite,
+ menuColor 5s linear infinite;
+ font-weight:800
+}
+nav a.destination-link:nth-child(2){animation-delay:0s}
+nav a.destination-link:nth-child(3){animation-delay:1s}
 
-.hero{position:relative;height:520px;overflow:hidden;background:#111;padding:0}
-.hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:heroFade 16s infinite}
+@keyframes menuPulse{
+ 0%,100%{transform:scale(1)}
+ 50%{transform:scale(1.13)}
+}
+@keyframes menuColor{
+ 0%{color:#075e54}
+ 25%{color:#e53935}
+ 50%{color:#d89b16}
+ 75%{color:#087ea4}
+ 100%{color:#075e54}
+}
+
+/* HERO */
+.hero{
+ position:relative;
+ height:540px;
+ overflow:hidden;
+ background:#102a2a
+}
+.hero-slide{
+ position:absolute;
+ inset:0;
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ opacity:0;
+ animation:heroFade 20s infinite
+}
 .hero-slide:nth-child(1){animation-delay:0s}
 .hero-slide:nth-child(2){animation-delay:4s}
 .hero-slide:nth-child(3){animation-delay:8s}
 .hero-slide:nth-child(4){animation-delay:12s}
+.hero-slide:nth-child(5){animation-delay:16s}
 
 @keyframes heroFade{
-0%{opacity:0}
-8%{opacity:1}
-25%{opacity:1}
-33%{opacity:0}
-100%{opacity:0}
+ 0%{opacity:0}
+ 8%{opacity:1}
+ 25%{opacity:1}
+ 33%{opacity:0}
+ 100%{opacity:0}
+}
+.hero-overlay{
+ position:absolute;
+ inset:0;
+ background:linear-gradient(90deg,#0009,#0002);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ padding:20px
+}
+.hero-content{
+ color:#fff;
+ max-width:850px
+}
+.hero-content h1{
+ font-size:48px;
+ line-height:1.2;
+ margin-bottom:18px;
+ text-shadow:2px 3px 8px #000
+}
+.hero-content h1 span{color:#ffd45c}
+.hero-content p{
+ font-size:20px;
+ margin-bottom:25px;
+ text-shadow:1px 2px 5px #000
 }
 
-.intro,.gallery-section{background:#fff}
-.section-title{text-align:center;margin-bottom:40px}
-.section-title h2{font-size:36px;color:#075e54;margin-bottom:8px}
-.section-title p{color:#666}
-.intro-text{max-width:900px;margin:auto;text-align:center;font-size:18px;color:#555}
-
-.property-section{background:#f5f7f9}
-.red-section-heading{text-align:center;margin-bottom:40px}
-.red-section-heading .top-line{display:block;font-size:30px;font-weight:700;color:#e53935;line-height:1.1;letter-spacing:1px}
-.red-section-heading .bottom-line{display:block;font-size:38px;font-weight:800;color:#e53935;line-height:1.05;margin-top:3px}
-
-.property-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
-.property-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 5px 20px #0002;transition:.3s}
-.property-card:hover{transform:translateY(-5px);box-shadow:0 10px 28px #0003}
-
-.property-image{height:330px;position:relative;overflow:hidden}
-.slideshow{position:relative;width:100%;height:100%;overflow:hidden;background:#111;cursor:pointer}
-.card-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:cardFade 18s infinite}
-
-@keyframes cardFade{
-0%{opacity:0;transform:scale(1)}
-8%{opacity:1;transform:scale(1.02)}
-75%{opacity:1;transform:scale(1.1)}
-92%{opacity:0;transform:scale(1.13)}
-100%{opacity:0;transform:scale(1)}
+/* COMMON */
+section{padding:70px 20px}
+.container{max-width:1200px;margin:auto}
+.section-title{
+ text-align:center;
+ margin-bottom:35px
 }
+.section-title h2{
+ font-size:36px;
+ color:#075e54;
+ margin-bottom:8px
+}
+.section-title p{color:#666;font-size:17px}
 
-.property-content{padding:24px}
-.property-content h3{color:#075e54;font-size:25px;margin-bottom:8px}
-.property-content h4{color:#d28d00;margin-bottom:12px}
-.property-content p{color:#555;margin-bottom:10px}
-.location{font-weight:600;color:#555}
-
-.property-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.btn{display:inline-block;padding:11px 18px;border-radius:8px;background:#075e54;color:#fff;font-weight:600;border:none;cursor:pointer;transition:.3s;font-family:inherit;font-size:14px}
-.btn:hover{background:#043f39}
+.btn{
+ display:inline-block;
+ padding:12px 22px;
+ border-radius:8px;
+ background:#075e54;
+ color:#fff;
+ font-weight:700;
+ border:none;
+ cursor:pointer;
+ transition:.3s;
+ font-size:15px
+}
+.btn:hover{
+ background:#043f39;
+ transform:translateY(-2px)
+}
+.btn-gold{background:#d89b16;color:#fff}
+.btn-gold:hover{background:#b77d08}
 .btn-whatsapp{background:#25d366}
 .btn-whatsapp:hover{background:#1da851}
 
-.room-photo-heading{text-align:center;margin-bottom:40px}
-.room-photo-heading .room-line{display:block;color:#075e54;font-size:34px;font-weight:700;line-height:1.05}
-.room-photo-heading .photo-line{display:block;color:#075e54;font-size:42px;font-weight:800;line-height:1;margin-top:2px}
+/* INTRO */
+.intro{background:#fff}
+.intro-text{
+ max-width:950px;
+ margin:auto;
+ text-align:center;
+ font-size:18px;
+ color:#555
+}
 
-.gallery-cover-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}
-.gallery-cover{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 5px 20px #0002;cursor:pointer;transition:.3s}
-.gallery-cover:hover{transform:translateY(-5px)}
-.gallery-cover img{width:100%;height:280px;object-fit:cover}
-.gallery-cover-content{padding:20px;text-align:center}
-.gallery-cover-content h3{color:#075e54;margin-bottom:5px}
-.gallery-cover-content p{color:#777}
+/* DESTINATIONS */
+.destinations{background:#f5f7f9}
+.destination-grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:28px
+}
+.destination-card{
+ background:#fff;
+ border-radius:18px;
+ overflow:hidden;
+ box-shadow:0 5px 20px #0002;
+ transition:.3s
+}
+.destination-card:hover{
+ transform:translateY(-5px);
+ box-shadow:0 10px 28px #0003
+}
+.destination-card img{
+ width:100%;
+ height:290px;
+ object-fit:cover
+}
+.destination-content{
+ padding:25px;
+ text-align:center
+}
+.destination-content h3{
+ color:#075e54;
+ font-size:27px;
+ margin-bottom:10px
+}
+.destination-content p{
+ color:#666;
+ margin-bottom:20px
+}
 
-.property-gallery{display:none}
-.property-gallery.active{display:block}
-.property-gallery h2{text-align:center;color:#075e54;font-size:32px;margin:20px 0 30px}
-.back-gallery-btn{display:block;margin:0 auto 20px;padding:11px 20px;border:none;border-radius:8px;background:#075e54;color:#fff;cursor:pointer;font-size:15px;font-weight:600}
+/* SERVICES */
+.services{background:#fff}
+.service-grid{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:22px
+}
+.service-card{
+ background:#f5f7f9;
+ padding:28px 20px;
+ text-align:center;
+ border-radius:15px;
+ transition:.3s;
+ border-bottom:3px solid #d89b16
+}
+.service-card:hover{transform:translateY(-5px)}
+.service-icon{
+ font-size:38px;
+ margin-bottom:12px
+}
+.service-card h3{
+ color:#075e54;
+ font-size:20px;
+ margin-bottom:10px
+}
+.service-card p{color:#666;font-size:15px}
 
-.photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.property-photo{width:100%;height:260px;object-fit:cover;border-radius:12px;cursor:pointer;transition:.3s;box-shadow:0 3px 12px #0002}
-.property-photo:hover{transform:scale(1.03)}
+/* ABOUT */
+.about{
+ background:#eef5f2;
+ text-align:center
+}
+.about-text{
+ max-width:900px;
+ margin:auto;
+ color:#555;
+ font-size:17px
+}
 
-.gallery-navigation,.lightbox-nav{display:flex;justify-content:center;gap:15px;margin-top:30px}
-.gallery-navigation button{padding:12px 22px;border:none;border-radius:8px;background:#075e54;color:#fff;font-weight:600;cursor:pointer}
-
-.photo-lightbox{position:fixed;inset:0;background:#000e;z-index:5000;display:none;align-items:center;justify-content:center;padding:30px}
-.photo-lightbox.active{display:flex}
-.lightbox-content{position:relative;max-width:1000px;width:100%;text-align:center}
-.lightbox-content img{max-width:90vw;max-height:75vh;margin:auto;object-fit:contain;border-radius:8px}
-.lightbox-close{position:absolute;top:-50px;right:0;color:#fff;font-size:35px;background:none;border:none;cursor:pointer}
-.lightbox-nav{margin-top:20px}
-.lightbox-nav button{padding:12px 22px;border:none;border-radius:8px;background:#fff;color:#222;font-weight:600;cursor:pointer}
-
-.booking{background:#075e54;color:#fff;text-align:center}
-.booking h2{font-size:35px;margin-bottom:12px}
-.booking p{max-width:700px;margin:0 auto 25px;font-size:18px}
-.booking-buttons{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+/* BOOKING */
+.booking{
+ background:#075e54;
+ color:#fff;
+ text-align:center
+}
+.booking h2{
+ font-size:35px;
+ margin-bottom:12px
+}
+.booking p{
+ max-width:750px;
+ margin:0 auto 25px;
+ font-size:18px
+}
+.booking-buttons{
+ display:flex;
+ justify-content:center;
+ gap:15px;
+ flex-wrap:wrap
+}
 .booking .btn{background:#fff;color:#075e54}
+.booking .btn:hover{background:#f1f1f1}
 
+/* CONTACT */
 .contact{background:#f5f7f9}
-.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
-.contact-box{background:#fff;padding:25px;border-radius:15px;text-align:center;box-shadow:0 4px 15px #0001}
-.contact-box h3{color:#075e54;margin-bottom:10px}
+.contact-grid{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:25px
+}
+.contact-box{
+ background:#fff;
+ padding:25px;
+ border-radius:15px;
+ text-align:center;
+ box-shadow:0 4px 15px #0001
+}
+.contact-box h3{
+ color:#075e54;
+ margin-bottom:10px
+}
 .contact-box p{color:#555}
 
-footer{background:#102a2a;color:#fff;text-align:center;padding:25px 20px}
+/* FOOTER */
+footer{
+ background:#102a2a;
+ color:#fff;
+ text-align:center;
+ padding:25px 20px
+}
 footer p{margin:5px 0}
-.mobile-contact-buttons{display:none}
 
-/* GOLDEN CURSOR */
-.custom-cursor{position:fixed;top:0;left:0;width:46px;height:46px;z-index:999999;pointer-events:none;opacity:0;visibility:hidden;transform:translate(-50%,-50%);transition:opacity .18s ease,visibility .18s ease,transform .18s ease;will-change:left,top,transform}
-.custom-cursor.visible{opacity:1;visibility:visible}
-.cursor-ring{position:absolute;inset:1px;border-radius:50%;border:3px solid transparent;border-top-color:#ffd700;border-right-color:#d89b16;border-bottom-color:#fff0a0;border-left-color:#d89b16;background:transparent;box-shadow:0 0 7px #ffd700,0 0 15px #d89b1680;animation:goldenCursorRotate 1.5s linear infinite}
-.cursor-dot{position:absolute;left:50%;top:50%;width:5px;height:5px;border-radius:50%;background:#ffd700;box-shadow:0 0 7px #ffd700;transform:translate(-50%,-50%)}
-.custom-cursor.hovering{transform:translate(-50%,-50%) scale(1.3)}
-@keyframes goldenCursorRotate{to{transform:rotate(360deg)}}
-body.golden-cursor-enabled,body.golden-cursor-enabled a,body.golden-cursor-enabled button,body.golden-cursor-enabled .slideshow,body.golden-cursor-enabled .gallery-cover,body.golden-cursor-enabled .property-photo{cursor:none!important}
+/* MOBILE CONTACT */
+.mobile-contact-buttons{display:none}
 
 /* MOBILE */
 @media(max-width:768px){
-section{padding:50px 14px}
-.navbar{padding:7px 10px;flex-direction:column;gap:6px}
-.logo{font-size:16px}
-.logo img{width:44px;height:44px}
-nav{gap:10px}
-nav a{font-size:12px}
-.hero{height:430px}
-.red-section-heading{margin-bottom:28px}
-.red-section-heading .top-line{font-size:24px}
-.red-section-heading .bottom-line{font-size:34px}
-.property-grid{grid-template-columns:1fr;gap:22px}
-.property-card{width:100%;border-radius:16px}
-.property-image{height:245px}
-.property-content{padding:18px}
-.property-content h3{font-size:23px;line-height:1.25}
-.property-content h4{font-size:17px}
-.property-content p{font-size:15px;line-height:1.55}
-.property-buttons{gap:8px}
-.property-buttons .btn{padding:10px 14px;font-size:13px}
-.room-photo-heading{margin-bottom:28px}
-.room-photo-heading .room-line{font-size:28px}
-.room-photo-heading .photo-line{font-size:36px}
-.gallery-cover-grid{grid-template-columns:1fr;gap:18px}
-.gallery-cover img{height:220px}
-.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.property-photo{height:155px;border-radius:9px}
-.gallery-navigation{gap:8px}
-.gallery-navigation button{padding:10px 15px;font-size:14px}
-.photo-lightbox{padding:15px}
-.lightbox-content img{max-width:96vw;max-height:72vh}
-.lightbox-close{top:-42px;font-size:32px}
-.lightbox-nav button{padding:10px 15px;font-size:14px}
-.booking h2{font-size:29px}
-.booking p{font-size:15px}
-.contact-grid{grid-template-columns:1fr;gap:15px}
-.mobile-contact-buttons{position:fixed;left:0;right:0;bottom:0;width:100%;height:82px;z-index:99999;display:flex;align-items:center;justify-content:space-between;padding:10px 24px;pointer-events:none;background:transparent}
-.floating-whatsapp,.floating-call{width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 5px 18px #0005;pointer-events:auto;transition:.2s;border:2px solid #ffffff40}
-.floating-whatsapp{background:#16d45a}
-.floating-call{background:#087ea4;font-size:32px}
-.floating-whatsapp:active,.floating-call:active{transform:scale(.88)}
-footer{padding-bottom:105px}
-.custom-cursor{display:none!important}
+ section{padding:50px 14px}
+ .navbar{
+  padding:7px 10px;
+  flex-direction:column;
+  gap:8px
+ }
+ .logo{font-size:16px}
+ .logo img{width:44px;height:44px}
+ nav{gap:12px}
+ nav a{font-size:12px}
+ .hero{height:440px}
+ .hero-content h1{font-size:34px}
+ .hero-content p{font-size:16px}
+ .section-title h2{font-size:29px}
+ .intro-text{font-size:16px}
+ .destination-grid{grid-template-columns:1fr;gap:20px}
+ .destination-card img{height:230px}
+ .destination-content{padding:20px}
+ .destination-content h3{font-size:24px}
+ .service-grid{grid-template-columns:1fr;gap:15px}
+ .booking h2{font-size:29px}
+ .booking p{font-size:15px}
+ .contact-grid{grid-template-columns:1fr;gap:15px}
+ .mobile-contact-buttons{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:75px;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:8px 24px;
+  pointer-events:none
+ }
+ .floating-whatsapp,.floating-call{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  box-shadow:0 5px 18px #0005;
+  pointer-events:auto;
+  border:2px solid #ffffff40
+ }
+ .floating-whatsapp{background:#16d45a}
+ .floating-call{background:#087ea4;font-size:30px}
+ footer{padding-bottom:100px}
 }
 @media(max-width:480px){
-.hero{height:420px}
-.property-image{height:240px}
-.property-photo{height:150px}
-.floating-whatsapp,.floating-call{width:58px;height:58px}
+ .hero{height:410px}
+ .hero-content h1{font-size:30px}
+ .hero-content p{font-size:15px}
+ nav{gap:10px}
+ nav a{font-size:11px}
+ .destination-card img{height:210px}
 }
-@media(hover:none),(pointer:coarse){.custom-cursor{display:none!important}}
+@media(prefers-reduced-motion:reduce){
+ nav a.destination-link{animation:none}
+ .hero-slide{animation:none;opacity:0}
+ .hero-slide:first-child{opacity:1}
+}
 </style>
 </head>
 
@@ -196,101 +400,96 @@ footer{padding-bottom:105px}
 
 <header>
  <div class="navbar">
+
   <a class="logo" href="index.html">
    <img src="image/logo.jpeg" alt="Sea & Mount Travel Logo">
    <span>SEA & MOUNT <b>TRAVEL</b></span>
   </a>
+
   <nav>
    <a href="index.html">Home</a>
- <a href="Digha.html">Digha Hotels</a>
-   <a href="Northbengal.html">North Bengal</a>
-   <a href="#gallery">Room Photo</a>
-   <a href="#booking">Booking</a>
+   <a class="destination-link" href="Digha.html">Digha Hotels</a>
+   <a class="destination-link" href="Northbengal.html">North Bengal</a>
+   <a href="#services">Our Services</a>
+   <a href="#about">About Us</a>
    <a href="#contact">Contact</a>
   </nav>
+
  </div>
 </header>
 
-<!-- DIGHA HERO SLIDESHOW -->
+<!-- HOMEPAGE HERO -->
 <section class="hero" id="home">
- <img class="hero-slide" src="image/1.jpg" alt="Hotel Pratima Guest Inn">
- <img class="hero-slide" src="image/22.jpeg" alt="Aaradhya Holiday Inn">
- <img class="hero-slide" src="image/2.jpeg" alt="Hotel Pratima Guest Inn">
- <img class="hero-slide" src="image/23.jpeg" alt="Aaradhya Holiday Inn">
+
+ <img class="hero-slide" src="image/home-1.jpg" alt="Beautiful holiday destination">
+ <img class="hero-slide" src="image/home-2.png" alt="Mountain holiday destination">
+ <img class="hero-slide" src="image/home-3.png" alt="Scenic travel destination">
+ <img class="hero-slide" src="image/home-4.webp" alt="Nature and holiday destination">
+ <img class="hero-slide" src="image/82.jpeg" alt="North Bengal travel destination">
+
+ <div class="hero-overlay">
+  <div class="hero-content">
+   <h1>Explore More With <span>Sea & Mount Travel</span></h1>
+   <p>Your Trusted Travel Partner for Hotels, Homestays & Holiday Packages</p>
+   <a class="btn btn-gold" href="#destinations">Explore Destinations</a>
+   <a class="btn btn-whatsapp" target="_blank" rel="noopener" href="https://wa.me/916290624090">Contact on WhatsApp</a>
+  </div>
+ </div>
+
 </section>
 
+<!-- INTRODUCTION -->
 <section class="intro">
  <div class="container">
   <div class="section-title">
-   <h2>Hotels in Digha</h2>
-   <p>Your comfortable stay by the sea</p>
+   <h2>Welcome to Sea & Mount Travel</h2>
+   <p>Your Journey, Our Responsibility</p>
   </div>
+
   <div class="intro-text">
-   <p>Discover comfortable accommodation in New Digha with Sea & Mount Travel. Explore Hotel Pratima Guest Inn and Aaradhya Holiday Inn for your family holiday, weekend trip and beach vacation.</p>
+   <p>
+    Sea & Mount Travel is your travel and hospitality booking partner.
+    We help you discover comfortable hotels, beautiful homestays and
+    memorable holiday experiences. Whether you are planning a relaxing
+    beach holiday or a peaceful mountain escape, we are here to help
+    make your journey easier and more enjoyable.
+   </p>
   </div>
  </div>
 </section>
 
-<section class="property-section" id="hotels">
+<!-- DESTINATIONS -->
+<section class="destinations" id="destinations">
  <div class="container">
-  <div class="red-section-heading">
-   <span class="top-line">Explore</span>
-   <span class="bottom-line">Digha Hotels</span>
+
+  <div class="section-title">
+   <h2>Explore Our Destinations</h2>
+   <p>Find your perfect stay and plan your next holiday</p>
   </div>
 
-  <div class="property-grid">
+  <div class="destination-grid">
 
-   <!-- HOTEL PRATIMA -->
-   <article class="property-card">
-    <div class="property-image">
-     <div class="slideshow" onclick="openGallery('pratima')">
-      <img class="card-slide" style="animation-delay:0s" src="image/1.jpg" alt="Hotel Pratima Guest Inn">
-      <img class="card-slide" style="animation-delay:2s" src="image/2.jpeg" alt="Hotel Pratima Guest Inn">
-      <img class="card-slide" style="animation-delay:4s" src="image/3.jpg" alt="Hotel Pratima Guest Inn">
-      <img class="card-slide" style="animation-delay:6s" src="image/4.jpg" alt="Hotel Pratima Guest Inn">
-      <img class="card-slide" style="animation-delay:8s" src="image/5.jpeg" alt="Hotel Pratima Guest Inn">
-      <img class="card-slide" style="animation-delay:10s" src="image/6.jpeg" alt="Hotel Pratima Guest Inn">
-      <img class="card-slide" style="animation-delay:12s" src="image/7.jpeg" alt="Hotel Pratima Guest Inn">
-      <img class="card-slide" style="animation-delay:14s" src="image/8.jpeg" alt="Hotel Pratima Guest Inn">
-      <img class="card-slide" style="animation-delay:16s" src="image/9.jpeg" alt="Hotel Pratima Guest Inn">
-     </div>
-    </div>
-    <div class="property-content">
-     <h3>Hotel Pratima Guest Inn</h3>
-     <h4>New Digha</h4>
-     <p class="location">📍 New Digha, Digha, West Bengal 721428</p>
-     <p>Comfortable rooms for families and groups, conveniently located near Sea Beach, SBSTC Bus Stand, Railway Station and Jagannath Temple.</p>
-     <div class="property-buttons">
-      <a class="btn btn-whatsapp" target="_blank" rel="noopener" href="https://wa.me/916290624090?text=Hello%2C%20I%20want%20to%20enquire%20about%20Hotel%20Pratima%20Guest%20Inn">WhatsApp Booking</a>
-      <button class="btn" onclick="openGallery('pratima')">Room Photo</button>
-     </div>
+   <article class="destination-card">
+    <img src="image/1.jpg" alt="Digha holiday destination">
+    <div class="destination-content">
+     <h3>Digha</h3>
+     <p>
+      Plan a refreshing seaside holiday with our hotel booking
+      services and travel assistance in Digha.
+     </p>
+     <a class="btn" href="Digha.html">Explore Digha Hotels</a>
     </div>
    </article>
 
-   <!-- AARADHYA HOLIDAY INN -->
-   <article class="property-card">
-    <div class="property-image">
-     <div class="slideshow" onclick="openGallery('aaradhya')">
-      <img class="card-slide" style="animation-delay:0s" src="image/22.jpeg" alt="Aaradhya Holiday Inn">
-      <img class="card-slide" style="animation-delay:2s" src="image/23.jpeg" alt="Aaradhya Holiday Inn">
-      <img class="card-slide" style="animation-delay:4s" src="image/24.jpeg" alt="Aaradhya Holiday Inn">
-      <img class="card-slide" style="animation-delay:6s" src="image/25.jpeg" alt="Aaradhya Holiday Inn">
-      <img class="card-slide" style="animation-delay:8s" src="image/26.jpeg" alt="Aaradhya Holiday Inn">
-      <img class="card-slide" style="animation-delay:10s" src="image/27.jpeg" alt="Aaradhya Holiday Inn">
-      <img class="card-slide" style="animation-delay:12s" src="image/28.jpeg" alt="Aaradhya Holiday Inn">
-      <img class="card-slide" style="animation-delay:14s" src="image/29.jpeg" alt="Aaradhya Holiday Inn">
-      <img class="card-slide" style="animation-delay:16s" src="image/30.jpeg" alt="Aaradhya Holiday Inn">
-     </div>
-    </div>
-    <div class="property-content">
-     <h3>Aaradhya Holiday Inn</h3>
-     <h4>New Digha</h4>
-     <p class="location">📍 Near Helipad, Jahaj Bari, Palsandapur, Digha, West Bengal 721428</p>
-     <p>A comfortable holiday stay in New Digha, suitable for families, couples and groups.</p>
-     <div class="property-buttons">
-      <a class="btn btn-whatsapp" target="_blank" rel="noopener" href="https://wa.me/916290624090?text=Hello%2C%20I%20want%20to%20enquire%20about%20Aaradhya%20Holiday%20Inn">WhatsApp Booking</a>
-      <button class="btn" onclick="openGallery('aaradhya')">Room Photo</button>
-     </div>
+   <article class="destination-card">
+    <img src="image/home-3.png" alt="North Bengal mountain destination">
+    <div class="destination-content">
+     <h3>North Bengal</h3>
+     <p>
+      Discover peaceful mountain holidays, homestay booking
+      services and holiday packages in North Bengal.
+     </p>
+     <a class="btn" href="Northbengal.html">Explore North Bengal</a>
     </div>
    </article>
 
@@ -298,279 +497,186 @@ footer{padding-bottom:105px}
  </div>
 </section>
 
-<!-- ROOM PHOTO GALLERY -->
-<section class="gallery-section" id="gallery">
+<!-- OUR SERVICES -->
+<section class="services" id="services">
  <div class="container">
-  <div class="room-photo-heading">
-   <span class="room-line">Digha Room</span>
-   <span class="photo-line">Photo Gallery</span>
+
+  <div class="section-title">
+   <h2>Our Services</h2>
+   <p>Everything you need for a comfortable holiday</p>
   </div>
 
-  <div id="galleryHome">
-   <div class="gallery-cover-grid" id="galleryCoverGrid"></div>
-  </div>
+  <div class="service-grid">
 
-  <div id="pratimaGallery" class="property-gallery">
-   <button class="back-gallery-btn" onclick="backToGallery()">← Back to Room Photo</button>
-   <h2>Hotel Pratima Guest Inn</h2>
-   <div id="pratimaPhotoGrid" class="photo-grid"></div>
-   <div class="gallery-navigation">
-    <button onclick="previousPhoto()">← Previous</button>
-    <button onclick="nextPhoto()">Next →</button>
+   <div class="service-card">
+    <div class="service-icon">🏨</div>
+    <h3>Hotel Booking</h3>
+    <p>
+     Find comfortable hotel accommodation for your family,
+     friends and group holidays.
+    </p>
    </div>
-  </div>
 
-  <div id="aaradhyaGallery" class="property-gallery">
-   <button class="back-gallery-btn" onclick="backToGallery()">← Back to Room Photo</button>
-   <h2>Aaradhya Holiday Inn</h2>
-   <div id="aaradhyaPhotoGrid" class="photo-grid"></div>
-   <div class="gallery-navigation">
-    <button onclick="previousPhoto()">← Previous</button>
-    <button onclick="nextPhoto()">Next →</button>
+   <div class="service-card">
+    <div class="service-icon">🏡</div>
+    <h3>Homestay Booking</h3>
+    <p>
+     Experience peaceful stays and local hospitality
+     through our homestay booking service.
+    </p>
    </div>
+
+   <div class="service-card">
+    <div class="service-icon">🧳</div>
+    <h3>Holiday Packages</h3>
+    <p>
+     Choose suitable holiday packages for your next
+     beach or mountain vacation.
+    </p>
+   </div>
+
+   <div class="service-card">
+    <div class="service-icon">👨‍👩‍👧‍👦</div>
+    <h3>Family & Group Tours</h3>
+    <p>
+     Travel together with family and friends.
+     We help arrange memorable group trips.
+    </p>
+   </div>
+
+   <div class="service-card">
+    <div class="service-icon">🚆</div>
+    <h3>Train Ticket Assistance</h3>
+    <p>
+     Get assistance with train ticket arrangements
+     for your planned journey.
+    </p>
+   </div>
+
+   <div class="service-card">
+    <div class="service-icon">📞</div>
+    <h3>Travel Assistance</h3>
+    <p>
+     Contact our team for booking enquiries,
+     travel planning and stay-related assistance.
+    </p>
+   </div>
+
   </div>
  </div>
 </section>
 
-<!-- PHOTO LIGHTBOX -->
-<div id="photoLightbox" class="photo-lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
- <div class="lightbox-content">
-  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close photo viewer">×</button>
-  <img id="lightboxImage" src="" alt="Hotel Room Photo">
-  <div class="lightbox-nav">
-   <button onclick="movePhoto(-1)">← Previous</button>
-   <button onclick="movePhoto(1)">Next →</button>
-  </div>
- </div>
-</div>
+<!-- ABOUT US -->
+<section class="about" id="about">
+ <div class="container">
 
+  <div class="section-title">
+   <h2>About Sea & Mount Travel</h2>
+   <p>Making Every Journey Special</p>
+  </div>
+
+  <div class="about-text">
+   <p>
+    Sea & Mount Travel works to make holiday planning simple
+    and convenient. We provide hotel and homestay booking
+    assistance, holiday packages and travel support for
+    travellers visiting Digha and North Bengal.
+   </p>
+   <br>
+   <p>
+    Our aim is to help guests find suitable accommodation
+    and enjoy a comfortable travel experience with reliable
+    booking assistance and friendly service.
+   </p>
+  </div>
+
+ </div>
+</section>
+
+<!-- BOOKING -->
 <section class="booking" id="booking">
  <div class="container">
-  <h2>Book Your Digha Stay</h2>
-  <p>Contact Sea & Mount Travel directly for hotel room booking, family holidays and travel assistance in Digha.</p>
+  <h2>Plan Your Next Holiday</h2>
+  <p>
+   Looking for hotels, homestays or holiday packages in
+   Digha and North Bengal? Contact Sea & Mount Travel.
+   We will be happy to assist you.
+  </p>
+
   <div class="booking-buttons">
-   <a class="btn" target="_blank" rel="noopener" href="https://wa.me/916290624090?text=Hello%2C%20I%20want%20to%20book%20a%20hotel%20in%20Digha">WhatsApp: +91 62906 24090</a>
-   <a class="btn" href="tel:+916290624090">Call: +91 62906 24090</a>
+   <a class="btn" target="_blank" rel="noopener"
+      href="https://wa.me/916290624090?text=Hello%2C%20I%20want%20to%20enquire%20about%20a%20holiday%20booking">
+    WhatsApp: +91 62906 24090
+   </a>
+
+   <a class="btn" href="tel:+916290624090">
+    Call Us
+   </a>
   </div>
  </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
  <div class="container">
+
   <div class="section-title">
    <h2>Contact Us</h2>
-   <p>Sea & Mount Travel</p>
+   <p>We are here to help you plan your journey</p>
   </div>
+
   <div class="contact-grid">
+
    <div class="contact-box">
     <h3>WhatsApp</h3>
     <p>+91 62906 24090</p>
    </div>
+
    <div class="contact-box">
     <h3>Phone</h3>
     <p>+91 97482 28781</p>
     <p>+91 82405 11881</p>
    </div>
+
    <div class="contact-box">
     <h3>Email</h3>
     <p>admin@seamount.co.in</p>
    </div>
+
   </div>
  </div>
 </section>
 
 <footer>
  <p>© 2026 Sea & Mount Travel. All Rights Reserved.</p>
- <p>Hotels • Homestays • Holiday Packages</p>
- <p><a href="index.html" style="color:#fff">Visit Main Website</a></p>
+ <p>Hotels • Homestays • Holiday Packages • Travel Assistance</p>
+ <p>
+  <a href="Digha.html" style="color:#ffd45c">Digha Hotels</a>
+  &nbsp; | &nbsp;
+  <a href="Northbengal.html" style="color:#ffd45c">North Bengal</a>
+ </p>
 </footer>
 
 <!-- MOBILE CONTACT BUTTONS -->
 <div class="mobile-contact-buttons">
- <a class="floating-whatsapp" href="https://wa.me/916290624090" target="_blank" rel="noopener" aria-label="WhatsApp Sea and Mount Travel">
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+
+ <a class="floating-whatsapp"
+    href="https://wa.me/916290624090"
+    target="_blank"
+    rel="noopener"
+    aria-label="WhatsApp Sea and Mount Travel">
+  <svg width="32" height="32" viewBox="0 0 24 24"
+       fill="white" aria-hidden="true">
    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372.074-.57.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.347-.57-.347"/>
    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.55 4.112 1.514 5.824L.057 24l6.338-1.66A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0Zm0 22.1c-1.88 0-3.722-.504-5.342-1.459l-.382-.225-3.762.985 1.003-3.666-.249-.394A9.95 9.95 0 0 1 2.05 12C2.05 6.515 6.515 2.05 12 2.05S21.95 6.515 21.95 12 17.485 21.95 12 21.95Z"/>
   </svg>
  </a>
- <a class="floating-call" href="tel:+916290624090" aria-label="Call Sea and Mount Travel">☎</a>
+
+ <a class="floating-call"
+    href="tel:+916290624090"
+    aria-label="Call Sea and Mount Travel">☎</a>
+
 </div>
-
-<!-- GOLDEN CURSOR -->
-<div class="custom-cursor" id="customCursor" aria-hidden="true">
- <div class="cursor-ring"></div>
- <div class="cursor-dot"></div>
-</div>
-
-<script>
-const galleries={
- pratima:{
-  title:"Hotel Pratima Guest Inn",
-  photos:["1.jpg","2.jpeg","3.jpg","4.jpg","5.jpeg","6.jpeg","7.jpeg","8.jpeg","9.jpeg"],
-  grid:"pratimaPhotoGrid",
-  section:"pratimaGallery"
- },
- aaradhya:{
-  title:"Aaradhya Holiday Inn",
-  photos:["22.jpeg","23.jpeg","24.jpeg","25.jpeg","26.jpeg","27.jpeg","28.jpeg","29.jpeg","30.jpeg","31.jpeg","32.jpeg","33.jpeg","34.jpeg","35.jpeg","36.jpeg"],
-  grid:"aaradhyaPhotoGrid",
-  section:"aaradhyaGallery"
- }
-};
-
-let currentGalleryType="pratima";
-let currentIndex=0;
-
-function buildGalleryCovers(){
- const grid=document.getElementById("galleryCoverGrid");
-
- Object.keys(galleries).forEach(function(key){
-  const g=galleries[key];
-  const cover=document.createElement("div");
-  cover.className="gallery-cover";
-  cover.onclick=function(){openGallery(key)};
-
-  const img=document.createElement("img");
-  img.src="image/"+g.photos[0];
-  img.alt=g.title;
-
-  const content=document.createElement("div");
-  content.className="gallery-cover-content";
-
-  const h3=document.createElement("h3");
-  h3.textContent=g.title;
-
-  const p=document.createElement("p");
-  p.textContent="View Room Photos";
-
-  content.append(h3,p);
-  cover.append(img,content);
-  grid.appendChild(cover);
- });
-}
-
-function openGallery(key){
- if(!galleries[key])return;
-
- currentGalleryType=key;
- document.getElementById("galleryHome").style.display="none";
-
- Object.values(galleries).forEach(g=>{
-  document.getElementById(g.section).classList.remove("active");
- });
-
- document.getElementById(galleries[key].section).classList.add("active");
- showPhotos(key);
- document.getElementById("gallery").scrollIntoView({behavior:"smooth"});
-}
-
-function showPhotos(key){
- const g=galleries[key];
- const grid=document.getElementById(g.grid);
- grid.innerHTML="";
-
- g.photos.forEach(function(photo,index){
-  const img=document.createElement("img");
-  img.className="property-photo";
-  img.src="image/"+photo;
-  img.alt=g.title+" Photo "+(index+1);
-  img.loading="lazy";
-  img.onclick=function(){openLightbox(key,index)};
-  grid.appendChild(img);
- });
-}
-
-function openLightbox(key,index){
- currentGalleryType=key;
- currentIndex=index;
- updateLightbox();
- document.getElementById("photoLightbox").classList.add("active");
-}
-
-function updateLightbox(){
- const g=galleries[currentGalleryType];
- document.getElementById("lightboxImage").src="image/"+g.photos[currentIndex];
- document.getElementById("lightboxImage").alt=g.title+" Photo "+(currentIndex+1);
-}
-
-function movePhoto(direction){
- const photos=galleries[currentGalleryType].photos;
- currentIndex=(currentIndex+direction+photos.length)%photos.length;
- updateLightbox();
-}
-
-function previousPhoto(){movePhoto(-1)}
-function nextPhoto(){movePhoto(1)}
-
-function backToGallery(){
- Object.values(galleries).forEach(g=>{
-  document.getElementById(g.section).classList.remove("active");
- });
- document.getElementById("galleryHome").style.display="block";
- document.getElementById("gallery").scrollIntoView({behavior:"smooth"});
-}
-
-function closeLightbox(){
- document.getElementById("photoLightbox").classList.remove("active");
-}
-
-document.addEventListener("keydown",function(event){
- if(event.key==="Escape")closeLightbox();
- if(event.key==="ArrowRight"&&document.getElementById("photoLightbox").classList.contains("active"))movePhoto(1);
- if(event.key==="ArrowLeft"&&document.getElementById("photoLightbox").classList.contains("active"))movePhoto(-1);
-});
-
-document.getElementById("photoLightbox").addEventListener("click",function(event){
- if(event.target===this)closeLightbox();
-});
-
-buildGalleryCovers();
-
-/* GOLDEN MOUSE CURSOR */
-(function(){
- const cursor=document.getElementById("customCursor");
-
- if(!cursor||!window.matchMedia("(hover: hover) and (pointer: fine)").matches)return;
-
- document.body.classList.add("golden-cursor-enabled");
-
- let mouseX=0,mouseY=0,cursorX=0,cursorY=0,started=false;
-
- document.addEventListener("mousemove",function(e){
-  mouseX=e.clientX;
-  mouseY=e.clientY;
-
-  if(!started){
-   cursorX=mouseX;
-   cursorY=mouseY;
-   started=true;
-  }
-
-  cursor.classList.add("visible");
- });
-
- document.addEventListener("mouseleave",function(){
-  cursor.classList.remove("visible");
- });
-
- function animate(){
-  if(started){
-   cursorX+=(mouseX-cursorX)*0.22;
-   cursorY+=(mouseY-cursorY)*0.22;
-   cursor.style.left=cursorX+"px";
-   cursor.style.top=cursorY+"px";
-  }
-  requestAnimationFrame(animate);
- }
-
- animate();
-
- document.querySelectorAll("a,button,.slideshow,.gallery-cover,.property-photo").forEach(function(el){
-  el.addEventListener("mouseenter",function(){cursor.classList.add("hovering")});
-  el.addEventListener("mouseleave",function(){cursor.classList.remove("hovering")});
- });
-})();
-</script>
 
 </body>
 </html>
