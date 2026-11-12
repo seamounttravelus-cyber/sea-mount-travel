@@ -5,678 +5,983 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sea & Mount Travel | Hotels, Homestays & Holiday Packages</title>
+<title>Sea & Mount Travel | Hotel Booking & Holiday Packages</title>
 
-<meta name="description" content="Sea & Mount Travel offers hotel and homestay booking, holiday packages, group tours and travel assistance in Digha and North Bengal.">
+<meta name="description" content="Sea & Mount Travel offers hotel booking, homestay booking, holiday packages, family tours and travel assistance in Digha and North Bengal.">
+
+<meta name="keywords" content="Sea and Mount Travel, Digha Hotel Booking, North Bengal Homestay, Icchegaon Homestay, Holiday Packages">
+
+<meta name="author" content="Sea & Mount Travel">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
- font-family:Arial,Helvetica,sans-serif;
- background:#f5f7f9;
- color:#222;
- line-height:1.6;
- overflow-x:hidden
-}
-a{text-decoration:none}
-img{max-width:100%;display:block}
-
-header{
- position:sticky;
- top:0;
- z-index:1000;
- background:#fff;
- box-shadow:0 2px 12px #0002
-}
-.navbar{
- max-width:1200px;
- margin:auto;
- padding:10px 20px;
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:20px
-}
-.logo{
- display:flex;
- align-items:center;
- gap:10px;
- font-size:20px;
- font-weight:700;
- color:#075e54;
- white-space:nowrap
-}
-.logo img{
- width:55px;
- height:55px;
- object-fit:contain;
- border-radius:50%
-}
-.logo b{color:#d89b16}
-
-nav{
- display:flex;
- gap:20px;
- flex-wrap:wrap;
- justify-content:center;
- align-items:center
-}
-nav a{
- color:#333;
- font-weight:700;
- font-size:14px;
- transition:.3s
-}
-nav a:hover{color:#075e54}
-
-/* ANIMATED DESTINATION MENU */
-nav a.destination-link{
- display:inline-block;
- animation:menuPulse 2s ease-in-out infinite,
- menuColor 5s linear infinite;
- font-weight:800
-}
-nav a.destination-link:nth-child(2){animation-delay:0s}
-nav a.destination-link:nth-child(3){animation-delay:1s}
-
-@keyframes menuPulse{
- 0%,100%{transform:scale(1)}
- 50%{transform:scale(1.13)}
-}
-@keyframes menuColor{
- 0%{color:#075e54}
- 25%{color:#e53935}
- 50%{color:#d89b16}
- 75%{color:#087ea4}
- 100%{color:#075e54}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* HERO */
-.hero{
- position:relative;
- height:540px;
- overflow:hidden;
- background:#102a2a
-}
-.hero-slide{
- position:absolute;
- inset:0;
- width:100%;
- height:100%;
- object-fit:cover;
- opacity:0;
- animation:heroFade 20s infinite
-}
-.hero-slide:nth-child(1){animation-delay:0s}
-.hero-slide:nth-child(2){animation-delay:4s}
-.hero-slide:nth-child(3){animation-delay:8s}
-.hero-slide:nth-child(4){animation-delay:12s}
-.hero-slide:nth-child(5){animation-delay:16s}
-
-@keyframes heroFade{
- 0%{opacity:0}
- 8%{opacity:1}
- 25%{opacity:1}
- 33%{opacity:0}
- 100%{opacity:0}
-}
-.hero-overlay{
- position:absolute;
- inset:0;
- background:linear-gradient(90deg,#0009,#0002);
- display:flex;
- align-items:center;
- justify-content:center;
- text-align:center;
- padding:20px
-}
-.hero-content{
- color:#fff;
- max-width:850px
-}
-.hero-content h1{
- font-size:48px;
- line-height:1.2;
- margin-bottom:18px;
- text-shadow:2px 3px 8px #000
-}
-.hero-content h1 span{color:#ffd45c}
-.hero-content p{
- font-size:20px;
- margin-bottom:25px;
- text-shadow:1px 2px 5px #000
+html {
+    scroll-behavior: smooth;
 }
 
-/* COMMON */
-section{padding:70px 20px}
-.container{max-width:1200px;margin:auto}
-.section-title{
- text-align:center;
- margin-bottom:35px
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: #fff;
 }
-.section-title h2{
- font-size:36px;
- color:#075e54;
- margin-bottom:8px
-}
-.section-title p{color:#666;font-size:17px}
 
-.btn{
- display:inline-block;
- padding:12px 22px;
- border-radius:8px;
- background:#075e54;
- color:#fff;
- font-weight:700;
- border:none;
- cursor:pointer;
- transition:.3s;
- font-size:15px
-}
-.btn:hover{
- background:#043f39;
- transform:translateY(-2px)
-}
-.btn-gold{background:#d89b16;color:#fff}
-.btn-gold:hover{background:#b77d08}
-.btn-whatsapp{background:#25d366}
-.btn-whatsapp:hover{background:#1da851}
+/* HEADER */
 
-/* INTRO */
-.intro{background:#fff}
-.intro-text{
- max-width:950px;
- margin:auto;
- text-align:center;
- font-size:18px;
- color:#555
+header {
+    background: #fff;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.logo h2 {
+    color: #126b4b;
+    font-size: 21px;
+}
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d49b27;
+}
+
+/* CERTIFICATE DROPDOWN */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 210px;
+    background: white;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1001;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    color: #126b4b;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-content a:hover {
+    background: #e8f5ee;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
+/* HERO SLIDESHOW */
+
+.hero {
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+    background: #234;
+}
+
+.slides {
+    position: absolute;
+    inset: 0;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: slideshow 25s infinite;
+}
+
+.slide:nth-child(1) {
+    background-image: url('image/home-1.jpg');
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    background-image: url('image/home-2.png');
+    animation-delay: 5s;
+}
+
+.slide:nth-child(3) {
+    background-image: url('image/home-3.png');
+    animation-delay: 10s;
+}
+
+.slide:nth-child(4) {
+    background-image: url('image/home-4.webp');
+    animation-delay: 15s;
+}
+
+.slide:nth-child(5) {
+    background-image: url('image/82.jpeg');
+    animation-delay: 20s;
+}
+
+@keyframes slideshow {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    20% { opacity: 1; }
+    25% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.48);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-content h1 {
+    font-size: 46px;
+    margin-bottom: 18px;
+}
+
+.hero-content p {
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #d49b27;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #126b4b;
+    transform: translateY(-3px);
+}
+
+/* COMMON SECTION */
+
+section {
+    padding: 65px 8%;
+}
+
+.section-title {
+    text-align: center;
+    color: #126b4b;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 35px;
+    color: #666;
+}
+
+/* ABOUT */
+
+.about {
+    background: #f7faf8;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+    font-size: 17px;
 }
 
 /* DESTINATIONS */
-.destinations{background:#f5f7f9}
-.destination-grid{
- display:grid;
- grid-template-columns:repeat(2,minmax(0,1fr));
- gap:28px
+
+.destination-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 }
-.destination-card{
- background:#fff;
- border-radius:18px;
- overflow:hidden;
- box-shadow:0 5px 20px #0002;
- transition:.3s
+
+.destination-card {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+    background: white;
+    text-align: center;
+    transition: 0.3s;
 }
-.destination-card:hover{
- transform:translateY(-5px);
- box-shadow:0 10px 28px #0003
+
+.destination-card:hover {
+    transform: translateY(-6px);
 }
-.destination-card img{
- width:100%;
- height:290px;
- object-fit:cover
+
+.destination-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
 }
-.destination-content{
- padding:25px;
- text-align:center
+
+.destination-card-content {
+    padding: 25px;
 }
-.destination-content h3{
- color:#075e54;
- font-size:27px;
- margin-bottom:10px
+
+.destination-card h3 {
+    color: #126b4b;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
-.destination-content p{
- color:#666;
- margin-bottom:20px
+
+.destination-card p {
+    margin-bottom: 20px;
+    color: #666;
 }
 
 /* SERVICES */
-.services{background:#fff}
-.service-grid{
- display:grid;
- grid-template-columns:repeat(3,minmax(0,1fr));
- gap:22px
-}
-.service-card{
- background:#f5f7f9;
- padding:28px 20px;
- text-align:center;
- border-radius:15px;
- transition:.3s;
- border-bottom:3px solid #d89b16
-}
-.service-card:hover{transform:translateY(-5px)}
-.service-icon{
- font-size:38px;
- margin-bottom:12px
-}
-.service-card h3{
- color:#075e54;
- font-size:20px;
- margin-bottom:10px
-}
-.service-card p{color:#666;font-size:15px}
 
-/* ABOUT */
-.about{
- background:#eef5f2;
- text-align:center
-}
-.about-text{
- max-width:900px;
- margin:auto;
- color:#555;
- font-size:17px
+.services {
+    background: #f7faf8;
 }
 
-/* BOOKING */
-.booking{
- background:#075e54;
- color:#fff;
- text-align:center
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
 }
-.booking h2{
- font-size:35px;
- margin-bottom:12px
+
+.service-card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
-.booking p{
- max-width:750px;
- margin:0 auto 25px;
- font-size:18px
+
+.service-card:hover {
+    transform: translateY(-5px);
 }
-.booking-buttons{
- display:flex;
- justify-content:center;
- gap:15px;
- flex-wrap:wrap
+
+.service-card .icon {
+    font-size: 40px;
+    margin-bottom: 12px;
 }
-.booking .btn{background:#fff;color:#075e54}
-.booking .btn:hover{background:#f1f1f1}
+
+.service-card h3 {
+    color: #126b4b;
+    margin-bottom: 10px;
+}
+
+/* CERTIFICATES */
+
+.certificates {
+    background: white;
+}
+
+.certificate-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.certificate-card {
+    padding: 30px 20px;
+    background: #f7faf8;
+    border: 1px solid #e2ebe5;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.certificate-card h3 {
+    color: #126b4b;
+    margin-bottom: 10px;
+}
+
+.certificate-card p {
+    color: #666;
+    margin-bottom: 18px;
+}
+
+.certificate-card a {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #126b4b;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.certificate-card a:hover {
+    background: #d49b27;
+}
+
+/* BOOKING CTA */
+
+.booking {
+    background: linear-gradient(120deg, #126b4b, #073c2b);
+    text-align: center;
+    color: white;
+}
+
+.booking h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.booking p {
+    margin-bottom: 25px;
+}
 
 /* CONTACT */
-.contact{background:#f5f7f9}
-.contact-grid{
- display:grid;
- grid-template-columns:repeat(3,minmax(0,1fr));
- gap:25px
+
+.contact {
+    background: #f7faf8;
+    text-align: center;
 }
-.contact-box{
- background:#fff;
- padding:25px;
- border-radius:15px;
- text-align:center;
- box-shadow:0 4px 15px #0001
+
+.contact-info {
+    max-width: 650px;
+    margin: auto;
 }
-.contact-box h3{
- color:#075e54;
- margin-bottom:10px
+
+.contact-info p {
+    margin: 12px 0;
+    font-size: 17px;
 }
-.contact-box p{color:#555}
 
 /* FOOTER */
-footer{
- background:#102a2a;
- color:#fff;
- text-align:center;
- padding:25px 20px
-}
-footer p{margin:5px 0}
 
-/* MOBILE CONTACT */
-.mobile-contact-buttons{display:none}
+footer {
+    background: #102e25;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
 
-/* MOBILE */
-@media(max-width:768px){
- section{padding:50px 14px}
- .navbar{
-  padding:7px 10px;
-  flex-direction:column;
-  gap:8px
- }
- .logo{font-size:16px}
- .logo img{width:44px;height:44px}
- nav{gap:12px}
- nav a{font-size:12px}
- .hero{height:440px}
- .hero-content h1{font-size:34px}
- .hero-content p{font-size:16px}
- .section-title h2{font-size:29px}
- .intro-text{font-size:16px}
- .destination-grid{grid-template-columns:1fr;gap:20px}
- .destination-card img{height:230px}
- .destination-content{padding:20px}
- .destination-content h3{font-size:24px}
- .service-grid{grid-template-columns:1fr;gap:15px}
- .booking h2{font-size:29px}
- .booking p{font-size:15px}
- .contact-grid{grid-template-columns:1fr;gap:15px}
- .mobile-contact-buttons{
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
-  width:100%;
-  height:75px;
-  z-index:99999;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:8px 24px;
-  pointer-events:none
- }
- .floating-whatsapp,.floating-call{
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  box-shadow:0 5px 18px #0005;
-  pointer-events:auto;
-  border:2px solid #ffffff40
- }
- .floating-whatsapp{background:#16d45a}
- .floating-call{background:#087ea4;font-size:30px}
- footer{padding-bottom:100px}
+footer a {
+    color: #e5bd62;
+    text-decoration: none;
 }
-@media(max-width:480px){
- .hero{height:410px}
- .hero-content h1{font-size:30px}
- .hero-content p{font-size:15px}
- nav{gap:10px}
- nav a{font-size:11px}
- .destination-card img{height:210px}
+
+/* FLOATING BUTTONS */
+
+.float-whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 85px;
+    background: #25D366;
+    color: white;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    text-decoration: none;
+    z-index: 999;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
-@media(prefers-reduced-motion:reduce){
- nav a.destination-link{animation:none}
- .hero-slide{animation:none;opacity:0}
- .hero-slide:first-child{opacity:1}
+
+.float-call {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #126b4b;
+    color: white;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    text-decoration: none;
+    z-index: 999;
+}
+
+/* MOBILE MENU */
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #126b4b;
+}
+
+@media(max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 15px 0;
+        gap: 15px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 5px 0;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        margin-top: 8px;
+        width: 100%;
+        background: #f5f8f6;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .hero {
+        height: 450px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .destination-container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .certificate-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 550px) {
+    section {
+        padding: 45px 6%;
+    }
+
+    .logo h2 {
+        font-size: 17px;
+    }
+
+    .logo img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 29px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
- <div class="navbar">
 
-  <a class="logo" href="index.html">
-   <img src="image/logo.jpeg" alt="Sea & Mount Travel Logo">
-   <span>SEA & MOUNT <b>TRAVEL</b></span>
-  </a>
+    <div class="logo">
+        <img src="image/logo.jpeg" alt="Sea & Mount Travel Logo">
+        <h2>Sea & Mount Travel</h2>
+    </div>
 
-  <nav>
-   <a href="index.html">Home</a>
-   <a class="destination-link" href="Digha.html">Digha Hotels</a>
-   <a class="destination-link" href="Northbengal.html">North Bengal</a>
-   <a href="#services">Our Services</a>
-   <a href="#about">About Us</a>
-   <a href="#contact">Contact</a>
-  </nav>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+        ☰
+    </button>
 
- </div>
+    <nav id="mainNav">
+        <a href="index.html">Home</a>
+
+        <a href="Digha.html">Digha Hotels</a>
+
+        <a href="Northbengal.html">North Bengal</a>
+
+        <a href="#services">Our Services</a>
+
+        <div class="dropdown">
+            <a href="#certificates" class="dropbtn">
+                Certificates ▼
+            </a>
+
+            <div class="dropdown-content">
+                <a href="image/NIDHI.jpeg" target="_blank">
+                    NIDHI Certificate
+                </a>
+
+                <a href="image/TRAVEL.jpeg" target="_blank">
+                    Travel Certificate
+                </a>
+            </div>
+        </div>
+
+        <a href="#about">About Us</a>
+
+        <a href="#contact">Contact</a>
+    </nav>
+
 </header>
 
-<!-- HOMEPAGE HERO -->
-<section class="hero" id="home">
+<!-- HERO SLIDESHOW -->
 
- <img class="hero-slide" src="image/home-1.jpg" alt="Beautiful holiday destination">
- <img class="hero-slide" src="image/home-2.png" alt="Mountain holiday destination">
- <img class="hero-slide" src="image/home-3.png" alt="Scenic travel destination">
- <img class="hero-slide" src="image/home-4.webp" alt="Nature and holiday destination">
- <img class="hero-slide" src="image/82.jpeg" alt="North Bengal travel destination">
+<div class="hero">
 
- <div class="hero-overlay">
-  <div class="hero-content">
-   <h1>Explore More With <span>Sea & Mount Travel</span></h1>
-   <p>Your Trusted Travel Partner for Hotels, Homestays & Holiday Packages</p>
-   <a class="btn btn-gold" href="#destinations">Explore Destinations</a>
-   <a class="btn btn-whatsapp" target="_blank" rel="noopener" href="https://wa.me/916290624090">Contact on WhatsApp</a>
-  </div>
- </div>
+    <div class="slides">
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+    </div>
 
-</section>
+    <div class="hero-overlay">
+        <div class="hero-content">
 
-<!-- INTRODUCTION -->
-<section class="intro">
- <div class="container">
-  <div class="section-title">
-   <h2>Welcome to Sea & Mount Travel</h2>
-   <p>Your Journey, Our Responsibility</p>
-  </div>
+            <h1>Explore The Beauty With Sea & Mount Travel</h1>
 
-  <div class="intro-text">
-   <p>
-    Sea & Mount Travel is your travel and hospitality booking partner.
-    We help you discover comfortable hotels, beautiful homestays and
-    memorable holiday experiences. Whether you are planning a relaxing
-    beach holiday or a peaceful mountain escape, we are here to help
-    make your journey easier and more enjoyable.
-   </p>
-  </div>
- </div>
+            <p>
+                Discover beautiful destinations, comfortable stays
+                and memorable holidays with us.
+            </p>
+
+            <a href="#destinations" class="btn">
+                Explore Destinations
+            </a>
+
+            <a href="https://wa.me/916290624090" class="btn">
+                Book Now
+            </a>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <h2 class="section-title">
+        Welcome to Sea & Mount Travel
+    </h2>
+
+    <p class="section-subtitle">
+        Your trusted travel partner for memorable holidays.
+    </p>
+
+    <div class="about-content">
+
+        <p>
+            Sea & Mount Travel is a travel and hospitality service
+            provider dedicated to making your holidays comfortable,
+            enjoyable and memorable.
+        </p>
+
+        <br>
+
+        <p>
+            From peaceful beach destinations to beautiful mountain
+            villages, we help travellers discover amazing places
+            with convenient hotel booking, homestay booking,
+            holiday packages and travel assistance.
+        </p>
+
+        <br>
+
+        <p>
+            Whether you are planning a family holiday, group tour
+            or a peaceful getaway, we are here to help you.
+        </p>
+
+    </div>
+
 </section>
 
 <!-- DESTINATIONS -->
-<section class="destinations" id="destinations">
- <div class="container">
 
-  <div class="section-title">
-   <h2>Explore Our Destinations</h2>
-   <p>Find your perfect stay and plan your next holiday</p>
-  </div>
+<section id="destinations">
 
-  <div class="destination-grid">
+    <h2 class="section-title">
+        Explore Our Destinations
+    </h2>
 
-   <article class="destination-card">
-    <img src="image/1.jpg" alt="Digha holiday destination">
-    <div class="destination-content">
-     <h3>Digha</h3>
-     <p>
-      Plan a refreshing seaside holiday with our hotel booking
-      services and travel assistance in Digha.
-     </p>
-     <a class="btn" href="Digha.html">Explore Digha Hotels</a>
+    <p class="section-subtitle">
+        Discover beautiful holiday destinations with
+        Sea & Mount Travel.
+    </p>
+
+    <div class="destination-container">
+
+        <div class="destination-card">
+
+            <img src="image/1.jpg" alt="Digha Beach">
+
+            <div class="destination-card-content">
+
+                <h3>Digha</h3>
+
+                <p>
+                    Enjoy beautiful sea beaches, relaxing holidays
+                    and comfortable hotel stays in Digha.
+                </p>
+
+                <a href="Digha.html" class="btn">
+                    Explore Digha Hotels
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="destination-card">
+
+            <img src="image/home-3.png" alt="North Bengal Mountains">
+
+            <div class="destination-card-content">
+
+                <h3>North Bengal</h3>
+
+                <p>
+                    Experience mountain views, tea gardens,
+                    peaceful villages and memorable homestay holidays.
+                </p>
+
+                <a href="Northbengal.html" class="btn">
+                    Explore Homestays
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
-   </article>
 
-   <article class="destination-card">
-    <img src="image/home-3.png" alt="North Bengal mountain destination">
-    <div class="destination-content">
-     <h3>North Bengal</h3>
-     <p>
-      Discover peaceful mountain holidays, homestay booking
-      services and holiday packages in North Bengal.
-     </p>
-     <a class="btn" href="Northbengal.html">Explore North Bengal</a>
-    </div>
-   </article>
-
-  </div>
- </div>
 </section>
 
-<!-- OUR SERVICES -->
+<!-- SERVICES -->
+
 <section class="services" id="services">
- <div class="container">
 
-  <div class="section-title">
-   <h2>Our Services</h2>
-   <p>Everything you need for a comfortable holiday</p>
-  </div>
+    <h2 class="section-title">
+        Our Services
+    </h2>
 
-  <div class="service-grid">
-
-   <div class="service-card">
-    <div class="service-icon">🏨</div>
-    <h3>Hotel Booking</h3>
-    <p>
-     Find comfortable hotel accommodation for your family,
-     friends and group holidays.
+    <p class="section-subtitle">
+        Complete travel solutions for your next holiday.
     </p>
-   </div>
 
-   <div class="service-card">
-    <div class="service-icon">🏡</div>
-    <h3>Homestay Booking</h3>
-    <p>
-     Experience peaceful stays and local hospitality
-     through our homestay booking service.
-    </p>
-   </div>
+    <div class="service-container">
 
-   <div class="service-card">
-    <div class="service-icon">🧳</div>
-    <h3>Holiday Packages</h3>
-    <p>
-     Choose suitable holiday packages for your next
-     beach or mountain vacation.
-    </p>
-   </div>
+        <div class="service-card">
+            <div class="icon">🏨</div>
+            <h3>Hotel Booking</h3>
+            <p>
+                Find comfortable hotels for your holiday
+                at popular destinations.
+            </p>
+        </div>
 
-   <div class="service-card">
-    <div class="service-icon">👨‍👩‍👧‍👦</div>
-    <h3>Family & Group Tours</h3>
-    <p>
-     Travel together with family and friends.
-     We help arrange memorable group trips.
-    </p>
-   </div>
+        <div class="service-card">
+            <div class="icon">🏡</div>
+            <h3>Homestay Booking</h3>
+            <p>
+                Enjoy peaceful homestay experiences
+                surrounded by nature.
+            </p>
+        </div>
 
-   <div class="service-card">
-    <div class="service-icon">🚆</div>
-    <h3>Train Ticket Assistance</h3>
-    <p>
-     Get assistance with train ticket arrangements
-     for your planned journey.
-    </p>
-   </div>
+        <div class="service-card">
+            <div class="icon">🏔️</div>
+            <h3>Holiday Packages</h3>
+            <p>
+                Explore customised holiday packages
+                for families and travellers.
+            </p>
+        </div>
 
-   <div class="service-card">
-    <div class="service-icon">📞</div>
-    <h3>Travel Assistance</h3>
-    <p>
-     Contact our team for booking enquiries,
-     travel planning and stay-related assistance.
-    </p>
-   </div>
+        <div class="service-card">
+            <div class="icon">👨‍👩‍👧‍👦</div>
+            <h3>Family & Group Tours</h3>
+            <p>
+                Plan memorable trips with your family,
+                friends and groups.
+            </p>
+        </div>
 
-  </div>
- </div>
+        <div class="service-card">
+            <div class="icon">🚆</div>
+            <h3>Train Ticket Assistance</h3>
+            <p>
+                Get assistance with your travel
+                and train ticket arrangements.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">🧭</div>
+            <h3>Travel Assistance</h3>
+            <p>
+                Get support with trip planning,
+                sightseeing and travel arrangements.
+            </p>
+        </div>
+
+    </div>
+
 </section>
 
-<!-- ABOUT US -->
-<section class="about" id="about">
- <div class="container">
+<!-- CERTIFICATES -->
 
-  <div class="section-title">
-   <h2>About Sea & Mount Travel</h2>
-   <p>Making Every Journey Special</p>
-  </div>
+<section class="certificates" id="certificates">
 
-  <div class="about-text">
-   <p>
-    Sea & Mount Travel works to make holiday planning simple
-    and convenient. We provide hotel and homestay booking
-    assistance, holiday packages and travel support for
-    travellers visiting Digha and North Bengal.
-   </p>
-   <br>
-   <p>
-    Our aim is to help guests find suitable accommodation
-    and enjoy a comfortable travel experience with reliable
-    booking assistance and friendly service.
-   </p>
-  </div>
+    <h2 class="section-title">
+        Our Certificates
+    </h2>
 
- </div>
+    <p class="section-subtitle">
+        Our tourism-related recognitions and certificates.
+    </p>
+
+    <div class="certificate-container">
+
+        <div class="certificate-card">
+
+            <h3>NIDHI Certificate</h3>
+
+            <p>
+                Pledge for Safe & Honourable Tourism.
+            </p>
+
+            <a href="image/NIDHI.jpeg" target="_blank">
+                View NIDHI Certificate
+            </a>
+
+        </div>
+
+        <div class="certificate-card">
+
+            <h3>Travel Certificate</h3>
+
+            <p>
+                Travel for LiFE – Successfully Signed Up.
+            </p>
+
+            <a href="image/TRAVEL.jpeg" target="_blank">
+                View Travel Certificate
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
 
-<!-- BOOKING -->
-<section class="booking" id="booking">
- <div class="container">
-  <h2>Plan Your Next Holiday</h2>
-  <p>
-   Looking for hotels, homestays or holiday packages in
-   Digha and North Bengal? Contact Sea & Mount Travel.
-   We will be happy to assist you.
-  </p>
+<!-- BOOKING CTA -->
 
-  <div class="booking-buttons">
-   <a class="btn" target="_blank" rel="noopener"
-      href="https://wa.me/916290624090?text=Hello%2C%20I%20want%20to%20enquire%20about%20a%20holiday%20booking">
-    WhatsApp: +91 62906 24090
-   </a>
+<section class="booking">
 
-   <a class="btn" href="tel:+916290624090">
-    Call Us
-   </a>
-  </div>
- </div>
+    <h2>Plan Your Next Holiday With Us</h2>
+
+    <p>
+        Contact Sea & Mount Travel for hotel booking,
+        homestay booking and holiday packages.
+    </p>
+
+    <a href="https://wa.me/916290624090" class="btn">
+        Contact on WhatsApp
+    </a>
+
 </section>
 
 <!-- CONTACT -->
+
 <section class="contact" id="contact">
- <div class="container">
 
-  <div class="section-title">
-   <h2>Contact Us</h2>
-   <p>We are here to help you plan your journey</p>
-  </div>
+    <h2 class="section-title">
+        Contact Us
+    </h2>
 
-  <div class="contact-grid">
+    <p class="section-subtitle">
+        We are happy to help you plan your next journey.
+    </p>
 
-   <div class="contact-box">
-    <h3>WhatsApp</h3>
-    <p>+91 62906 24090</p>
-   </div>
+    <div class="contact-info">
 
-   <div class="contact-box">
-    <h3>Phone</h3>
-    <p>+91 97482 28781</p>
-    <p>+91 82405 11881</p>
-   </div>
+        <p>
+            <strong>Business Name:</strong>
+            Sea & Mount Travel
+        </p>
 
-   <div class="contact-box">
-    <h3>Email</h3>
-    <p>admin@seamount.co.in</p>
-   </div>
+        <p>
+            <strong>Phone:</strong>
+            +91 97482 28781
+        </p>
 
-  </div>
- </div>
+        <p>
+            <strong>Phone:</strong>
+            +91 82405 11881
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            admin@seamount.co.in
+        </p>
+
+        <p>
+            <strong>WhatsApp:</strong>
+            <a href="https://wa.me/916290624090">
+                Chat With Us
+            </a>
+        </p>
+
+    </div>
+
 </section>
 
+<!-- FOOTER -->
+
 <footer>
- <p>© 2026 Sea & Mount Travel. All Rights Reserved.</p>
- <p>Hotels • Homestays • Holiday Packages • Travel Assistance</p>
- <p>
-  <a href="Digha.html" style="color:#ffd45c">Digha Hotels</a>
-  &nbsp; | &nbsp;
-  <a href="Northbengal.html" style="color:#ffd45c">North Bengal</a>
- </p>
+
+    <h3>Sea & Mount Travel</h3>
+
+    <p>
+        Your Journey, Our Responsibility.
+    </p>
+
+    <p>
+        © 2026 Sea & Mount Travel. All Rights Reserved.
+    </p>
+
+    <p>
+        <a href="index.html">Home</a> |
+        <a href="Digha.html">Digha Hotels</a> |
+        <a href="Northbengal.html">North Bengal</a> |
+        <a href="#certificates">Certificates</a>
+    </p>
+
 </footer>
 
-<!-- MOBILE CONTACT BUTTONS -->
-<div class="mobile-contact-buttons">
+<!-- FLOATING WHATSAPP -->
 
- <a class="floating-whatsapp"
-    href="https://wa.me/916290624090"
-    target="_blank"
-    rel="noopener"
-    aria-label="WhatsApp Sea and Mount Travel">
-  <svg width="32" height="32" viewBox="0 0 24 24"
-       fill="white" aria-hidden="true">
-   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372.074-.57.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.347-.57-.347"/>
-   <path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.55 4.112 1.514 5.824L.057 24l6.338-1.66A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0Zm0 22.1c-1.88 0-3.722-.504-5.342-1.459l-.382-.225-3.762.985 1.003-3.666-.249-.394A9.95 9.95 0 0 1 2.05 12C2.05 6.515 6.515 2.05 12 2.05S21.95 6.515 21.95 12 17.485 21.95 12 21.95Z"/>
-  </svg>
- </a>
+<a class="float-whatsapp"
+   href="https://wa.me/916290624090"
+   target="_blank"
+   aria-label="WhatsApp">
+   ☎
+</a>
 
- <a class="floating-call"
-    href="tel:+916290624090"
-    aria-label="Call Sea and Mount Travel">☎</a>
+<!-- FLOATING CALL -->
 
-</div>
+<a class="float-call"
+   href="tel:+919748228781"
+   aria-label="Call Us">
+   📞
+</a>
+
+<!-- MOBILE MENU SCRIPT -->
+
+<script>
+function toggleMenu() {
+    document.getElementById("mainNav").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
