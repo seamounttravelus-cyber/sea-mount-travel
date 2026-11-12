@@ -14,6 +14,9 @@
 <meta name="author" content="Sea & Mount Travel">
 
 <style>
+
+/* GENERAL */
+
 * {
     margin: 0;
     padding: 0;
@@ -82,44 +85,15 @@ nav a:hover {
     color: #d49b27;
 }
 
-/* CERTIFICATE DROPDOWN */
+/* MOBILE MENU BUTTON */
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropbtn {
-    cursor: pointer;
-}
-
-.dropdown-content {
+.menu-toggle {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 210px;
-    background: white;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.15);
-    border-radius: 8px;
-    overflow: hidden;
-    z-index: 1001;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 12px 16px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
     color: #126b4b;
-    border-bottom: 1px solid #eee;
-}
-
-.dropdown-content a:hover {
-    background: #e8f5ee;
-}
-
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
-    display: block;
 }
 
 /* HERO SLIDESHOW */
@@ -204,6 +178,8 @@ nav a:hover {
     margin-bottom: 25px;
 }
 
+/* BUTTONS */
+
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -213,6 +189,7 @@ nav a:hover {
     border-radius: 30px;
     font-weight: bold;
     transition: 0.3s;
+    margin: 5px;
 }
 
 .btn:hover {
@@ -220,7 +197,7 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
-/* COMMON SECTION */
+/* COMMON SECTIONS */
 
 section {
     padding: 65px 8%;
@@ -333,50 +310,63 @@ section {
 /* CERTIFICATES */
 
 .certificates {
-    background: white;
+    background: #f7faf8;
+    text-align: center;
 }
 
 .certificate-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    max-width: 850px;
-    margin: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 30px auto 0;
 }
 
 .certificate-card {
-    padding: 30px 20px;
-    background: #f7faf8;
-    border: 1px solid #e2ebe5;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    transition: 0.3s;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
 }
 
 .certificate-card h3 {
     color: #126b4b;
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 15px;
 }
 
-.certificate-card p {
-    color: #666;
+.certificate-card img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
     margin-bottom: 18px;
 }
 
 .certificate-card a {
     display: inline-block;
-    padding: 10px 22px;
+    padding: 11px 24px;
     background: #126b4b;
     color: white;
     text-decoration: none;
     border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .certificate-card a:hover {
     background: #d49b27;
 }
 
-/* BOOKING CTA */
+/* BOOKING SECTION */
 
 .booking {
     background: linear-gradient(120deg, #126b4b, #073c2b);
@@ -410,6 +400,11 @@ section {
     font-size: 17px;
 }
 
+.contact-info a {
+    color: #126b4b;
+    text-decoration: none;
+}
+
 /* FOOTER */
 
 footer {
@@ -419,12 +414,16 @@ footer {
     padding: 25px 15px;
 }
 
+footer p {
+    margin: 8px 0;
+}
+
 footer a {
     color: #e5bd62;
     text-decoration: none;
 }
 
-/* FLOATING BUTTONS */
+/* FLOATING WHATSAPP */
 
 .float-whatsapp {
     position: fixed;
@@ -438,11 +437,13 @@ footer a {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 27px;
+    font-size: 25px;
     text-decoration: none;
     z-index: 999;
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
+
+/* FLOATING CALL */
 
 .float-call {
     position: fixed;
@@ -461,18 +462,10 @@ footer a {
     z-index: 999;
 }
 
-/* MOBILE MENU */
-
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #126b4b;
-}
+/* MOBILE RESPONSIVE */
 
 @media(max-width: 900px) {
+
     header {
         flex-wrap: wrap;
     }
@@ -498,22 +491,6 @@ footer a {
         padding: 5px 0;
     }
 
-    .dropdown {
-        width: 100%;
-    }
-
-    .dropdown-content {
-        position: static;
-        box-shadow: none;
-        margin-top: 8px;
-        width: 100%;
-        background: #f5f8f6;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
     .hero {
         height: 450px;
     }
@@ -530,12 +507,10 @@ footer a {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .certificate-container {
-        grid-template-columns: 1fr;
-    }
 }
 
-@media(max-width: 550px) {
+@media(max-width: 600px) {
+
     section {
         padding: 45px 6%;
     }
@@ -568,7 +543,17 @@ footer a {
     .service-container {
         grid-template-columns: 1fr;
     }
+
+    .certificate-container {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-card img {
+        height: 260px;
+    }
+
 }
+
 </style>
 </head>
 
@@ -579,15 +564,22 @@ footer a {
 <header>
 
     <div class="logo">
-        <img src="image/logo.jpeg" alt="Sea & Mount Travel Logo">
+
+        <img src="image/logo.jpeg"
+             alt="Sea & Mount Travel Logo">
+
         <h2>Sea & Mount Travel</h2>
+
     </div>
 
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+    <button class="menu-toggle"
+            onclick="toggleMenu()"
+            aria-label="Open menu">
         ☰
     </button>
 
     <nav id="mainNav">
+
         <a href="index.html">Home</a>
 
         <a href="Digha.html">Digha Hotels</a>
@@ -596,25 +588,12 @@ footer a {
 
         <a href="#services">Our Services</a>
 
-        <div class="dropdown">
-            <a href="#certificates" class="dropbtn">
-                Certificates ▼
-            </a>
-
-            <div class="dropdown-content">
-                <a href="image/NIDHI.jpeg" target="_blank">
-                    NIDHI Certificate
-                </a>
-
-                <a href="image/TRAVEL.jpeg" target="_blank">
-                    Travel Certificate
-                </a>
-            </div>
-        </div>
+        <a href="#certificates">Certificates</a>
 
         <a href="#about">About Us</a>
 
         <a href="#contact">Contact</a>
+
     </nav>
 
 </header>
@@ -624,17 +603,26 @@ footer a {
 <div class="hero">
 
     <div class="slides">
+
         <div class="slide"></div>
+
         <div class="slide"></div>
+
         <div class="slide"></div>
+
         <div class="slide"></div>
+
         <div class="slide"></div>
+
     </div>
 
     <div class="hero-overlay">
+
         <div class="hero-content">
 
-            <h1>Explore The Beauty With Sea & Mount Travel</h1>
+            <h1>
+                Explore The Beauty With Sea & Mount Travel
+            </h1>
 
             <p>
                 Discover beautiful destinations, comfortable stays
@@ -645,16 +633,18 @@ footer a {
                 Explore Destinations
             </a>
 
-            <a href="https://wa.me/916290624090" class="btn">
+            <a href="https://wa.me/916290624090"
+               class="btn">
                 Book Now
             </a>
 
         </div>
+
     </div>
 
 </div>
 
-<!-- ABOUT -->
+<!-- ABOUT US -->
 
 <section class="about" id="about">
 
@@ -663,31 +653,32 @@ footer a {
     </h2>
 
     <p class="section-subtitle">
-        Your trusted travel partner for memorable holidays.
+        Your Trusted Travel Partner for Memorable Holidays
     </p>
 
     <div class="about-content">
 
         <p>
-            Sea & Mount Travel is a travel and hospitality service
-            provider dedicated to making your holidays comfortable,
-            enjoyable and memorable.
+            Sea & Mount Travel is a travel and hospitality
+            service provider dedicated to making your holidays
+            comfortable, enjoyable and memorable.
         </p>
 
         <br>
 
         <p>
-            From peaceful beach destinations to beautiful mountain
-            villages, we help travellers discover amazing places
-            with convenient hotel booking, homestay booking,
-            holiday packages and travel assistance.
+            From peaceful beach destinations to beautiful
+            mountain villages, we help travellers discover
+            amazing places with convenient hotel booking,
+            homestay booking, holiday packages and travel assistance.
         </p>
 
         <br>
 
         <p>
-            Whether you are planning a family holiday, group tour
-            or a peaceful getaway, we are here to help you.
+            Whether you are planning a family holiday,
+            group tour or a peaceful getaway,
+            we are here to help you.
         </p>
 
     </div>
@@ -703,23 +694,27 @@ footer a {
     </h2>
 
     <p class="section-subtitle">
-        Discover beautiful holiday destinations with
-        Sea & Mount Travel.
+        Discover beautiful holiday destinations
+        with Sea & Mount Travel.
     </p>
 
     <div class="destination-container">
 
+        <!-- DIGHA -->
+
         <div class="destination-card">
 
-            <img src="image/1.jpg" alt="Digha Beach">
+            <img src="image/1.jpg"
+                 alt="Digha Beach">
 
             <div class="destination-card-content">
 
                 <h3>Digha</h3>
 
                 <p>
-                    Enjoy beautiful sea beaches, relaxing holidays
-                    and comfortable hotel stays in Digha.
+                    Enjoy beautiful sea beaches,
+                    relaxing holidays and comfortable
+                    hotel stays in Digha.
                 </p>
 
                 <a href="Digha.html" class="btn">
@@ -730,9 +725,12 @@ footer a {
 
         </div>
 
+        <!-- NORTH BENGAL -->
+
         <div class="destination-card">
 
-            <img src="image/home-3.png" alt="North Bengal Mountains">
+            <img src="image/home-3.png"
+                 alt="North Bengal Mountains">
 
             <div class="destination-card-content">
 
@@ -740,7 +738,8 @@ footer a {
 
                 <p>
                     Experience mountain views, tea gardens,
-                    peaceful villages and memorable homestay holidays.
+                    peaceful villages and memorable
+                    homestay holidays.
                 </p>
 
                 <a href="Northbengal.html" class="btn">
@@ -755,7 +754,7 @@ footer a {
 
 </section>
 
-<!-- SERVICES -->
+<!-- OUR SERVICES -->
 
 <section class="services" id="services">
 
@@ -764,63 +763,87 @@ footer a {
     </h2>
 
     <p class="section-subtitle">
-        Complete travel solutions for your next holiday.
+        Complete Travel Solutions for Your Next Holiday
     </p>
 
     <div class="service-container">
 
         <div class="service-card">
+
             <div class="icon">🏨</div>
+
             <h3>Hotel Booking</h3>
+
             <p>
                 Find comfortable hotels for your holiday
                 at popular destinations.
             </p>
+
         </div>
 
         <div class="service-card">
+
             <div class="icon">🏡</div>
+
             <h3>Homestay Booking</h3>
+
             <p>
                 Enjoy peaceful homestay experiences
                 surrounded by nature.
             </p>
+
         </div>
 
         <div class="service-card">
+
             <div class="icon">🏔️</div>
+
             <h3>Holiday Packages</h3>
+
             <p>
                 Explore customised holiday packages
                 for families and travellers.
             </p>
+
         </div>
 
         <div class="service-card">
+
             <div class="icon">👨‍👩‍👧‍👦</div>
+
             <h3>Family & Group Tours</h3>
+
             <p>
                 Plan memorable trips with your family,
                 friends and groups.
             </p>
+
         </div>
 
         <div class="service-card">
+
             <div class="icon">🚆</div>
+
             <h3>Train Ticket Assistance</h3>
+
             <p>
                 Get assistance with your travel
                 and train ticket arrangements.
             </p>
+
         </div>
 
         <div class="service-card">
+
             <div class="icon">🧭</div>
+
             <h3>Travel Assistance</h3>
+
             <p>
                 Get support with trip planning,
                 sightseeing and travel arrangements.
             </p>
+
         </div>
 
     </div>
@@ -836,34 +859,46 @@ footer a {
     </h2>
 
     <p class="section-subtitle">
-        Our tourism-related recognitions and certificates.
+        Our Tourism Recognitions & Certificates
     </p>
 
     <div class="certificate-container">
+
+        <!-- NIDHI CERTIFICATE -->
 
         <div class="certificate-card">
 
             <h3>NIDHI Certificate</h3>
 
-            <p>
-                Pledge for Safe & Honourable Tourism.
-            </p>
-
             <a href="image/NIDHI.jpeg" target="_blank">
+
+                <img src="image/NIDHI.jpeg"
+                     alt="NIDHI Certificate">
+
+            </a>
+
+            <a href="image/NIDHI.jpeg"
+               target="_blank">
                 View NIDHI Certificate
             </a>
 
         </div>
 
+        <!-- TRAVEL CERTIFICATE -->
+
         <div class="certificate-card">
 
             <h3>Travel Certificate</h3>
 
-            <p>
-                Travel for LiFE – Successfully Signed Up.
-            </p>
-
             <a href="image/TRAVEL.jpeg" target="_blank">
+
+                <img src="image/TRAVEL.jpeg"
+                     alt="Travel for LiFE Certificate">
+
+            </a>
+
+            <a href="image/TRAVEL.jpeg"
+               target="_blank">
                 View Travel Certificate
             </a>
 
@@ -873,18 +908,22 @@ footer a {
 
 </section>
 
-<!-- BOOKING CTA -->
+<!-- BOOKING SECTION -->
 
 <section class="booking">
 
-    <h2>Plan Your Next Holiday With Us</h2>
+    <h2>
+        Plan Your Next Holiday With Us
+    </h2>
 
     <p>
         Contact Sea & Mount Travel for hotel booking,
         homestay booking and holiday packages.
     </p>
 
-    <a href="https://wa.me/916290624090" class="btn">
+    <a href="https://wa.me/916290624090"
+       class="btn"
+       target="_blank">
         Contact on WhatsApp
     </a>
 
@@ -899,7 +938,7 @@ footer a {
     </h2>
 
     <p class="section-subtitle">
-        We are happy to help you plan your next journey.
+        We are Happy to Help You Plan Your Next Journey.
     </p>
 
     <div class="contact-info">
@@ -911,22 +950,29 @@ footer a {
 
         <p>
             <strong>Phone:</strong>
-            +91 97482 28781
+            <a href="tel:+919748228781">
+                +91 97482 28781
+            </a>
         </p>
 
         <p>
             <strong>Phone:</strong>
-            +91 82405 11881
+            <a href="tel:+918240511881">
+                +91 82405 11881
+            </a>
         </p>
 
         <p>
             <strong>Email:</strong>
-            admin@seamount.co.in
+            <a href="mailto:admin@seamount.co.in">
+                admin@seamount.co.in
+            </a>
         </p>
 
         <p>
             <strong>WhatsApp:</strong>
-            <a href="https://wa.me/916290624090">
+            <a href="https://wa.me/916290624090"
+               target="_blank">
                 Chat With Us
             </a>
         </p>
@@ -950,37 +996,60 @@ footer a {
     </p>
 
     <p>
+
         <a href="index.html">Home</a> |
+
         <a href="Digha.html">Digha Hotels</a> |
+
         <a href="Northbengal.html">North Bengal</a> |
+
         <a href="#certificates">Certificates</a>
+
     </p>
 
 </footer>
 
-<!-- FLOATING WHATSAPP -->
+<!-- FLOATING WHATSAPP BUTTON -->
 
 <a class="float-whatsapp"
    href="https://wa.me/916290624090"
    target="_blank"
    aria-label="WhatsApp">
-   ☎
+    ☎
 </a>
 
-<!-- FLOATING CALL -->
+<!-- FLOATING CALL BUTTON -->
 
 <a class="float-call"
    href="tel:+919748228781"
    aria-label="Call Us">
-   📞
+    📞
 </a>
 
 <!-- MOBILE MENU SCRIPT -->
 
 <script>
+
 function toggleMenu() {
-    document.getElementById("mainNav").classList.toggle("active");
+
+    document.getElementById("mainNav")
+        .classList.toggle("active");
+
 }
+
+// Close mobile menu after clicking a navigation link
+
+document.querySelectorAll("#mainNav a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        document.getElementById("mainNav")
+            .classList.remove("active");
+
+    });
+
+});
+
 </script>
 
 </body>
