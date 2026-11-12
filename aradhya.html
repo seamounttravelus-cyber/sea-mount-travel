@@ -1,1 +1,1224 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aaradhya Holiday Inn | New Digha</title>
+<meta name="description" content="Discover Aaradhya Holiday Inn in New Digha. Explore hotel rooms and send your booking enquiry to Sea & Mount Travel.">
+<meta name="theme-color" content="#142b45">
+
+<style>
+:root {
+    --navy: #142b45;
+    --blue: #244d70;
+    --gold: #c99b50;
+    --light: #f5f7fa;
+    --text: #293746;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+section {
+    padding: 70px 0;
+}
+
+h2 {
+    color: var(--navy);
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title p {
+    color: #687582;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 22px;
+    background: var(--gold);
+    color: #142b45;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #e2b968;
+    transform: translateY(-2px);
+}
+
+.btn-dark {
+    background: var(--navy);
+    color: white;
+}
+
+.btn-dark:hover {
+    background: var(--blue);
+    color: white;
+}
+
+/* HEADER */
+
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px #00000012;
+}
+
+.navbar {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.logo {
+    color: var(--navy);
+    font-size: 19px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    display: block;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.nav-book {
+    background: var(--navy);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 5px;
+}
+
+/* HERO */
+
+.hero {
+    height: 620px;
+    position: relative;
+    overflow: hidden;
+    background: var(--navy);
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.3s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(7,23,40,.85),
+        rgba(7,23,40,.35)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+}
+
+.hero-content small {
+    color: #e7c98e;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.hero-content h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px,7vw,68px);
+    line-height: 1.1;
+    margin: 18px 0;
+}
+
+.hero-content h1 span {
+    color: #e7c98e;
+}
+
+.hero-content p {
+    max-width: 580px;
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--navy);
+}
+
+/* QUICK INFO */
+
+.quick-info {
+    background: var(--navy);
+    color: white;
+    padding: 23px 0;
+}
+
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    gap: 15px;
+}
+
+.quick-grid strong {
+    display: block;
+    color: #e7c98e;
+    font-size: 19px;
+}
+
+.quick-grid span {
+    font-size: 13px;
+}
+
+/* ABOUT */
+
+.about {
+    background: var(--light);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px #00000018;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    color: #687582;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.features div {
+    font-weight: bold;
+    color: var(--navy);
+    font-size: 14px;
+}
+
+.features div::before {
+    content: "✓ ";
+    color: var(--gold);
+}
+
+/* ROOMS */
+
+.room-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    background: white;
+    box-shadow: 0 8px 30px #00000010;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.room-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.room-content {
+    padding: 25px;
+}
+
+.room-content h3 {
+    color: var(--navy);
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.room-content p {
+    color: #687582;
+    margin-bottom: 15px;
+}
+
+/* GALLERY */
+
+.gallery {
+    background: var(--light);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.025);
+}
+
+/* FACILITIES */
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+
+.facility {
+    background: var(--light);
+    padding: 25px 12px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.facility .icon {
+    font-size: 30px;
+}
+
+.facility h3 {
+    color: var(--navy);
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+/* LOCATION */
+
+.location {
+    background: var(--light);
+}
+
+.location-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.location-box p {
+    color: #687582;
+    margin: 10px 0 20px;
+}
+
+/* BOOKING */
+
+.booking {
+    background: linear-gradient(135deg,#142b45,#244d70);
+    color: white;
+}
+
+.booking h2 {
+    color: white;
+}
+
+.booking .section-title p {
+    color: #d8e1e9;
+}
+
+.booking-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.contact-box {
+    border: 1px solid #ffffff35;
+    padding: 28px;
+    border-radius: 10px;
+}
+
+.contact-box h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.contact-box p {
+    margin-bottom: 15px;
+    color: #e0e7ed;
+}
+
+.booking-form {
+    background: white;
+    color: var(--text);
+    padding: 28px;
+    border-radius: 10px;
+}
+
+.booking-form h3 {
+    color: var(--navy);
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.booking-form > p {
+    color: #687582;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d7dfe6;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+
+.booking-form button {
+    width: 100%;
+    margin-top: 18px;
+}
+
+.form-note {
+    color: #687582;
+    text-align: center;
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #091827;
+    color: #d0d9e1;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer strong {
+    color: white;
+}
+
+footer a {
+    color: #e7c98e;
+    text-decoration: none;
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #000e;
+    z-index: 3000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 85vh;
+    object-fit: contain;
+}
+
+.lightbox button {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* FLOATING CONTACT */
+
+.float-buttons {
+    position: fixed;
+    right: 16px;
+    bottom: 18px;
+    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.float-buttons a {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px #0004;
+}
+
+.whatsapp {
+    background: #20bd60;
+}
+
+.call {
+    background: #087ca5;
+}
+
+/* MOBILE */
+
+@media(max-width:800px) {
+    .navbar {
+        flex-direction: column;
+        padding: 12px 0;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .about-grid,
+    .room-card,
+    .booking-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .facility-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .hero {
+        height: 560px;
+    }
+}
+
+@media(max-width:520px) {
+    section {
+        padding: 50px 0;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        height: 540px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img {
+        height: 280px;
+    }
+
+    .gallery-grid img {
+        height: 145px;
+    }
+
+    .facility-grid {
+        gap: 10px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container navbar">
+
+        <a href="index.html" class="logo">
+            SEA & MOUNT TRAVEL
+            <span>YOUR JOURNEY, OUR CARE</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Digha.html">Digha Hotels</a>
+            <a href="#about">About</a>
+            <a href="#rooms">Rooms</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#location">Location</a>
+            <a href="#booking" class="nav-book">Book Now</a>
+        </nav>
+
+    </div>
+</header>
+
+<!-- HERO SLIDER -->
+<div class="hero">
+
+    <!-- Replace these filenames with your actual Aaradhya photos -->
+    <img class="slide active" src="image/aaradhya1.jpg" alt="Aaradhya Holiday Inn">
+    <img class="slide" src="image/aaradhya2.jpg" alt="Aaradhya Holiday Inn room">
+    <img class="slide" src="image/aaradhya3.jpg" alt="Aaradhya Holiday Inn">
+    <img class="slide" src="image/aaradhya4.jpg" alt="Aaradhya Holiday Inn">
+
+    <div class="container hero-content">
+
+        <small>WELCOME TO NEW DIGHA</small>
+
+        <h1>
+            Aaradhya<br>
+            <span>Holiday Inn</span>
+        </h1>
+
+        <p>
+            Plan your Digha holiday with a comfortable stay
+            at Aaradhya Holiday Inn. Contact us for room
+            availability, tariffs and booking assistance.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#booking" class="btn">Book Your Stay</a>
+            <a href="tel:+916290624090" class="btn btn-outline">Call Now</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- QUICK INFORMATION -->
+<div class="quick-info">
+    <div class="container quick-grid">
+
+        <div>
+            <strong>Aaradhya</strong>
+            <span>Holiday Inn</span>
+        </div>
+
+        <div>
+            <strong>New Digha</strong>
+            <span>West Bengal, India</span>
+        </div>
+
+        <div>
+            <strong>Direct Booking</strong>
+            <span>WhatsApp & Call Support</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-image">
+            <img src="image/aaradhya1.jpg" alt="Aaradhya Holiday Inn">
+        </div>
+
+        <div class="about-content">
+
+            <h2>Welcome to Aaradhya Holiday Inn</h2>
+
+            <p>
+                Welcome to Aaradhya Holiday Inn, New Digha.
+                Make your visit to Digha special with a convenient
+                place to stay for your holiday.
+            </p>
+
+            <p>
+                Contact our booking team to know about available
+                room categories, occupancy, current tariffs and
+                booking arrangements.
+            </p>
+
+            <div class="features">
+                <div>New Digha Location</div>
+                <div>Room Enquiry</div>
+                <div>WhatsApp Booking</div>
+                <div>Direct Assistance</div>
+            </div>
+
+            <a href="#booking" class="btn btn-dark">
+                Check Availability
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ROOMS -->
+<section id="rooms">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Our Rooms</h2>
+            <p>Explore the property photographs and enquire about rooms.</p>
+        </div>
+
+        <div class="room-card">
+
+            <img src="image/aaradhya2.jpg"
+                 alt="Aaradhya Holiday Inn guest room"
+                 loading="lazy">
+
+            <div class="room-content">
+
+                <h3>Comfortable Guest Rooms</h3>
+
+                <p>
+                    Looking for accommodation in New Digha?
+                    Contact us to check room availability and
+                    the latest tariff for your travel dates.
+                </p>
+
+                <p>
+                    Our team will assist you with your booking enquiry.
+                </p>
+
+                <a href="#booking" class="btn">
+                    Enquire Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Photo Gallery</h2>
+            <p>Explore Aaradhya Holiday Inn.</p>
+        </div>
+
+        <div class="gallery-grid">
+
+            <img src="image/aaradhya1.jpg" alt="Aaradhya photo 1" onclick="openPhoto(this.src)" loading="lazy">
+
+            <img src="image/aaradhya2.jpg" alt="Aaradhya photo 2" onclick="openPhoto(this.src)" loading="lazy">
+
+            <img src="image/aaradhya3.jpg" alt="Aaradhya photo 3" onclick="openPhoto(this.src)" loading="lazy">
+
+            <img src="image/aaradhya4.jpg" alt="Aaradhya photo 4" onclick="openPhoto(this.src)" loading="lazy">
+
+            <img src="image/aaradhya5.jpg" alt="Aaradhya photo 5" onclick="openPhoto(this.src)" loading="lazy">
+
+            <img src="image/aaradhya6.jpg" alt="Aaradhya photo 6" onclick="openPhoto(this.src)" loading="lazy">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closePhoto()">
+
+    <button type="button" aria-label="Close photo" onclick="closePhoto()">×</button>
+
+    <img id="lightboxImage" src="" alt="Aaradhya Holiday Inn photograph">
+
+</div>
+
+<!-- FACILITIES -->
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Hotel Information</h2>
+            <p>Contact us for current room and facility details.</p>
+        </div>
+
+        <div class="facility-grid">
+
+            <div class="facility">
+                <div class="icon">🏨</div>
+                <h3>Guest Rooms</h3>
+            </div>
+
+            <div class="facility">
+                <div class="icon">📍</div>
+                <h3>New Digha</h3>
+            </div>
+
+            <div class="facility">
+                <div class="icon">📱</div>
+                <h3>WhatsApp Support</h3>
+            </div>
+
+            <div class="facility">
+                <div class="icon">☎️</div>
+                <h3>Phone Enquiry</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Our Location</h2>
+            <p>Aaradhya Holiday Inn, New Digha, West Bengal.</p>
+        </div>
+
+        <div class="location-box">
+
+            <h3>Aaradhya Holiday Inn</h3>
+
+            <p>
+                New Digha, Purba Medinipur, West Bengal, India.
+                Contact us for the exact property location and directions.
+            </p>
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Aaradhya+Holiday+Inn+New+Digha"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-dark">
+                Open Google Maps
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Book Your Stay</h2>
+            <p>Send your booking enquiry directly to our WhatsApp.</p>
+        </div>
+
+        <div class="booking-grid">
+
+            <div class="contact-box">
+
+                <h3>Aaradhya Holiday Inn</h3>
+
+                <p>
+                    Planning a trip to New Digha?
+                    Contact our booking team for room availability,
+                    tariffs and booking assistance.
+                </p>
+
+                <p>
+                    <strong>Booking Phone:</strong><br>
+                    +91 62906 24090
+                </p>
+
+                <p>
+                    <strong>Booking Support:</strong><br>
+                    Sea & Mount Travel
+                </p>
+
+                <a
+                    href="https://wa.me/916290624090"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn">
+                    WhatsApp Us
+                </a>
+
+            </div>
+
+            <form class="booking-form" id="bookingForm">
+
+                <h3>Booking Enquiry Form</h3>
+
+                <p>
+                    Fill in your details. Your enquiry will open in WhatsApp.
+                </p>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="guestName">Guest Name *</label>
+                        <input id="guestName" type="text" required placeholder="Your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guestPhone">Mobile Number *</label>
+                        <input id="guestPhone" type="tel" required
+                               pattern="[0-9+\-\s]{8,18}"
+                               placeholder="Your mobile number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkin">Check-in Date *</label>
+                        <input id="checkin" type="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkout">Check-out Date *</label>
+                        <input id="checkout" type="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rooms">Number of Rooms</label>
+                        <select id="rooms">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests">
+                            <option>1</option>
+                            <option selected>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="message">Additional Message</label>
+                        <textarea id="message" placeholder="Any special requirements?"></textarea>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-dark">
+                    Send Booking Enquiry on WhatsApp
+                </button>
+
+                <div class="form-note">
+                    This form sends an enquiry. It does not instantly confirm a reservation.
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="container">
+
+        <strong>Aaradhya Holiday Inn</strong>
+
+        <p>New Digha, West Bengal, India</p>
+
+        <p>
+            Booking Support by
+            <a href="index.html">Sea & Mount Travel</a>
+        </p>
+
+        <p>
+            © <span id="year"></span> Sea & Mount Travel. All Rights Reserved.
+        </p>
+
+        <p>
+            <a href="Digha.html">Back to Digha Hotels</a>
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- FLOATING CONTACT BUTTONS -->
+<div class="float-buttons">
+
+    <a class="whatsapp"
+       href="https://wa.me/916290624090"
+       target="_blank"
+       rel="noopener"
+       aria-label="WhatsApp">◉</a>
+
+    <a class="call"
+       href="tel:+916290624090"
+       aria-label="Call">☎</a>
+
+</div>
+
+<script>
+
+// AUTOMATIC HERO SLIDER
+
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+setInterval(function() {
+
+    slides[currentSlide].classList.remove("active");
+
+    currentSlide = (currentSlide + 1) % slides.length;
+
+    slides[currentSlide].classList.add("active");
+
+}, 5000);
+
+
+// PHOTO GALLERY LIGHTBOX
+
+function openPhoto(source) {
+
+    document.getElementById("lightboxImage").src = source;
+
+    document.getElementById("lightbox").classList.add("active");
+
+}
+
+function closePhoto() {
+
+    document.getElementById("lightbox").classList.remove("active");
+
+}
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closePhoto();
+    }
+
+});
+
+
+// BOOKING FORM TO WHATSAPP
+
+document.getElementById("bookingForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("guestName").value.trim();
+    const phone = document.getElementById("guestPhone").value.trim();
+    const checkin = document.getElementById("checkin").value;
+    const checkout = document.getElementById("checkout").value;
+    const rooms = document.getElementById("rooms").value;
+    const guests = document.getElementById("guests").value;
+    const message = document.getElementById("message").value.trim();
+
+    if (checkout <= checkin) {
+        alert("Check-out date must be after check-in date.");
+        return;
+    }
+
+    const whatsappMessage =
+`Hello, I want to enquire about booking at Aaradhya Holiday Inn.
+
+Guest Name: ${name}
+Mobile Number: ${phone}
+Check-in Date: ${checkin}
+Check-out Date: ${checkout}
+Number of Rooms: ${rooms}
+Number of Guests: ${guests}
+Additional Message: ${message}
+
+Please share room availability and tariff.
+
+Thank you.`;
+
+    const whatsappURL =
+        "https://wa.me/916290624090?text=" +
+        encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
+
+});
+
+
+// DATE VALIDATION
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const today = new Date();
+const localToday = new Date(
+    today.getTime() - today.getTimezoneOffset() * 60000
+).toISOString().split("T")[0];
+
+const checkinInput = document.getElementById("checkin");
+const checkoutInput = document.getElementById("checkout");
+
+checkinInput.min = localToday;
+checkoutInput.min = localToday;
+
+checkinInput.addEventListener("change", function() {
+
+    checkoutInput.min = this.value || localToday;
+
+    if (checkoutInput.value && checkoutInput.value <= this.value) {
+        checkoutInput.value = "";
+    }
+
+});
+
+</script>
+
+</body>
+</html>
