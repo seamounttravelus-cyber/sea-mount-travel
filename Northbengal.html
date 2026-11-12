@@ -106,6 +106,47 @@ section{padding:70px 20px}
 .lightbox-nav{margin-top:20px}
 .lightbox-nav button{padding:12px 22px;border:none;border-radius:8px;background:#fff;color:#222;font-weight:600;cursor:pointer}
 
+/* CERTIFICATES */
+.certificates{background:#f5f7f9}
+.certificate-container{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:30px;
+ max-width:1050px;
+ margin:30px auto 0
+}
+.certificate-card{
+ background:#fff;
+ padding:22px;
+ border-radius:15px;
+ box-shadow:0 4px 18px #0002;
+ text-align:center;
+ transition:.3s
+}
+.certificate-card:hover{transform:translateY(-5px)}
+.certificate-card h3{
+ color:#075e54;
+ font-size:23px;
+ margin-bottom:15px
+}
+.certificate-card img{
+ width:100%;
+ height:300px;
+ object-fit:contain;
+ background:#fff;
+ border:1px solid #eee;
+ border-radius:8px;
+ margin-bottom:18px;
+ cursor:pointer
+}
+.certificate-card .btn{display:inline-block}
+.certificate-note{
+ text-align:center;
+ color:#666;
+ margin-top:15px;
+ font-size:14px
+}
+
 /* BOOKING */
 .booking{background:#075e54;color:#fff;text-align:center}
 .booking h2{font-size:35px;margin-bottom:12px}
@@ -161,6 +202,11 @@ footer p{margin:5px 0}
  .lightbox-content img{max-width:96vw;max-height:72vh}
  .lightbox-close{top:-42px;font-size:32px}
  .lightbox-nav button{padding:10px 15px;font-size:14px}
+
+ /* CERTIFICATE MOBILE */
+ .certificate-container{grid-template-columns:1fr;gap:20px}
+ .certificate-card img{height:260px}
+
  .booking h2{font-size:29px}
  .booking p{font-size:15px}
  .contact-grid{grid-template-columns:1fr;gap:15px}
@@ -193,6 +239,7 @@ footer p{margin:5px 0}
    <a href="index.html">Home</a>
    <a href="Digha.html">Digha Hotels</a>
    <a href="Northbengal.html">North Bengal</a>
+   <a href="#certificates">Certificates</a>
    <a href="#booking">Booking</a>
    <a href="#contact">Contact</a>
   </nav>
@@ -369,6 +416,58 @@ footer p{margin:5px 0}
   </div>
  </div>
 </div>
+
+<!-- CERTIFICATES SECTION -->
+<section class="certificates" id="certificates">
+ <div class="container">
+
+  <div class="section-title">
+   <h2>Our Certificates</h2>
+   <p>Our Tourism Recognitions & Certificates</p>
+  </div>
+
+  <div class="certificate-container">
+
+   <!-- NIDHI CERTIFICATE -->
+   <div class="certificate-card">
+    <h3>NIDHI+ Certificate</h3>
+    <a href="image/NIDHI.jpeg" target="_blank" rel="noopener">
+     <img src="image/NIDHI.jpeg"
+          alt="NIDHI+ Pledge Certificate"
+          loading="lazy">
+    </a>
+    <a class="btn"
+       href="image/NIDHI.jpeg"
+       target="_blank"
+       rel="noopener">
+     View NIDHI Certificate
+    </a>
+   </div>
+
+   <!-- TRAVEL FOR LIFE CERTIFICATE -->
+   <div class="certificate-card">
+    <h3>Travel for LiFE Certificate</h3>
+    <a href="image/TRAVEL.jpeg" target="_blank" rel="noopener">
+     <img src="image/TRAVEL.jpeg"
+          alt="Travel for LiFE Certificate"
+          loading="lazy">
+    </a>
+    <a class="btn"
+       href="image/TRAVEL.jpeg"
+       target="_blank"
+       rel="noopener">
+     View Travel Certificate
+    </a>
+   </div>
+
+  </div>
+
+  <p class="certificate-note">
+   Click on a certificate to view the full-size image.
+  </p>
+
+ </div>
+</section>
 
 <!-- BOOKING SECTION -->
 <section class="booking" id="booking">
